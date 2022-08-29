@@ -1,1 +1,9 @@
 <h1>Make a profile</h1>
+
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :bio %>
+  <%= f.association :crag %>
+  <%= f.association :user %>
+  <%= f.submit %>
+<% end %>
