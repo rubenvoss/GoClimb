@@ -1,0 +1,2 @@
+class CragsController < ApplicationController
+end
