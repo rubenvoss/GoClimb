@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :trips
   has_many :reviews
   has_one :profile
+  validates :email, :encrypted_password, presence: true
 end
