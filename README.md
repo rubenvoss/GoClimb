@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+![LOGO](https://user-images.githubusercontent.com/105738004/187217708-2ce4c5c5-4f3c-4533-8f1a-daacb1cfc848.svg)
+Go Climbing with cool people to new Crags
