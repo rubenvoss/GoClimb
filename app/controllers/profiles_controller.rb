@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   def show
+    @profile = Profile.find(params[:id])
   end
 
   def new
@@ -19,5 +20,6 @@ class ProfilesController < ApplicationController
 
   private
 
-  def 
+  def profile_params
+  end
 end
