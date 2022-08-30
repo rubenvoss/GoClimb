@@ -27,6 +27,8 @@ crags_data = [
     country: spain
   }
 ]
+
+# IMPORTANT: the symbol has to match exactly the crag name in crags_data
 crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661856531/go-climb-seeds/margalef-1_dka26r.jpg"
 }
 
