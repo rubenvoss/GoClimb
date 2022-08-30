@@ -6,12 +6,12 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    @crag = Crag.new
   end
 
   def create
     @profile = Profile.new(profile_params)
-    @crag = @profile.crag
+    @profile.crag = Crag.find(profile_params[:crag_id])
+    @profile.user = current_user
     if @profile.save
       redirect_to profile_path(@profile)
     else
@@ -22,6 +22,7 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find(params[:id])
     @crag = @profile.crag
+    @profile.user = current_user
     if @profile.save
       redirect_to profile_path(@profile)
     else
@@ -38,6 +39,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :bio, :crag)
+    params.require(:profile).permit(:name, :bio, :crag_id)
   end
 end
