@@ -3,13 +3,13 @@ require "open-uri"
 puts "cleaning dataase..."
 Crag.destroy_all
 Country.destroy_all
-User.destroy_all
-Message.destroy_all
 Chatroom.destroy_all
-Trip.destroy_all
+Message.destroy_all
 Activity.destroy_all
 Review.destroy_all
 Profile.destroy_all
+Trip.destroy_all
+User.destroy_all
 
 puts "seeding admin user - admin@admin.com - 123456"
 User.create(email: "admin@admin.com", password: "123456")
