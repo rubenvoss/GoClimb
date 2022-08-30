@@ -1,9 +1,19 @@
 <div class="container">
-  <h1>Your profile</h1>
+  <h1>Profile</h1>
   <h3><%= @profile.name %></h3>
   <p><%= @profile.bio %></p>
   <p><%= @crag.name %></p>
 
-  <h1>Edit your profile</h1>
-  <%= render "form" %>
+  <h1>Reviews</h1>
+  <ul>
+    <% @profile.reviews.each do |review| %>
+      <li><%= review.rating %></li>
+      <li><%= review.comment %></li>
+    <% end %>
+  </ul>
+
+  <% if @profile.user == current_user %>
+    <h1>Edit your profile</h1>
+    <%= render "form" %>
+  <% end %>
 </div>

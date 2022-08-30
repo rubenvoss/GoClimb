@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :profiles, except: %i[index destroy] do
-    member do
-      resources :reviews, except: %i[show destroy]
-    end
+    resources :reviews, except: %i[show destroy]
   end
 end
 
