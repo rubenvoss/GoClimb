@@ -21,16 +21,17 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
     @crag = @profile.crag
     @profile.user = current_user
-    if @profile.save
+    if @profile.update(profile_params)
       redirect_to profile_path(@profile)
     else
       render :show, status: :unprocessable_entity
     end
-  end
-
-  def update
   end
 
   def destroy
