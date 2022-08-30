@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_profile
+  before_action :set_profile, only: %i[new create]
 
   def new
     @review = Review.new
@@ -16,6 +16,9 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to profile_path(@review.profile), status: :see_other
   end
 
   private
