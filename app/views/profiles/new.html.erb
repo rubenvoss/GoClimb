@@ -1,10 +1,4 @@
 <div class="container">
   <h1>Make a profile</h1>
-
-  <%= simple_form_for(@profile) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :bio %>
-    <%= f.association :crag %>
-    <%= f.submit class: "red-button" %>
-  <% end %>
+  <%= render "form" %>
 </div>

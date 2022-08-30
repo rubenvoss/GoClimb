@@ -1,1 +1,9 @@
-<h1>Your profile</h1>
+<div class="container">
+  <h1>Your profile</h1>
+  <h3><%= @profile.name %></h3>
+  <p><%= @profile.bio %></p>
+  <p><%= @crag.name %></p>
+
+  <h1>Edit your profile</h1>
+  <%= render "form" %>
+</div>
