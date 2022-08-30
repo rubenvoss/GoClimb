@@ -1,7 +1,39 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+require "open-uri"
+
+puts "cleaning dataase..."
+Country.destroy_all
+Crag.destroy_all
+User.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+Trip.destroy_all
+Activity.destroy_all
+Review.destroy_all
+Profile.destroy_all
+
+# seeding the data
+puts "seeding countries..."
+spain = Country.create(name: "Spain")
+germany = Country.create(name: "Germany")
+
+# all of the data for the seeds
+crags_data = [
+                {
+                  name: "Margalef",
+                  lat: 1,
+                  long: 2,
+                  country: spain
+                }
+            ]
+crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661856531/go-climb-seeds/margalef-1_dka26r.jpg"
+               }
+
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+
+puts "seeding crags..."
+crags_data.each do |crag_data|
+  crag = Crag.new(crag_data)
+  photo = URI.open(crags_photos[crag_data[:name].to_sym])
+  crag.photo.attach(io: photo, filename: "#{crag_data[:name]}.jpg", content_type: "image/jpg")
+  crag.save!
+end
