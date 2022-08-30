@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_profile, only: %i[new create]
+  before_action :set_profile
 
   def new
     @review = Review.new
@@ -15,10 +15,7 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
+  def destroy
   end
 
   private
