@@ -1,10 +1,12 @@
 class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
+    @crag = @profile.crag
   end
 
   def new
     @profile = Profile.new
+    @crag = Crag.new
   end
 
   def create
@@ -18,6 +20,13 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find(params[:id])
+    @crag = @profile.crag
+    if @profile.save
+      redirect_to profile_path(@profile)
+    else
+      render :show, status: :unprocessable_entity
+    end
   end
 
   def update
