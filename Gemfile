@@ -51,13 +51,18 @@ gem "sassc-rails"
 
 # our gems:
 gem "devise"
+
 gem "faker"
+
 gem "autoprefixer-rails"
+
 gem "font-awesome-sass", "~> 6.1"
+
 gem "simple_form", github: "heartcombo/simple_form"
+
 gem "cloudinary"
 
-
+gem "pg_search"
 
 
 group :development, :test do
