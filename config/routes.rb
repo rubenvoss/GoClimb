@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:destroy]
   resources :crags
-  resources :chatrooms, only: %i[show new create] do
+  resources :chatrooms, only: %i[show new create index] do
     resources :messages, only: :create
   end
 end
