@@ -69,6 +69,7 @@ puts "seeding users..."
   User.create(email: "#{Faker::Name.first_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
 end
 
+# seeding messages only for checking layout purposes in development
 puts "seeding messages..."
 users = User.all
 chatrooms = Chatroom.all
