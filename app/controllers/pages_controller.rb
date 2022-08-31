@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def search
+    @crags = Crag.all
+    @countries = Country.all
+  end
 end
