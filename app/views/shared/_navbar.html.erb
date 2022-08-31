@@ -1,15 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon background">
   <div class="navbar-full-height d-flex justify-content-between">
-    <div class="navbar-button">
+    <%= link_to :back, class: "navbar-button" do %>
       <span class="icon--lastpage"><i class="fa-solid fa-angle-left"></i></span>
-    </div>
+    <% end %>
     <svg height="40" width="2">
         <line x1="0" y1="0" x2="0" y2="200" style="stroke:rgb(0,0,0);stroke-width:2" />
         Sorry, your browser does not support inline SVG.
       </svg>
-    <div class="navbar-button">
-      <span class="icon--message"><i class="fa-solid fa-message"></i></span>
-    </div>
+        <%# <%= link_to chatroom_messages_path, class: "navbar-button" do %> %>
+          <span class="icon--message"><i class="fa-solid fa-message"></i></span>
+        <%# <% end %> %>
+
     <svg height="40" width="2">
       <line x1="0" y1="0" x2="0" y2="200" style="stroke:rgb(0,0,0);stroke-width:2" />
       Sorry, your browser does not support inline SVG.
