@@ -69,6 +69,15 @@ puts "seeding users..."
   User.create(email: "#{Faker::Name.first_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
 end
 
+puts "seeding profiles..."
+users = User.all
+crags = Crag.all
+crags.each do |crag|
+  users.each do |user|
+    Profile.create(name: Faker::Name.first_name, crag: crag, user: user)
+  end
+end
+
 # seeding messages only for checking layout purposes in development
 
 # puts "seeding messages..."
