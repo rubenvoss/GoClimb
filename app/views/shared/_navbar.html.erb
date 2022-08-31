@@ -7,9 +7,9 @@
         <line x1="0" y1="0" x2="0" y2="200" style="stroke:rgb(0,0,0);stroke-width:2" />
         Sorry, your browser does not support inline SVG.
       </svg>
-        <%# <%= link_to chatroom_messages_path, class: "navbar-button" do %> %>
+        <%= link_to chatrooms_path, class: "navbar-button" do %>
           <span class="icon--message"><i class="fa-solid fa-message"></i></span>
-        <%# <% end %> %>
+        <% end %>
 
     <svg height="40" width="2">
       <line x1="0" y1="0" x2="0" y2="200" style="stroke:rgb(0,0,0);stroke-width:2" />
@@ -31,10 +31,10 @@
       <ul class="navbar-nav aligh-right">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+          <li class="nav-item active">
+            <%= link_to "Profile", profile_path(current_user.profile), class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.email %></a>
