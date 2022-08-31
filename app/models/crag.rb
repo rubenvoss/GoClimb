@@ -6,5 +6,5 @@ class Crag < ApplicationRecord
 
   # makes crags searchable for names
   include PgSearch::Model
-  multisearchable against: [:name]
+  multisearchable against: :name
 end
