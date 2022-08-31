@@ -1,4 +1,5 @@
 require "open-uri"
+require 'faker'
 
 puts "cleaning dataase..."
 Crag.destroy_all
@@ -58,3 +59,12 @@ crags_data.each do |crag_data|
 end
 
 puts "seeding users..."
+10.times do
+  User.new(email: "#{Faker::Name.first_name}@gmail.com", encrypted_password: Faker::Alphanumeric.alphanumeric(number: 10))
+end
+
+puts "seeding chatrooms..."
+crags_data.each do |crag|
+  chatroom_name = crag[:name]
+  Chatroom.new(name: chatroom_name)
+end
