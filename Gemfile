@@ -64,6 +64,7 @@ gem "cloudinary"
 
 gem "pg_search"
 
+gem 'pry-byebug'
 
 
 group :development, :test do
