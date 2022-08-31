@@ -4,5 +4,5 @@ class Country < ApplicationRecord
 
   # makes countries searchable for names
   include PgSearch::Model
-  multisearchable against: :name
+  multisearchable against: [:name]
 end
