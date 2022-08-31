@@ -1,6 +1,7 @@
 <%= simple_form_for(@profile) do |f| %>
   <%= f.input :name %>
   <%= f.input :bio %>
+  <%= f.input :photo, as: :file %>
   <%= f.association :crag %>
   <%= f.submit class: "red-button" %>
 <% end %>

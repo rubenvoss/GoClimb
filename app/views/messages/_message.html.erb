@@ -1,7 +1,7 @@
 <div id="message-<%= message.id %>">
-  <small>
-    <%= %>
-    <strong><%= message.user.profile.name %></strong>
-  </small>
-  <p><em><%= message.content %></em></p>
+  <div class="d-flex justify-content-start">
+    <div class="p-2"><%= cl_image_tag message.user.profile.photo.key, height: 50, width: 50, radius: 25, crop: :fill, gravity: :face %></div>
+    <div class="p-2"><strong><%= message.user.profile.name %></strong></div>
+  </div>
+  <p class="p-3"><em><%= message.content %></em></p>
 </div>
