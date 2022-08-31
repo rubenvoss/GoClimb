@@ -21,12 +21,6 @@ puts "seeding countries..."
 spain = Country.create(name: "Spain")
 germany = Country.create(name: "Germany")
 
-puts "seeding chatrooms..."
-crags_data.each do |crag_data|
-  chatroom_name = crag_data[:name]
-  Chatroom.create(name: chatroom_name)
-end
-
 # all of the data for the crags
 crags_data = [
   {
@@ -64,6 +58,17 @@ crags_data.each do |crag_data|
   puts "crag #{crag.name} with id:#{crag.id} #{crag.valid? ? 'saved' : 'not saved'}"
 end
 
+puts "seeding chatrooms..."
+crags_data.each do |crag_data|
+  chatroom_name = crag_data[:name]
+  Chatroom.create(name: chatroom_name)
+end
+
+puts "seeding users..."
+10.times do
+  User.create(email: "#{Faker::Name.first_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
+end
+
 puts "seeding messages..."
 users = User.all
 chatrooms = Chatroom.all
@@ -73,9 +78,4 @@ users.each do |user|
       Message.create(content: Faker::Lorem.sentence, user: user, chatroom: chatroom)
     end
   end
-end
-
-puts "seeding users..."
-10.times do
-  User.create(email: "#{Faker::Name.first_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
 end
