@@ -1,0 +1,38 @@
+.search-bottom-padding {
+  padding-bottom: 40px;
+}
+
+.search-bottom {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background-color: $blue;
+
+  // for search-bar:
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 90%;
+  height: 55%;
+  background-color: rgba($color: white, $alpha: 0.8);
+  border-radius: 10px;
+  padding-left: 1em;
+
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.search-bar-text {
+  line-height: 2em;
+  font-size: 1em;
+}
+
+.search-link {
+  text-decoration: none;
+  color: black;
+}
