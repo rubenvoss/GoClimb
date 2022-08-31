@@ -70,13 +70,14 @@ puts "seeding users..."
 end
 
 # seeding messages only for checking layout purposes in development
-puts "seeding messages..."
-users = User.all
-chatrooms = Chatroom.all
-users.each do |user|
-  chatrooms.each do |chatroom|
-    10.times do
-      Message.create(content: Faker::Lorem.sentence, user: user, chatroom: chatroom)
-    end
-  end
-end
+
+# puts "seeding messages..."
+# users = User.all
+# chatrooms = Chatroom.all
+# users.each do |user|
+#   chatrooms.each do |chatroom|
+#     10.times do
+#       Message.create(content: Faker::Lorem.sentence, user: user, chatroom: chatroom)
+#     end
+#   end
+# end
