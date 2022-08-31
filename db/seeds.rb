@@ -60,11 +60,11 @@ end
 
 puts "seeding users..."
 10.times do
-  User.new(email: "#{Faker::Name.first_name}@gmail.com", encrypted_password: Faker::Alphanumeric.alphanumeric(number: 10))
+  User.create(email: "#{Faker::Name.first_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
 end
 
 puts "seeding chatrooms..."
-crags_data.each do |crag|
-  chatroom_name = crag[:name]
-  Chatroom.new(name: chatroom_name)
+crags_data.each do |crag_data|
+  chatroom_name = crag_data[:name]
+  Chatroom.create(name: chatroom_name)
 end
