@@ -68,3 +68,14 @@ crags_data.each do |crag_data|
   chatroom_name = crag_data[:name]
   Chatroom.create(name: chatroom_name)
 end
+
+puts "seeding messages..."
+users = User.all
+chatrooms = Chatroom.all
+users.each do |user|
+  chatrooms.each do |chatroom|
+    user.messages = 10.times do
+      Message.create(content: Faker::Lorem.sentence, user: user, chatroom: chatroom)
+    end
+  end
+end
