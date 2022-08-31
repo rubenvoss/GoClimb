@@ -6,7 +6,6 @@ class PagesController < ApplicationController
 
   def search
     @results = PgSearch.multisearch(params[:query])
-    @result = @results.first
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
