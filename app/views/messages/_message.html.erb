@@ -1,6 +1,7 @@
 <div id="message-<%= message.id %>">
   <small>
-    <strong><%= message.user.email %></strong>
+    <%= %>
+    <strong><%= message.user.profile.name %></strong>
   </small>
   <p><em><%= message.content %></em></p>
 </div>
