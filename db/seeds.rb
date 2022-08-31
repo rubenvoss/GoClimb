@@ -56,3 +56,5 @@ crags_data.each do |crag_data|
   crag.save
   puts "crag #{crag.name} with id:#{crag.id} #{crag.valid? ? 'saved' : 'not saved'}"
 end
+
+puts "seeding users..."
