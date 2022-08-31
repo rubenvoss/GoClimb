@@ -1,3 +1,7 @@
 <div class="container">
   <h1>Create a new chatroom</h1>
+  <%= simple_form_for(@chatroom) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class: "red-button" %>
+<% end %>
 </div>
