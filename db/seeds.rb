@@ -2,14 +2,14 @@ require "open-uri"
 require 'faker'
 
 puts "cleaning dataase..."
-Crag.destroy_all
-Country.destroy_all
-Chatroom.destroy_all
-Message.destroy_all
-Activity.destroy_all
-Review.destroy_all
 Profile.destroy_all
 Trip.destroy_all
+Crag.destroy_all
+Country.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+Activity.destroy_all
+Review.destroy_all
 
 # leave this commented if you want to stay logged in as an admin user
 # User.destroy_all
@@ -17,9 +17,10 @@ Trip.destroy_all
 puts "seeding admin user - admin@admin.com - 123456"
 User.create(email: "admin@admin.com", password: "123456")
 
-puts "seeding countries..."
+
 spain = Country.create(name: "Spain")
 germany = Country.create(name: "Germany")
+turkey = Country.create(name: "Turkey")
 
 # all of the data for the crags
 crags_data = [
@@ -40,13 +41,34 @@ crags_data = [
     lat: 47.596418,
     long: 11.071603,
     country: germany
+  },
+  {
+    name: "Geyikbayiyri",
+    lat: 36.874830,
+    long: 30.464940,
+    country: turkey
+  },
+  {
+    name: "Kochel",
+    lat: 47.596418,
+    long: 11.071603,
+    country: germany
+  },
+  {
+    name: "WeißmainAlb",
+    lat: 47.596418,
+    long: 11.071603,
+    country: germany
   }
 ]
 
 # IMPORTANT: the symbol has to match exactly the crag name in crags_data
 crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661856531/go-climb-seeds/margalef-1_dka26r.jpg",
                  Siurana: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661857164/go-climb-seeds/1080px-Siurana_Kirche_do28pr.jpg",
-                 Oberammergau: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661857179/go-climb-seeds/P1060004-1_gycg9f.jpg"
+                 Oberammergau: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661857179/go-climb-seeds/P1060004-1_gycg9f.jpg",
+                 Geyikbayiyri: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661939067/go-climb-seeds/geyikbayiri-2015-02-19_frzsid.jpg",
+                 Kochel: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661984493/go-climb-seeds/kochel_dhoneh.jpg",
+                 WeißmainAlb: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661984692/go-climb-seeds/Wei%C3%9Fmain-Alb_sooadi.jpg"
 }
 
 puts "seeding crags..."
@@ -54,6 +76,8 @@ crags_data.each do |crag_data|
   crag = Crag.new(crag_data)
   photo = URI.open(crags_photos[crag_data[:name].to_sym])
   crag.photo.attach(io: photo, filename: "#{crag_data[:name].delete(' ')}.jpg", content_type: "image/jpg")
+  # add country to crag name
+  "#{crag.name}, #{crag.country.name}"
   crag.save
   puts "crag #{crag.name} with id:#{crag.id} #{crag.valid? ? 'saved' : 'not saved'}"
 end
