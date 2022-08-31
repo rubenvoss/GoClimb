@@ -1,8 +1,19 @@
-<h1>WHERE DO YOU WANT TO CIMB?</h1>
+<div class="container">
+  <h3>WHERE DO YOU WANT TO CLIMB?</h3>
+  <div data-controller="search">
+    <%= form_with url: search_path, method: :get, html: {class:
+      "mb-4", data: {search_target: "form"}} do |f| %>
+      <%= f.text_field :query,
+                       class: "form-control",
+                       placeholder: "Search for a Crag or Country",
+                       value: params[:query],
+                       data: {search_target: "input",
+                              action: "keyup->search#update"} %>
+    <% end %>
+    <div data-search-target="list">
+    </div>
+  </div>
 
-<h1>WHEN DO YOU WANT TO GO?</h1>
-<% results = PgSearch.multisearch("Margalef") %>
 
-<% results.each do |result| %>
-<h1><%= result.content %></h1>
-<% end %>
+  <h3>WHEN DO YOU WANT TO GO?</h3>
+</div>
