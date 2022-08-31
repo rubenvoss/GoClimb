@@ -1,0 +1,8 @@
+<h1>WHERE DO YOU WANT TO CIMB?</h1>
+
+<h1>WHEN DO YOU WANT TO GO?</h1>
+<% results = PgSearch.multisearch("Margalef") %>
+
+<% results.each do |result| %>
+<h1><%= result.content %></h1>
+<% end %>
