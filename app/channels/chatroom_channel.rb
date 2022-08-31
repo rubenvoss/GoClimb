@@ -7,5 +7,6 @@ class ChatroomChannel < ApplicationCable::Channel
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
+    this.channel.unsubscribe
   end
 end
