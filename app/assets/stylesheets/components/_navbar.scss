@@ -25,6 +25,15 @@
 }
 
 .icon {
-  color: white;
   font-size: 1.5em;
+  &--lastpage {
+    @extend .icon;
+    color: white;
+  }
+  &--message {
+    @extend .icon;
+  }
+  &--menu {
+    @extend .icon;
+  }
 }
