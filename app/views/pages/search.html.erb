@@ -1,4 +1,5 @@
 <div class="container">
+
   <h3>WHERE DO YOU WANT TO CLIMB?</h3>
   <div data-controller="search">
     <%= form_with url: search_path, method: :get, html: {class:
@@ -10,10 +11,11 @@
                        data: {search_target: "input",
                               action: "keyup->search#update"} %>
     <% end %>
-    <div data-search-target="list">
-    </div>
+    <div data-search-target="list"></div>
   </div>
 
 
   <h3>WHEN DO YOU WANT TO GO?</h3>
+  simple_form_for
+
 </div>

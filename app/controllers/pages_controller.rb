@@ -5,8 +5,6 @@ class PagesController < ApplicationController
   end
 
   def search
-    @crags = Crag.all
-    @countries = Country.all
     @results = PgSearch.multisearch(params[:query])
 
     respond_to do |format|
