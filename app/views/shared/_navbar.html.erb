@@ -24,8 +24,10 @@
 
 
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+  </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="container py-1">
+      <ul class="navbar-nav aligh-right">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
