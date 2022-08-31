@@ -16,6 +16,16 @@
 
 
   <h3>WHEN DO YOU WANT TO GO?</h3>
-  simple_form_for
+  <%# select a date %>
+  <%= simple_form_for @trip do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit class: "red-button" %>
+  <% end %>
+
+  <%# I'm flexible %>
+  <%= simple_form_for @trip do |f| %>
+    <%= f.submit class: "red-button" %>
+  <% end %>
 
 </div>
