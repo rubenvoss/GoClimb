@@ -133,13 +133,12 @@ male_users_data.each do |male_user_data|
     password: Faker::Alphanumeric.alphanumeric(number: 10)
   )
   male_users << user
-  puts "1 male user #{male_user_data[:male_first_name]} created"
+  puts "male user with id #{user.id} created"
   male_profile = Profile.create(name: male_user_data[:male_first_name], crag: male_user_data[:crag], user: user)
   male_profiles << male_profile
-  puts "1 male profile #{male_user_data[:male_first_name]} without picture created"
   photo = URI.open(male_profile_photos[index])
   male_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
-  puts "1 male profile #{male_profile.name} with picture created"
+  puts "male profile for #{male_user_data[:male_first_name]} with id #{male_profile.id} created"
   index += 1
 end
 
@@ -163,13 +162,12 @@ female_users_data.each do |female_user_data|
     password: Faker::Alphanumeric.alphanumeric(number: 10)
   )
   female_users << user
-  puts "1 female user #{female_user_data[:female_first_name]} created"
+  puts "female user with id #{user.id} created"
   female_profile = Profile.create(name: female_user_data[:female_first_name], crag: female_user_data[:crag], user: user)
   female_profiles << female_profile
-  puts "1 female profile #{female_user_data[:female_first_name]} without picture created"
   photo = URI.open(female_profile_photos[index])
   female_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
-  puts "1 female profile #{female_profile.name} with picture created"
+  puts "female profile for #{female_user_data[:female_first_name]} with id #{female_profile.id} created"
   index += 1
 end
 
