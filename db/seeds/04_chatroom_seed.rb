@@ -1,5 +1,7 @@
 puts "seeding chatrooms..."
-crags_data.each do |crag_data|
-  chatroom_name = crag_data[:name]
-  Chatroom.create(name: chatroom_name)
+5.times do
+  user = User.all.sample
+  binding.pry
+  name = user.profile.name
+  Chatroom.create(name: name)
 end
