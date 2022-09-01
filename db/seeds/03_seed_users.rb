@@ -7,6 +7,4 @@ def seed_users
   end
 end
 
-
-
 seed_users

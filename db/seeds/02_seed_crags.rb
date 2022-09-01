@@ -1,7 +1,6 @@
 spain = Country.create(name: "Spain")
 germany = Country.create(name: "Germany")
 turkey = Country.create(name: "Turkey")
-
 # all of the data for the crags
 crags_data = [
   {
@@ -47,7 +46,6 @@ crags_data = [
     country: spain
   }
 ]
-
 # IMPORTANT: the key has to match exactly the crag name in crags_data
 crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661856531/go-climb-seeds/margalef-1_dka26r.jpg",
   Siurana: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661857164/go-climb-seeds/1080px-Siurana_Kirche_do28pr.jpg",
@@ -58,7 +56,6 @@ crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1
   Oliana: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661986800/go-climb-seeds/Oliana_k0ehyb.jpg",
 
 }.stringify_keys
-
 def seed_crags(crags_data, crags_photos)
   puts "seeding crags..."
   crags_data.each do |crag_data|
@@ -71,9 +68,5 @@ def seed_crags(crags_data, crags_photos)
     puts "crag #{crag.name} with id:#{crag.id} #{crag.valid? ? 'saved' : 'not saved'}"
   end
 end
-
-
-
-
 
 seed_crags(crags_data, crags_photos)
