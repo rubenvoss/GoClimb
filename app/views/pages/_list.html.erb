@@ -1,5 +1,7 @@
-  <ul>
-    <% results.each do |result| %>
-    <li><%= result.content %></li>
+<% results.each do |result| %>
+
+    <%= link_to crag_path(result.searchable_id), class: "result-button" do %>
+      <div class="h3 white"><%= result.content %></div>
     <% end %>
-  </ul>
+
+<% end %>
