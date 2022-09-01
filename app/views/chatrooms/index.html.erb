@@ -1,0 +1,10 @@
+<div class="container py-3">
+  <h1>Messages:</h1>
+  <% @chatrooms.each do |chatroom| %>
+    <%= link_to chatroom_path(chatroom) do %>
+      <%= chatroom.name %> -
+      <%= chatroom.message_ids.first %>
+      <br>
+    <% end %>
+  <% end %>
+</div>
