@@ -31,7 +31,7 @@ index = 0
 male_users_data.each do |male_user_data|
   user = User.create(
     email: "#{male_user_data[:male_first_name]}.#{male_user_data[:last_name]}@gmail.com",
-    password: Faker::Alphanumeric.alphanumeric(number: 10)
+    password: "123456"
   )
   male_users << user
   puts "male user with id #{user.id} created"
