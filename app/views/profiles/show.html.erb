@@ -1,9 +1,11 @@
 <div class="container">
-  <h1>Profile</h1>
-  <h3><%= @profile.name %></h3>
+  <h1><%= @profile.name %></h1>
+  <p>Home Crag: <%= @crag.name %></p>
   <p><%= @profile.bio %></p>
-  <p><%= @profile.photo %></p>
-  <p><%= @crag.name %></p>
+  <div class="profile-photo"
+       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+       url('<%= cl_image_path @profile.photo.key, height: 300, crop: :fill %>')">
+  </div>
 
   <h1>Reviews</h1>
   <ul>
