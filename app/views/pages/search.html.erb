@@ -2,21 +2,20 @@
 
 
 
-  <h3 class="h2 white">when do you want to go climbing?</h3>
+  <h3 class="t3 white">when do you want to go climbing?</h3>
   <%# select a date %>
   <div data-controller="flatpickr" class="flatpickr-form-wrapper">
     <%= simple_form_for :search, method: "get" do |f| %>
       <%= f.input :trip_start_date, label: "Start Date", as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :trip_end_date, label: "End Date", as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit "Continue", class: "button--red" %>
+      <div class="d-flex justify-content-between">
+        <%= f.submit "Continue", class: "button--red" %>
+        <%= f.submit "I'm flexible", class: "button--red" %>
+      </div>
     <% end %>
   </div>
 
-  <%# I'm flexible %>
-  <br>
-  <button class="button--red">I'm flexible</button>
-
-  <h3 class="h2 white">where do you want to go?</h3>
+  <h3 class="t3 white pt-5">where do you want to go?</h3>
   <div data-controller="search">
     <%= form_with url: search_path, method: :get, html: {class:
       "mb-4", data: {search_target: "form"}} do |f| %>
