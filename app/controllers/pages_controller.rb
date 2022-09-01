@@ -11,5 +11,6 @@ class PagesController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: "pages/list", locals: { results: @results }, formats: [:html] }
     end
+    # raise
   end
 end

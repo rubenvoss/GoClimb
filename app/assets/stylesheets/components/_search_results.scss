@@ -1,0 +1,16 @@
+.result-button {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20%;
+  justify-content: left;
+  background-blend-mode: overlay;
+  background-image: url("https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661986800/go-climb-seeds/Oliana_k0ehyb.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  text-decoration: none;
+  // position: absolute;
+}
+
+.search-results-list {
+  display: block;
+}
