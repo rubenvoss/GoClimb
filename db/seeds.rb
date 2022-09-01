@@ -15,8 +15,7 @@ Review.destroy_all
 # User.destroy_all
 
 puts "seeding admin user - admin@admin.com - 123456"
-User.create(email: "admin@admin.com", password: "123456")
-
+admin_user = User.create(email: "admin@admin.com", password: "123456")
 
 spain = Country.create(name: "Spain")
 germany = Country.create(name: "Germany")
@@ -89,6 +88,13 @@ crags_data.each do |crag_data|
   crag.save
   puts "crag #{crag.name} with id:#{crag.id} #{crag.valid? ? 'saved' : 'not saved'}"
 end
+
+puts "seeding admin profile"
+admin_profile_photo = "https://res.cloudinary.com/dqdezmage/image/upload/v1662029176/go%20climb%20profile%20pictures/omid-armin-Y5jCPXa1HdM-unsplash_50_p3xoxu.jpg"
+admin_profile = Profile.create(name: "admin", crag: Crag.first, user: admin_user)
+photo = URI.open(admin_profile_photo)
+admin_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+puts "created admin profile with id #{admin_profile.id}"
 
 puts "seeding chatrooms..."
 crags_data.each do |crag_data|
