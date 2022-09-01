@@ -2,7 +2,7 @@
 
 
 
-  <h3 class="h1 white">when do you want to go climbing?</h3>
+  <h3 class="h2 white">when do you want to go climbing?</h3>
   <%# select a date %>
   <div data-controller="flatpickr" class="form-wrapper" style="width: 400px; margin: 0 auto;">
     <h2>Flatpickr Demo</h2>
@@ -18,7 +18,7 @@
   <br>
   <button class="button--red">I'm flexible</button>
 
-  <h3 class="h1 white">where do you want to go?</h3>
+  <h3 class="h2 white">where do you want to go?</h3>
   <div data-controller="search">
     <%= form_with url: search_path, method: :get, html: {class:
       "mb-4", data: {search_target: "form"}} do |f| %>
