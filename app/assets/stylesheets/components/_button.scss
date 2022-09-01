@@ -1,19 +1,36 @@
-.red-button {
-  background-color: $red;
-  border-radius: 10px;
-  padding: 1vh;
-  padding-left: 2vh;
-  padding-right: 2vh;
-  border: 0;
-  color: white;
-}
+// .red-button {
+//   background-color: $red;
+//   border-radius: 10px;
+//   padding: 1vh;
+//   padding-left: 2vh;
+//   padding-right: 2vh;
+//   border: 0;
+//   color: white;
+// }
 
-.blue-button {
-  background-color: $blue;
+// .blue-button {
+//   background-color: $blue;
+//   border-radius: 10px;
+//   padding: 1vh;
+//   padding-left: 2vh;
+//   padding-right: 2vh;
+//   border: 0;
+//   color: white;
+// }
+
+.button {
   border-radius: 10px;
   padding: 1vh;
   padding-left: 2vh;
   padding-right: 2vh;
   border: 0;
   color: white;
+  &--red {
+    @extend .button;
+    background-color: $red;
+  }
+  &--blue {
+    @extend .button;
+    background-color: $blue;
+  }
 }
