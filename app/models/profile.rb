@@ -4,4 +4,5 @@ class Profile < ApplicationRecord
   has_one_attached :photo
   validates :name, :photo, presence: true
   has_many :reviews
+  has_many :trips, through: :users
 end
