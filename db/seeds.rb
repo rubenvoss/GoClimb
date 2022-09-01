@@ -1,7 +1,7 @@
 require "open-uri"
 require 'faker'
 
-puts "cleaning dataase..."
+puts "cleaning database..."
 Profile.destroy_all
 Trip.destroy_all
 Crag.destroy_all
@@ -113,48 +113,65 @@ female_profile_photos = [
   "https://res.cloudinary.com/dqdezmage/image/upload/v1662028670/go%20climb%20profile%20pictures/khamkhor--I-McziCxxM-unsplash_50_wnumu1.jpg"
 ]
 
-puts "seeding users and profiles..."
-male_users = 5.times do
-  {
+puts "seeding male users and profiles..."
+male_users_data = []
+crags = Crag.all
+5.times do
+  male_users_data << {
     male_first_name: Faker::Name.male_first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    crag: crags.sample
   }
 end
 
-puts "5 male persons created"
-
-crags = Crag.all
-male_users.each do |male_user|
-  user = User.create(email: "#{male_first_name}.#{last_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
-  crags.each do |crag|
-    male_profile_photos.each do |male_photo|
-      Profile.create(name: male_user[:male_first_name], crag: crag, user: user, photo: male_photo)
-    end
-  end
+male_users = []
+male_profiles = []
+index = 0
+male_users_data.each do |male_user_data|
+  user = User.create(
+    email: "#{male_user_data[:male_first_name]}.#{male_user_data[:last_name]}@gmail.com",
+    password: Faker::Alphanumeric.alphanumeric(number: 10)
+  )
+  male_users << user
+  puts "1 male user #{male_user_data[:male_first_name]} created"
+  male_profile = Profile.create(name: male_user_data[:male_first_name], crag: male_user_data[:crag], user: user)
+  male_profiles << male_profile
+  puts "1 male profile #{male_user_data[:male_first_name]} without picture created"
+  photo = URI.open(male_profile_photos[index])
+  male_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+  puts "1 male profile #{male_profile.name} with picture created"
+  index += 1
 end
 
-puts "5 male users and profiles created"
-
-female_users = 5.times do
-  {
+puts "seeding female users and profiles..."
+female_users_data = []
+crags = Crag.all
+5.times do
+  female_users_data << {
     female_first_name: Faker::Name.female_first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    crag: crags.sample
   }
 end
 
-puts "5 female persons created"
-
-crags = Crag.all
-female_users.each do |female_user|
-  user = User.create(email: "#{female_first_name}.#{last_name}@gmail.com", password: Faker::Alphanumeric.alphanumeric(number: 10))
-  crags.each do |crag|
-    female_profile_photos.each do |female_photo|
-      Profile.create(name: female_user[:female_first_name], crag: crag, user: user, photo: female_photo)
-    end
-  end
+female_users = []
+female_profiles = []
+index = 0
+female_users_data.each do |female_user_data|
+  user = User.create(
+    email: "#{female_user_data[:female_first_name]}.#{female_user_data[:last_name]}@gmail.com",
+    password: Faker::Alphanumeric.alphanumeric(number: 10)
+  )
+  female_users << user
+  puts "1 female user #{female_user_data[:female_first_name]} created"
+  female_profile = Profile.create(name: female_user_data[:female_first_name], crag: female_user_data[:crag], user: user)
+  female_profiles << female_profile
+  puts "1 female profile #{female_user_data[:female_first_name]} without picture created"
+  photo = URI.open(female_profile_photos[index])
+  female_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+  puts "1 female profile #{female_profile.name} with picture created"
+  index += 1
 end
-
-puts "5 female users and profiles created"
 
 # seeding messages only for checking layout purposes in development
 
