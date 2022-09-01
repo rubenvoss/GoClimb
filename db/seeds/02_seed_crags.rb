@@ -60,6 +60,7 @@ crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1
 }.stringify_keys
 
 def seed_crags(crags_data, crags_photos)
+  puts "seeding crags..."
   crags_data.each do |crag_data|
     crag = Crag.new(crag_data)
     photo = URI.open(crags_photos[crag_data[:name]])
@@ -71,5 +72,8 @@ def seed_crags(crags_data, crags_photos)
   end
 end
 
-puts "seeding crags..."
-seed_crags(crags_data, crags_photos)
+
+
+
+
+# seed_crags(crags_data, crags_photos)

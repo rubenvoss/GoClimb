@@ -1,3 +1,8 @@
+
+
+
+
+
 male_profile_photos = [
   "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg",
   "https://res.cloudinary.com/dqdezmage/image/upload/v1662031008/go%20climb%20profile%20pictures/tommy-lisbin-zUHe9T8Zsj8-unsplash_50_1_50_kxzwdn.jpg",
@@ -17,13 +22,7 @@ female_profile_photos = [
 puts "seeding male users and profiles..."
 male_users_data = []
 crags = Crag.all
-5.times do
-  male_users_data << {
-    male_first_name: Faker::Name.male_first_name,
-    last_name: Faker::Name.last_name,
-    crag: crags.sample
-  }
-end
+
 
 male_users = []
 male_profiles = []
