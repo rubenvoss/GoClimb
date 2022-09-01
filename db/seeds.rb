@@ -91,9 +91,10 @@ end
 
 puts "seeding admin profile"
 admin_profile_photo = "https://res.cloudinary.com/dqdezmage/image/upload/v1662029176/go%20climb%20profile%20pictures/omid-armin-Y5jCPXa1HdM-unsplash_50_p3xoxu.jpg"
-admin_profile = Profile.create(name: "admin", crag: Crag.first, user: admin_user)
+admin_profile = Profile.new(name: "admin", crag: Crag.first, user: admin_user)
 photo = URI.open(admin_profile_photo)
 admin_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+admin_profile.save!
 puts "created admin profile with id #{admin_profile.id}"
 
 puts "seeding chatrooms..."
@@ -140,11 +141,12 @@ male_users_data.each do |male_user_data|
   )
   male_users << user
   puts "male user with id #{user.id} created"
-  male_profile = Profile.create(name: male_user_data[:male_first_name], crag: male_user_data[:crag], user: user)
+  male_profile = Profile.new(name: male_user_data[:male_first_name], crag: male_user_data[:crag], user: user)
   male_profiles << male_profile
   photo = URI.open(male_profile_photos[index])
   male_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
-  puts "male profile for #{male_user_data[:male_first_name]} with id #{male_profile.id} created"
+  male_profile.save!
+  puts "male profile for #{male_profile.name} with id #{male_profile.id} created"
   index += 1
 end
 
@@ -165,15 +167,16 @@ index = 0
 female_users_data.each do |female_user_data|
   user = User.create(
     email: "#{female_user_data[:female_first_name]}.#{female_user_data[:last_name]}@gmail.com",
-    password: Faker::Alphanumeric.alphanumeric(number: 10)
+    password: "123456"
   )
   female_users << user
   puts "female user with id #{user.id} created"
-  female_profile = Profile.create(name: female_user_data[:female_first_name], crag: female_user_data[:crag], user: user)
+  female_profile = Profile.new(name: female_user_data[:female_first_name], crag: female_user_data[:crag], user: user)
   female_profiles << female_profile
   photo = URI.open(female_profile_photos[index])
   female_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
-  puts "female profile for #{female_user_data[:female_first_name]} with id #{female_profile.id} created"
+  female_profile.save!
+  puts "female profile for #{female_profile.name} with id #{female_profile.id} created"
   index += 1
 end
 
