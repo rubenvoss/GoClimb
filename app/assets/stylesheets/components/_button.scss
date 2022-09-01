@@ -5,6 +5,7 @@
   padding-right: 2vh;
   border: 0;
   color: white;
+  text-decoration: none;
   &--red {
     @extend .button;
     background-color: $red;
@@ -13,4 +14,8 @@
     @extend .button;
     background-color: $blue;
   }
+}
+
+.button:active {
+  color: white;
 }
