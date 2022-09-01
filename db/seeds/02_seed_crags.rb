@@ -76,4 +76,4 @@ end
 
 
 
-# seed_crags(crags_data, crags_photos)
+seed_crags(crags_data, crags_photos)

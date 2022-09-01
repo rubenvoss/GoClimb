@@ -14,5 +14,5 @@ end
 
 
 
-# seed_user
-# seed_profile
+seed_user
+seed_profile

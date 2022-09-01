@@ -1,3 +1,27 @@
+def seed_profiles(profiles, n)
+  profiles.each_with_index do |profile, index|
+    # if user doesnt have a profile, make one
+    if User.find(index + 1 + n).profile.nil?
+      p = Profile.new(name: profile[:name], crag: Crag.all.sample, user: User.find(index + 1))
+      photo = URI.open(profile[:url])
+      p.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+      p.save
+      puts "profile for #{p.name} with id #{p.id} created"
+    end
+  end
+end
+
+
+# def seed_female_users(female_profiles)
+#   profiles.each_with_index do |female_profile, index|
+#     profile = Profile.new(name: female_profile[:name], crag: Crag.all.sample, user: User.find(index + 1))
+#     photo = URI.open(male_profile[:url])
+#     profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+#     profile.save
+#     puts "male profile for #{profile.name} with id #{profile.id} created"
+#   end
+# end
+
 male_profiles = [
   {
     name: "Peter Müller",
@@ -44,47 +68,46 @@ female_profiles = [
   }
 ]
 
-def seed_male_users(male_profiles_data)
-  male_profiles.each_with_index do |male_profile, index|
-    profile = Profile.new(name: male_profile[:name], crag: Crag.all.sample, user: User.find(index + 1))
-    photo = URI.open(male_profile[:url])
-    profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
-    puts "male profile for #{profile.name} with id #{profile.id} created"
-  end
-end
-
-seed_male_users(male_profiles_data)
+seed_profiles(male_profiles, 0)
+seed_profiles(female_profiles, 5)
 
 
 
-puts "seeding female users and profiles..."
-female_users_data = []
-crags = Crag.all
-5.times do
-  female_users_data << {
-    female_first_name: Faker::Name.female_first_name,
-    last_name: Faker::Name.last_name,
-    crag: crags.sample
-  }
-end
 
-female_users = []
-female_profiles = []
-index = 0
-female_users_data.each do |female_user_data|
-  user = User.create(
-    email: "#{female_user_data[:female_first_name]}.#{female_user_data[:last_name]}@gmail.com",
-    password: Faker::Alphanumeric.alphanumeric(number: 10)
-  )
-  female_users << user
-  puts "female user with id #{user.id} created"
-  female_profile = Profile.create(name: female_user_data[:female_first_name], crag: female_user_data[:crag], user: user)
-  female_profiles << female_profile
-  photo = URI.open(female_profile_photos[index])
-  female_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
-  puts "female profile for #{female_user_data[:female_first_name]} with id #{female_profile.id} created"
-  index += 1
-end
+
+
+
+
+
+
+# puts "seeding female users and profiles..."
+# female_users_data = []
+# crags = Crag.all
+# 5.times do
+#   female_users_data << {
+#     female_first_name: Faker::Name.female_first_name,
+#     last_name: Faker::Name.last_name,
+#     crag: crags.sample
+#   }
+# end
+
+# female_users = []
+# female_profiles = []
+# index = 0
+# female_users_data.each do |female_user_data|
+#   user = User.create(
+#     email: "#{female_user_data[:female_first_name]}.#{female_user_data[:last_name]}@gmail.com",
+#     password: Faker::Alphanumeric.alphanumeric(number: 10)
+#   )
+#   female_users << user
+#   puts "female user with id #{user.id} created"
+#   female_profile = Profile.create(name: female_user_data[:female_first_name], crag: female_user_data[:crag], user: user)
+#   female_profiles << female_profile
+#   photo = URI.open(female_profile_photos[index])
+#   female_profile.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+#   puts "female profile for #{female_user_data[:female_first_name]} with id #{female_profile.id} created"
+#   index += 1
+# end
 
 # seeding messages only for checking layout purposes in development
 
