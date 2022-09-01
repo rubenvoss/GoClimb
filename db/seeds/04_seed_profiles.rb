@@ -15,7 +15,7 @@ end
 male_profiles = [
   # first profile is admin
   {
-    name: "Peter Müller",
+    name: "admin",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg"
   },
   {
