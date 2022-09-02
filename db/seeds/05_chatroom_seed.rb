@@ -1,7 +1,7 @@
 def seed_chatrooms
   puts "seeding chatrooms..."
-  5.times do
-    name = Profile.all.sample.name
+  names = ["Jasmien", "Ruben", "Peter", "Max", "Marie"]
+  names.each do |name|
     Chatroom.create(name: name)
     puts "chatroom with name #{name} created"
   end
