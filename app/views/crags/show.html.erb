@@ -1,9 +1,9 @@
-<div class="container" data-controller="save-dates">
   <div class="crag-photo d-flex justify-content-center align-items-center"
     style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('<%= cl_image_path @crag.photo.key, crop: :fill %>')">
   <h3 class="t3 white"><%= @crag.name %></h3>
   </div>
+<div class="container" data-controller="save-dates">
 
   <button data-action="click->save-dates#show">button</button>
   <h1 class="t1">Heading t1</h1>
