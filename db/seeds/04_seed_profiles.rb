@@ -62,7 +62,7 @@ female_profiles = [
   }
 ]
 
-# there is a 0 here, because nobody has a profile
+# there is a 1 here, because nobody has a profile
 seed_profiles(male_profiles, 1)
 
 # there is a 6 here, because there are already 5 Users that have a profile
