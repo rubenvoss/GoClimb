@@ -7,6 +7,14 @@
        url('<%= cl_image_path @profile.photo.key, height: 300, crop: :fill %>')">
   </div>
 
+  <h1>Trips</h1>
+  <% @profile.trips.each do |trip| %>
+    <p><%= trip.name %></p>
+    <p><%= trip.start_date %></p>
+    <p><%= trip.end_date %></p>
+    <p><%= trip.crag.name %></p>
+  <% end %>
+
   <h1>Reviews</h1>
   <ul>
     <% @profile.reviews.each do |review| %>
