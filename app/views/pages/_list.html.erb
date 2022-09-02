@@ -1,7 +1,6 @@
 <% results.each do |result| %>
-
-    <%= link_to crag_path(result.searchable_id), class: "result-button" do %>
+    <%= link_to crag_path(result.searchable_id, start_date: params[:start_date],
+                                                end_date: params[:end_date]), class: "result-button" do %>
       <h3 class="t3 white"><%= result.content %></h3>
     <% end %>
-
 <% end %>

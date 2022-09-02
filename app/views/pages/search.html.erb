@@ -25,6 +25,11 @@
                        value: params[:query],
                        data: {search_target: "input",
                               action: "keyup->search#update"} %>
+                              <%= params %>
+      <% unless params[:search].nil? %>
+        <%= f.hidden_field :start_date, value: params[:search][:trip_start_date], data: {search_target: "start"} %>
+        <%= f.hidden_field :end_date, value: params[:search][:trip_end_date], data: {search_target: "end"} %>
+      <% end %>
     <% end %>
     <div class="search-results-list" data-search-target="list"></div>
   </div>
