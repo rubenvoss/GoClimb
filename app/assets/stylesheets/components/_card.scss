@@ -1,0 +1,17 @@
+.trip-card {
+  background-color: $light-gray;
+  border: $blue solid 1px;
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.trip-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
