@@ -1,0 +1,7 @@
+<%= simple_form_for [@profile, @trip] do |f| %>
+  <%= f.input :name, placeholder: 'Type a name here' %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <%= f.association :crag, include_blank: "Select a crag" %>
+  <%= f.submit class: "button--red" %>
+<% end %>
