@@ -13,5 +13,8 @@ application.register("flatpickr", FlatpickrController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import SaveDatesController from "./save_dates_controller"
+application.register("save-dates", SaveDatesController)
+
 import SearchController from "./search_controller"
 application.register("search", SearchController)
