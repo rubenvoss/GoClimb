@@ -8,12 +8,20 @@
   </div>
 
   <h1>Trips</h1>
-  <% @profile.trips.each do |trip| %>
-    <p><%= trip.name %></p>
-    <p><%= trip.start_date %></p>
-    <p><%= trip.end_date %></p>
-    <p><%= trip.crag.name %></p>
-  <% end %>
+  <div class="trip-grid">
+    <% @profile.trips.each do |trip| %>
+      <div class="trip-card">
+        <div class="crag-photo"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+            url('<%= cl_image_path trip.crag.photo.key, height: 300, crop: :fill %>')">
+        </div>
+        <div class = "trip-info">
+          <p><strong><%= trip.name %></strong> - <em><%= trip.crag.name %></em></p>
+          <p>From <%= trip.start_date %> until <%= trip.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   <h1>Reviews</h1>
   <ul>

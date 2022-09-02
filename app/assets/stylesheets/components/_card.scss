@@ -1,0 +1,14 @@
+.trip-card {
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.trip-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
