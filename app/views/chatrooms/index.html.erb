@@ -3,6 +3,7 @@
   <% @chatrooms.each do |chatroom| %>
     <%= link_to chatroom_path(chatroom) do %>
       <%= chatroom.name %>
+      <br>
     <% end %>
   <% end %>
 </div>
