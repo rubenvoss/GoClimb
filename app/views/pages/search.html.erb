@@ -1,22 +1,20 @@
-<div class="container background-blue">
+<div data-controller="search" class="background-blue pt-4">
   <h3 class="t3 white pt-2">Where do you want to climb?</h3>
-  <div data-controller="search">
-    <%= form_with url: search_path, method: :get, html: {class:
-      "mb-4", data: {search_target: "form"}} do |f| %>
-      <%= f.text_field :query,
-                        class: "form-control",
-                        placeholder: "Search for a Crag or Country",
-                        value: params[:query],
-                        data: {search_target: "input",
-                              action: "keyup->search#update"} %>
-      <% if params[:search].nil? %>
-        <%= f.hidden_field :start_date, data: {search_target: "start"} %>
-        <%= f.hidden_field :end_date, data: {search_target: "end"} %>
-      <% else %>
-        <%= f.hidden_field :start_date, value: params[:search][:trip_start_date], data: {search_target: "start"} %>
-        <%= f.hidden_field :end_date, value: params[:search][:trip_end_date], data: {search_target: "end"} %>
-      <% end %>
+  <%= form_with url: search_path, method: :get, html: {class:
+    "container", data: {search_target: "form"}} do |f| %>
+    <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: "Search for a Crag or Country",
+                      value: params[:query],
+                      data: {search_target: "input",
+                            action: "keyup->search#update"} %>
+    <% if params[:search].nil? %>
+      <%= f.hidden_field :start_date, data: {search_target: "start"} %>
+      <%= f.hidden_field :end_date, data: {search_target: "end"} %>
+    <% else %>
+      <%= f.hidden_field :start_date, value: params[:search][:trip_start_date], data: {search_target: "start"} %>
+      <%= f.hidden_field :end_date, value: params[:search][:trip_end_date], data: {search_target: "end"} %>
     <% end %>
-    <div class="search-results-list" data-search-target="list"></div>
-  </div>
+  <% end %>
+  <div class="search-results-list" data-search-target="list"></div>
 </div>
