@@ -13,8 +13,7 @@
       </div>
     <% end %>
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br>
-
+  <div class="search-scroll-spacing"></div>
   <h3 class="t3 white pt-5">where do you want to go?</h3>
   <div data-controller="search">
     <%= form_with url: search_path, method: :get, html: {class:
@@ -25,7 +24,6 @@
                        value: params[:query],
                        data: {search_target: "input",
                               action: "keyup->search#update"} %>
-                              <%= params %>
       <% if params[:search].nil? %>
         <%= f.hidden_field :start_date, data: {search_target: "start"} %>
         <%= f.hidden_field :end_date, data: {search_target: "end"} %>
@@ -38,12 +36,6 @@
   </div>
 
 
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1>test</h1>
-  <h1 id="anchor">anchor</h1>
+  <div class="search-scroll-spacing"></div>
+  <div id="anchor"></div>
 </div>
