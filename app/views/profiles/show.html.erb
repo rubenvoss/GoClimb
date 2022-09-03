@@ -25,23 +25,29 @@
   </div>
 
   <h2 class="mt-4 t2">Reviews</h2>
-  <ul>
-    <% @profile.reviews.each do |review| %>
-      <li><%= review.rating %></li>
-      <li><%= review.comment %></li>
-      <% if @profile.user == current_user %>
-        <li>
-          <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </li>
+  <div class="container">
+    <div class="row d-flex flex-wrap justify-content-between">
+      <% @profile.reviews.each do |review| %>
+        <div class="col-6 border p-2 text-center">
+          <p>Rating: <strong><%= review.rating %></strong></p>
+          <p><em><%= review.comment %></em></p>
+          <% if @profile.user == current_user %>
+            <p>
+              <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </p>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
-  </ul>
+    </div>
+  </div>
 
   <% if @profile.user == current_user %>
     <h2 class="mt-4 t2">Edit your profile</h2>
     <%= render "form" %>
   <% else %>
-    <%= link_to "Leave a review", new_profile_review_path(@profile) %>
-    <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
+    <div class="d-flex flex-column">
+      <%= link_to "Leave a review", new_profile_review_path(@profile) %>
+      <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
+    </div>
   <% end %>
 </div>

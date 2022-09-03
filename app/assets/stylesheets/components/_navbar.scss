@@ -26,6 +26,7 @@
 .navbar-full-height {
   padding: 0;
   width: 100%;
+  height: 4vh;
 }
 
 .icon {
@@ -41,4 +42,11 @@
   &--menu {
     @extend .icon;
   }
+}
+
+.navbar-pipe {
+  background-color: black;
+  color: black;
+  height: 85%;
+  width: 1px;
 }

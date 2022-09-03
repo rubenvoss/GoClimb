@@ -2,8 +2,7 @@
   <h1>Messages:</h1>
   <% @chatrooms.each do |chatroom| %>
     <%= link_to chatroom_path(chatroom) do %>
-      <%= chatroom.name %> -
-      <%= chatroom.message_ids.first %>
+      <%= chatroom.name %>
       <br>
     <% end %>
   <% end %>
