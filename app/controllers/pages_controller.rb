@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: "pages/list", locals: { results: @results }, formats: [:html] }
+      format.text { render partial: "pages/results", locals: { results: @results }, formats: [:html] }
     end
     # raise
   end
