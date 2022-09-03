@@ -47,19 +47,19 @@ reviews_data = [
   ]
 ]
 
-def seed_reviews(reviews, n)
-  Profile.all.each_with_index do |profile, index|
-    if Profile.find(index + n)
-      r = Review.new(reviews[0])
-      r.profile_id = profile.id
+def seed_reviews(reviews)
+  reviews.each_with_index do |review, index|
+    if Profile.find(index + 1)
+      r = Review.new(review[0])
+      r.profile_id = index + 1
       r.save!
       puts "New review with id #{r.id} created."
-      s = Review.new(reviews[1])
-      s.profile_id = profile.id
+      s = Review.new(review[1])
+      s.profile_id = index + 1
       s.save!
       puts "New review with id #{s.id} created."
     end
   end
 end
 
-seed_reviews(reviews_data, 1)
+seed_reviews(reviews_data)
