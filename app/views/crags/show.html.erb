@@ -24,8 +24,9 @@
 <div class="container spacing-for-anchor" data-controller="save-dates" id="anchor">
 
   <%# <button data-action="click->save-dates#show">button</button> %>
-
-  <h1 class="t1">Heading t1</h1>
-  <h2 class="t2">Heading t2</h2>
-  <h3 class="t3">Heading t3</h3>
+  <%# insert climbers that match the same timing like startDate and endDate %>
+  <h2 class="t2">Climbers in <%= @crag.name.split(",")[0] %></h2>
+  <% @crag.profiles.each do |profile| %>
+  <%= profile.name %> <br>
+  <% end %>
 </div>
