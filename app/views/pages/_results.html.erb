@@ -1,0 +1,7 @@
+<% results.each do |result| %>
+    <% crag_id = result.searchable_id %>
+    <% cloudinary_key = Crag.find(crag_id).photo.key %>
+    <%= link_to crag_path(crag_id), class: "result-button", style: "background-image: url('#{cl_image_path(cloudinary_key, :crop => :fill)}'), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));" do %>
+      <h3 class="t3 white"><%= result.content %></h3>
+    <% end %>
+<% end %>
