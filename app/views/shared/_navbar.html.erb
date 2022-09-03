@@ -1,20 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon background">
-  <div class="navbar-full-height d-flex justify-content-between">
+  <div class="navbar-full-height d-flex justify-content-between align-items-center">
     <%= link_to :back, class: "navbar-button" do %>
       <span class="icon--lastpage"><i class="fa-solid fa-angle-left"></i></span>
     <% end %>
-    <svg height="40" width="2">
-        <line x1="0" y1="0" x2="0" y2="200" style="stroke:rgb(0,0,0);stroke-width:2" />
-        Sorry, your browser does not support inline SVG.
-      </svg>
-        <%= link_to chatrooms_path, class: "navbar-button" do %>
-          <span class="icon--message"><i class="fa-solid fa-message"></i></span>
-        <% end %>
-
-    <svg height="40" width="2">
-      <line x1="0" y1="0" x2="0" y2="200" style="stroke:rgb(0,0,0);stroke-width:2" />
-      Sorry, your browser does not support inline SVG.
-    </svg>
+    <div class="navbar-pipe"></div>
+    <%= link_to chatrooms_path, class: "navbar-button" do %>
+      <span class="icon--message"><i class="fa-solid fa-message"></i></span>
+    <% end %>
+    <div class="navbar-pipe"></div>
     <div class="navbar-button" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
