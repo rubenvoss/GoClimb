@@ -27,6 +27,8 @@ export default class extends Controller {
     let endDate = flatpickr(search_trip_end_date, {}).selectedDates
     localStorage.setItem("startDate", startDate)
     localStorage.setItem("endDate", endDate)
+    console.log(startDate)
+    console.log(endDate)
   }
 
   // gets triggered on the Crag#show page
