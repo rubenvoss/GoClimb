@@ -1,28 +1,13 @@
-<div class="container background-blue" data-controller="save-dates">
-  <h3 class="t3 white pb-3">when do you want to go climbing?</h3>
-  <%# select a date %>
-  <div data-controller="flatpickr" class="flatpickr-form-wrapper">
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :trip_start_date, label: "Start Date", as: :string, required: false,
-                  input_html: {class: "datepicker"} %>
-      <%= f.input :trip_end_date, label: "End Date", as: :string, required: false,
-                  input_html: {class: "datepicker"} %>
-      <div class="d-flex justify-content-between">
-        <%= link_to "Continue", "#anchor", type: "submit", class: "button--red", data: { action: "click->save-dates#continue" } %>
-        <%= link_to "I'm flexible", "#anchor", class: "button--red" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="search-scroll-spacing"></div>
-  <h3 class="t3 white pt-5">where do you want to go?</h3>
+<div class="container background-blue">
+  <h3 class="t3 white pt-2">Where do you want to climb?</h3>
   <div data-controller="search">
     <%= form_with url: search_path, method: :get, html: {class:
       "mb-4", data: {search_target: "form"}} do |f| %>
       <%= f.text_field :query,
-                       class: "form-control",
-                       placeholder: "Search for a Crag or Country",
-                       value: params[:query],
-                       data: {search_target: "input",
+                        class: "form-control",
+                        placeholder: "Search for a Crag or Country",
+                        value: params[:query],
+                        data: {search_target: "input",
                               action: "keyup->search#update"} %>
       <% if params[:search].nil? %>
         <%= f.hidden_field :start_date, data: {search_target: "start"} %>
@@ -34,8 +19,4 @@
     <% end %>
     <div class="search-results-list" data-search-target="list"></div>
   </div>
-
-
-  <div class="search-scroll-spacing"></div>
-  <div id="anchor"></div>
 </div>
