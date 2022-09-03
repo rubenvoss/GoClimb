@@ -35,7 +35,7 @@
           </div>
           <p>Rating: <strong><%= review.rating %></strong></p>
           <p><em><%= review.comment %></em></p>
-          <% if @review.user == current_user %>
+          <% if review.user_id == current_user.id %>
             <p>
               <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </p>
