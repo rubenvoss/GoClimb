@@ -1,7 +1,4 @@
-<% @profiles.each do |profile| %>
-  <%= profile.name %>
-  <%# card %>
-<% end %>
+<div class="container d-flex flex-column align-items-center"><%= render "shared/profile_cards" %></div>
 
 <div class="search-bottom-padding"></div>
 <%= render "shared/search_bottom" %>

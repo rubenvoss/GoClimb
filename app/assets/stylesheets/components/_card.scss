@@ -1,7 +1,13 @@
 .card-wrapper {
   background-color: $blue;
-  height: 30vh;
+  height: 22vh;
   width: 70vw;
+  border-radius: 10px;
+}
+
+.card-text {
+  text-decoration: none !important;
+  color: white;
 }
 
 .trip-card {
