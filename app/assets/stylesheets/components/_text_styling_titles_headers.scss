@@ -3,11 +3,16 @@
   font-family: 'Space Mono', monospace;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 .t1 {
   @extend .t;
   font-size: 2em;
   font-weight: bold;
 }
+
 
 .t2 {
   @extend .t;
