@@ -2,11 +2,21 @@
       style="background-image: url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
 </div>
 <div class="container">
+
   <d-flex class="justify-content-start">
-    <h1 class="t1">
-    <span><%= @profile.name %>,</span>
-    <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
-    </h1>
+    <span>
+      <p class="t1">
+        <span><%= @profile.name %>,</span>
+        <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
+      </p>
+    </span>
+    <span>
+      <div class="text-me-button">
+        <% if @profile.user != current_user %>
+          <%= link_to "Text me!", new_chatroom_path(), class: "button--red" %>
+        <% end %>
+        </div>
+    </span>
   </d-flex>
 
   <p><strong>Homecrag: </strong><%= @crag.name %></p>
@@ -59,11 +69,10 @@
     <% end %>
   </div>
   <% if @profile.user != current_user %>
-    <div class="d-flex flex-column">
-      <%= link_to "Leave a review", new_profile_review_path(@profile) %>
-      <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
-    </div>
+    <%= link_to "Leave a review", new_profile_review_path(@profile) %>
   <% end %>
+
+
   <div class="py-3"></div>
 </div>
   <% if @profile.user == current_user %>
