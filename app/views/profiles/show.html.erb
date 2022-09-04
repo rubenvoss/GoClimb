@@ -28,10 +28,11 @@
   <div class="container">
     <div class="row d-flex flex-wrap justify-content-between">
       <% @profile.reviews.each do |review| %>
-        <div class="col-6 border p-2 text-center">
+        <div class="col-12 border p-4 text-center">
+          <p><strong><%= review.user.profile.name %></strong></p></p>
           <div class="profile-photo"
                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-               url('<%= cl_image_tag review.user.profile.photo.key, height: 50, width: 50, radius: 25, crop: :fill, gravity: :face %>')">
+               url('<%= cl_image_path review.user.profile.photo.key, crop: :fill %>')">
           </div>
           <p>Rating: <strong><%= review.rating %></strong></p>
           <p><em><%= review.comment %></em></p>

@@ -1,13 +1,22 @@
-def seed_profiles(profiles, n)
-  # binding.pry
-  profiles.each_with_index do |profile, index|
-    # if user doesnt have a profile, make one
-    if User.find(index + n).profile.nil?
-      p = Profile.new(name: profile[:name], crag: Crag.all.sample, user: User.find(index + 1))
+def seed_profiles(profiles)
+  profiles.each do |profile|
+    # users and profiles have the same ids
+
+    # if there is no last profile, make the first profile
+    if Profile.last.nil?
+      p = Profile.new(name: profile[:name], crag: Crag.all.sample, user: User.first)
       photo = URI.open(profile[:url])
       p.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
       p.save
-      # binding.pry
+      puts "profile for #{p.name} with id #{p.id} created"
+      # if there is a last profile, make a profile with the user id 1 + last profile id
+    elsif Profile.last
+      # getting last profile id
+      p = Profile.new(name: profile[:name], crag: Crag.all.sample,
+                      user: User.find(Profile.last.id + 1))
+      photo = URI.open(profile[:url])
+      p.photo.attach(io: photo, filename: "photo.jpg", content_type: "image/jpg")
+      p.save
       puts "profile for #{p.name} with id #{p.id} created"
     end
   end
@@ -62,8 +71,6 @@ female_profiles = [
   }
 ]
 
-# there is a 1 here, because nobody has a profile
-seed_profiles(male_profiles, 1)
+seed_profiles(male_profiles)
 
-# there is a 7 here, because there are already 6 Users that have a profile
-seed_profiles(female_profiles, 7)
+seed_profiles(female_profiles)
