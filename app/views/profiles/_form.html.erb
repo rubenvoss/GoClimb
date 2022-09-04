@@ -1,7 +1,9 @@
 <%= simple_form_for(@profile) do |f| %>
   <%= f.input :name %>
+  <%= f.input :age %>
   <%= f.input :bio %>
   <%= f.input :photo, as: :file %>
   <%= f.association :crag %>
-  <%= f.submit class: "button--red" %>
+  <div class="py-1"></div>
+  <%= f.submit class: "button--red", data: { turbo: :false } %>
 <% end %>

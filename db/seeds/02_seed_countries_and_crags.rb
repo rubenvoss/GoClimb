@@ -56,6 +56,7 @@ crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1
   Oliana: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661986800/go-climb-seeds/Oliana_k0ehyb.jpg",
 
 }.stringify_keys
+
 def seed_crags(crags_data, crags_photos)
   puts "seeding crags..."
   crags_data.each do |crag_data|
@@ -64,7 +65,7 @@ def seed_crags(crags_data, crags_photos)
     crag.photo.attach(io: photo, filename: "#{crag_data[:name].delete(' ')}.jpg", content_type: "image/jpg")
     # add country to crag name
     crag.name = "#{crag.name}, #{crag.country.name}"
-    crag.save
+    crag.save!
     puts "crag #{crag.name} with id:#{crag.id} #{crag.valid? ? 'saved' : 'not saved'}"
   end
 end

@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     @review.profile = @profile
     @review.user = current_user
     if @review.save
-      redirect_to profile_path(@profile)
+      redirect_to profile_path(@profile, anchor: "reviews")
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,6 +29,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:rating, :comment)
+    params.require(:review).permit(:comment)
   end
 end

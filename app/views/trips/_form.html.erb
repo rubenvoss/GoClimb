@@ -1,7 +1,11 @@
-<%= simple_form_for [@profile, @trip] do |f| %>
-  <%= f.input :name, placeholder: 'Type a name here' %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.association :crag, include_blank: "Select a crag" %>
-  <%= f.submit class: "button--red" %>
-<% end %>
+<div data-controller="flatpickr" class="flatpickr-form-wrapper">
+  <%= simple_form_for [@profile, @trip] do |f| %>
+    <%= f.input :name, placeholder: 'What is the name of your trip?' %>
+    <%= f.input :start_date, label: "Start Date", as: :string, required: true,
+                input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, label: "End Date", as: :string, required: true,
+                input_html: {class: "datepicker"} %>
+    <%= f.association :crag, include_blank: "Select a crag" %>
+    <%= f.submit class: "button--red mt-4" %>
+  <% end %>
+</div>

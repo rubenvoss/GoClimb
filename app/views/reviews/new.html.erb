@@ -1,8 +1,7 @@
 <div class="container">
   <h1>New review</h1>
   <%= simple_form_for [@profile, @review] do |f| %>
-    <%= f.input :rating %>
     <%= f.input :comment %>
-    <%= f.submit "Submit review", class: "button--red" %>
+    <%= f.submit "Submit review", class: "button--red", data: { turbo: :false } %>
   <% end %>
 </div>
