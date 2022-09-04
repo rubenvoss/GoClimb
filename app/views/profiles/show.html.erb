@@ -53,17 +53,23 @@
 
 <div class="container background-blue">
   <div class="relative">
-    <h3 class="py-3 t3 white">What other climbers have said about <%= @profile.name %>:</h3>
-    <div class="d-flex flex-column">
+    <h3 class="py-3 t3 white">What other climbers have said about
+      <% if @profile.user == current_user %>
+        you:
+      <% else %>
+        <%= @profile.name %>:
+      <% end %>
+    </h3>
+    <div class="d-flex flex-column" id="reviews">
       <% @profile.reviews.each do |review| %>
-          <div class="white-background review-bubble">
+
+          <div class="white-background review-bubble d-flex flex-column justify-content-center">
             <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
-          </div>
           <% if review.user_id == current_user.id %>
-            <p>
-              <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button--red" %>
-            </p>
+              <i class="fa-solid fa-trash trash-icon align-self-end fa-lg"><%= link_to "", review_path(review), data: { turbo: :false }, class: "" %></i>
           <% end %>
+          </div>
+
       <% end %>
     </div>
     <% if @profile.user != current_user %>
@@ -77,11 +83,12 @@
   <div class="container">
     <h2 class="mt-4 t2">Edit your profile</h2>
     <%= render "form" %>
+    <div class="py-3"></div>
   </div>
 <% end %>
 
 <div class="container">
 </div>
 
-<div class="search-bottom-padding"></div>
+
 <%= render "shared/search_bottom" %>
