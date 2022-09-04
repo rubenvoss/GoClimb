@@ -45,7 +45,10 @@
   <h3 class="py-3 t3 white">What other climbers have said about <%= @profile.name %>:</h3>
   <div class="d-flex flex-column">
     <% @profile.reviews.each do |review| %>
-        <p><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></p>
+
+        <div class="white-background review-bubble">
+          <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
+        </div>
 
         <% if review.user_id == current_user.id %>
           <p>
@@ -55,16 +58,20 @@
 
     <% end %>
   </div>
+  <div class="py-3"></div>
 </div>
 
-<% if @profile.user == current_user %>
-  <h2 class="mt-4 t2">Edit your profile</h2>
-  <%= render "form" %>
-<% else %>
-  <div class="d-flex flex-column">
-    <%= link_to "Leave a review", new_profile_review_path(@profile) %>
-    <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
-  </div>
-<% end %>
+<div class="container">
+  <% if @profile.user == current_user %>
+    <h2 class="mt-4 t2">Edit your profile</h2>
+    <%= render "form" %>
+  <% else %>
+    <div class="d-flex flex-column">
+      <%= link_to "Leave a review", new_profile_review_path(@profile) %>
+      <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
+    </div>
+  <% end %>
+</div>
+
 <div class="search-bottom-padding"></div>
 <%= render "shared/search_bottom" %>

@@ -1,0 +1,14 @@
+.white-background {
+  background-color: rgba($color: white, $alpha: 0.8);
+}
+
+.review-bubble {
+  border-radius: 24px 24px 24px 0px;
+  padding: 2vh;
+  padding-left: 10px;
+  padding-bottom: 10px !important;
+  margin: 2vh;
+  .p {
+    padding-bottom: 0 !important;
+  }
+}
