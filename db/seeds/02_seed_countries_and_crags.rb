@@ -56,6 +56,7 @@ crags_photos = { Margalef: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1
   Oliana: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661986800/go-climb-seeds/Oliana_k0ehyb.jpg",
 
 }.stringify_keys
+
 def seed_crags(crags_data, crags_photos)
   puts "seeding crags..."
   crags_data.each do |crag_data|
