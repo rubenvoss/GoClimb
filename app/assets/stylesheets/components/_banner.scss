@@ -1,0 +1,24 @@
+.banner {
+  background-image: url("https://res.cloudinary.com/dqdezmage/image/upload/v1662303835/go%20climb%20profile%20pictures/helena-lopes-PGnqT0rXWLs-unsplash_bg78pq.jpg"); /* The image used */
+  background-color: $blue; /* Used if the image is unavailable */
+  height: 35vh; /* You must set a specified height */
+  width: 100vw;
+  position: relative;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(30, 30, 30, 0.65);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
