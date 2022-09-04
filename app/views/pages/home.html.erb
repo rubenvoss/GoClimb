@@ -1,4 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% @profiles.each do |profile| %>
+  <%= profile.name %>
+  <%# card %>
+<% end %>
+
 <div class="search-bottom-padding"></div>
 <%= render "shared/search_bottom" %>
