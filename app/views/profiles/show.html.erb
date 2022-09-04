@@ -52,35 +52,33 @@
 </div>
 
 <div class="container background-blue">
-  <h3 class="py-3 t3 white">What other climbers have said about <%= @profile.name %>:</h3>
-  <div class="d-flex flex-column">
-    <% @profile.reviews.each do |review| %>
-
-        <div class="white-background review-bubble">
-          <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
-        </div>
-
-        <% if review.user_id == current_user.id %>
-          <p>
-            <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button--red" %>
-          </p>
-        <% end %>
-
-    <% end %>
-  </div>
-  <% if @profile.user != current_user %>
-    <%= link_to "Leave a review", new_profile_review_path(@profile) %>
-  <% end %>
-
-
-  <div class="py-3"></div>
-</div>
-  <% if @profile.user == current_user %>
-    <div class="container">
-      <h2 class="mt-4 t2">Edit your profile</h2>
-      <%= render "form" %>
+  <div class="relative">
+    <h3 class="py-3 t3 white">What other climbers have said about <%= @profile.name %>:</h3>
+    <div class="d-flex flex-column">
+      <% @profile.reviews.each do |review| %>
+          <div class="white-background review-bubble">
+            <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
+          </div>
+          <% if review.user_id == current_user.id %>
+            <p>
+              <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button--red" %>
+            </p>
+          <% end %>
+      <% end %>
     </div>
-  <% end %>
+    <% if @profile.user != current_user %>
+      <%= link_to "Leave a review", new_profile_review_path(@profile), class: "button--red bottom-right" %>
+    <% end %>
+    <div class="review-spacing"></div>
+  </div>
+</div>
+
+<% if @profile.user == current_user %>
+  <div class="container">
+    <h2 class="mt-4 t2">Edit your profile</h2>
+    <%= render "form" %>
+  </div>
+<% end %>
 
 <div class="container">
 </div>
