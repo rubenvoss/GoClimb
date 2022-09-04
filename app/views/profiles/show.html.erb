@@ -52,25 +52,28 @@
 
         <% if review.user_id == current_user.id %>
           <p>
-            <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button--red" %>
           </p>
         <% end %>
 
     <% end %>
   </div>
-  <div class="py-3"></div>
-</div>
-
-<div class="container">
-  <% if @profile.user == current_user %>
-    <h2 class="mt-4 t2">Edit your profile</h2>
-    <%= render "form" %>
-  <% else %>
+  <% if @profile.user != current_user %>
     <div class="d-flex flex-column">
       <%= link_to "Leave a review", new_profile_review_path(@profile) %>
       <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
     </div>
   <% end %>
+  <div class="py-3"></div>
+</div>
+  <% if @profile.user == current_user %>
+    <div class="container">
+      <h2 class="mt-4 t2">Edit your profile</h2>
+      <%= render "form" %>
+    </div>
+  <% end %>
+
+<div class="container">
 </div>
 
 <div class="search-bottom-padding"></div>
