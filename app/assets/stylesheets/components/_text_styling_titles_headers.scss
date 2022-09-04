@@ -5,7 +5,8 @@
 
 .t1 {
   @extend .t;
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
 .t2 {
@@ -17,6 +18,10 @@
   @extend .t;
   text-transform: uppercase;
   font-size: 1em;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .white {

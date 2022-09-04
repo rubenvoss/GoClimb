@@ -24,11 +24,11 @@ end
 male_profiles = [
   # first profile is admin
   {
-    name: "admin",
-    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg"
+    name: "Ruben",
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662310752/go-climb-seeds/ruben_lod8sw.jpg"
   },
   {
-    name: "Peter",
+    name: "Jasmien",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg"
   },
   {
