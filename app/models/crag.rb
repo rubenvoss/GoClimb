@@ -5,7 +5,8 @@ class Crag < ApplicationRecord
   has_one_attached :photo
 
   # geocoder config
-  reverse_geocoded_by :latitude, :longitude
+  #include Geocoder::Model::Mongoid
+  reverse_geocoded_by :lat, :long
   after_validation :reverse_geocode # auto-fetch address
 
   # makes crags searchable for names
