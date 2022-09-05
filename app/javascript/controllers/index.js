@@ -7,6 +7,9 @@ import { application } from "./application"
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
+import EditTripController from "./edit_trip_controller"
+application.register("edit-trip", EditTripController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
