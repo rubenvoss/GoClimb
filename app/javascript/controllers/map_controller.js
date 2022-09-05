@@ -8,7 +8,7 @@ export default class extends Controller {
   }
 
   connect() {
-    // console.log("Hi from js map controller")
+    console.log(this.markerValue)
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -21,16 +21,14 @@ export default class extends Controller {
   }
 
   #addMarkerToMap() {
-    this.markerValue((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    })
+    new mapboxgl.Marker()
+      .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
+      .addTo(this.map)
   }
 
   #fitMapToMarker() {
     const bounds = new mapboxgl.LngLatBounds()
-    this.markerValue(marker => bounds.extend([ marker.lng, marker.lat ]))
+    bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }
