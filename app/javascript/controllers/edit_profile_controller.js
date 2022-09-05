@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["infos", "form", "card"]
 
   connect() {
-    console.log("hello")
   }
 
   displayForm() {
