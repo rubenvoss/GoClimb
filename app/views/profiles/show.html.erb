@@ -2,11 +2,21 @@
       style="background-image: url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
 </div>
 <div class="container">
-  <d-flex class="justify-content-start">
-    <h1 class="t1">
-    <span><%= @profile.name %>,</span>
-    <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
-    </h1>
+
+  <d-flex class="d-flex justify-content-between flex-row align-items-center">
+    <span>
+      <p class="t1 no-margin">
+        <span><%= @profile.name %>,</span>
+        <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
+      </p>
+    </span>
+    <span>
+      <div class="text-me-button">
+        <% if @profile.user != current_user %>
+          <%= link_to "Text me!", new_chatroom_path(), class: "button--red" %>
+        <% end %>
+        </div>
+    </span>
   </d-flex>
 
 
@@ -64,29 +74,43 @@
 </div>
 
 <div class="container background-blue">
-  <h3 class="py-3 t3 white">What other climbers have said about <%= @profile.name %>:</h3>
-  <div class="d-flex flex-column">
-    <% @profile.reviews.each do |review| %>
-        <p><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></p>
+  <div class="relative">
+    <h3 class="py-3 t3 white">What other climbers have said about
+      <% if @profile.user == current_user %>
+        you:
+      <% else %>
+        <%= @profile.name %>:
+      <% end %>
+    </h3>
+    <div class="d-flex flex-column" id="reviews">
+      <% @profile.reviews.each do |review| %>
 
-        <% if review.user_id == current_user.id %>
-          <p>
-            <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          </p>
-        <% end %>
+          <div class="white-background review-bubble d-flex flex-column justify-content-center">
+            <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
+          <% if review.user_id == current_user.id %>
+              <i class="fa-solid fa-trash trash-icon align-self-end fa-lg"><%= link_to "", review_path(review), data: { turbo: :false }, class: "" %></i>
+          <% end %>
+          </div>
 
+      <% end %>
+    </div>
+    <% if @profile.user != current_user %>
+      <%= link_to "Leave a review", new_profile_review_path(@profile), class: "button--red bottom-right" %>
     <% end %>
+    <div class="review-spacing"></div>
   </div>
 </div>
 
 <% if @profile.user == current_user %>
-  <h2 class="mt-4 t2">Edit your profile</h2>
-  <%= render "form" %>
-<% else %>
-  <div class="d-flex flex-column">
-    <%= link_to "Leave a review", new_profile_review_path(@profile) %>
-    <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
+  <div class="container">
+    <h2 class="mt-4 t2">Edit your profile</h2>
+    <%= render "form" %>
+    <div class="py-3"></div>
   </div>
 <% end %>
-<div class="search-bottom-padding"></div>
+
+<div class="container">
+</div>
+
+
 <%= render "shared/search_bottom" %>
