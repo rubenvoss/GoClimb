@@ -27,6 +27,7 @@ export default class extends Controller {
   displayTravellingClimbers(startDate, endDate) {
     // if you reload the page, this doesnt insert data!!!
     const url = `/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
+    console.log(url)
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
