@@ -5,13 +5,13 @@ class TripsController < ApplicationController
     @trips = Trip.all
     start_date = Date.new(params[:start_date].to_i)
     end_date = Date.new(params[:end_date].to_i)
-    # raise
+
     # filter trips
-    # @trips = @trips.map do |trip|
-    #   if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
-    #     trip
-    #   end
-    # end
+    @trips = @trips.map do |trip|
+      if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
+        trip
+      end
+    end
 
     respond_to do |format|
       format.html
