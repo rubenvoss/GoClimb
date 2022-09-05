@@ -1,17 +1,15 @@
 <% @profiles.each do |profile| %>
-  <%= link_to profile_path(profile) do %>
-    <div class="card-wrapper p-3 my-3 d-flex">
-      <div >
+  <%= link_to profile_path(profile), class:"card-button p-3 my-3 d-flex flex-row align-items-start justify-content-start" do %>
+      <div class="avatar-wrapper">
         <div class="avatar--small"
             style="background-image: url('<%= cl_image_path profile.photo.key,
                                               height: 100, width: 100, crop: :fill, gravity: :face %>');">
         </div>
       </div>
-      <div class="card-text">
-      <h2 class="t2"><%= profile.name %></h2>
-      <h3 class="t3">local crag:</h3><br>
-      <h3 class="t3"><%= profile.crag.name %></h3>
+      <div class="card-text align-items-start">
+        <h2 class="t2"><%= profile.name %></h2>
+        <h3 class="t3 text-left">local crag:</h3>
+        <h3 class="t3 text-left"><%= profile.crag.name %></h3>
       </div>
-    </div>
   <% end %>
 <% end %>
