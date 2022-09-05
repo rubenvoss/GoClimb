@@ -3,11 +3,15 @@ class TripsController < ApplicationController
 
   def index
     @trips = Trip.all
-    start_date = params[:start_date]
-    end_date = params[:end_date]
-
+    start_date = Date.new(params[:start_date].to_i)
+    end_date = Date.new(params[:end_date].to_i)
+    # raise
     # filter trips
-
+    @trips = @trips.map do |trip|
+      if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
+        trip
+      end
+    end
     # create partial (movies/list)
 
     respond_to do |format|
@@ -49,7 +53,9 @@ class TripsController < ApplicationController
   private
 
   def set_profile
-    @profile = Profile.find(params[:profile_id])
+    if Profile.exists?(params[:profile_id])
+      @profile = Profile.find(params[:profile_id])
+    end
   end
 
   def trip_params
