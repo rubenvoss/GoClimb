@@ -1,13 +1,15 @@
-.card-wrapper {
+.card-button {
   background-color: $blue;
-  height: 22vh;
+
   width: 70vw;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .card-text {
   text-decoration: none !important;
   color: white;
+  padding-left: 4vw;
 }
 
 .trip-card {
@@ -26,4 +28,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.avatar-wrapper {
+  height: 100%;
 }
