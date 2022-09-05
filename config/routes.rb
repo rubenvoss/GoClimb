@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :trips, only: %i[new create edit update]
   end
 
+  resources :trips, only: [:index]
+
   resources :reviews, only: [:destroy]
   resources :crags
   resources :chatrooms, only: %i[show new create index] do

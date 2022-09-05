@@ -16,6 +16,5 @@ class CragsController < ApplicationController
         format.html
         format.json # Follow the classic Rails flow and look for a create.json view
     end
-    # render :json => {:name => "any name"}
   end
 end

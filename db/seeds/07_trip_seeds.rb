@@ -2,75 +2,75 @@ trips_data = [
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Ruben")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Jasmien")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Max")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2020, 9, 20),
+    end_date: Date.new(2020, 9, 30),
     user: Profile.where(name: "Theo")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Martin")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Connor")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Marie")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Anna")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2021, 9, 20),
+    end_date: Date.new(2021, 9, 30),
     user: Profile.where(name: "Carla")[0].user
   },
   {
-    name: "Sending hard routes in Margalef",
+    name: "second trip in 2022",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2022, 9, 20),
-    end_date: Date.new(2022, 9, 30),
+    start_date: Date.new(2022, 1, 1),
+    end_date: Date.new(2022, 12, 30),
     user: Profile.where(name: "Shannon")[0].user
   },
   {
-    name: "Sending hard routes in Margalef",
+    name: "Only Trip in 2022",
     crag: Crag.where(name: "Margalef, Spain")[0],
     start_date: Date.new(2022, 9, 20),
     end_date: Date.new(2022, 9, 30),

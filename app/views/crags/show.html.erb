@@ -1,19 +1,24 @@
 <div data-controller="save-dates">
-  <div class="container background-blue">
+  <div class="container background-blue full-screen">
     <h3 class="t3 white pb-3">when do you want to go climbing?</h3>
     <%# select a date %>
     <div data-controller="flatpickr" class="flatpickr-form-wrapper">
       <%= simple_form_for :search, method: "get" do |f| %>
         <%= f.input :trip_start_date, label: "Start Date", as: :string, required: false,
-                    input_html: {class: "datepicker"} %>
+                    input_html: {class: "datepicker"},
+                    value: params[:query],
+                    data: {search_target: "start_date",
+                           action: "click->save-dates#continue"} %>
         <%= f.input :trip_end_date, label: "End Date", as: :string, required: false,
-                    input_html: {class: "datepicker"} %>
+                    input_html: {class: "datepicker"},
+                    value: params[:query],
+                    data: {search_target: "end_date",
+                           action: "click->save-dates#continue"} %>
+
         <div class="d-flex justify-content-between">
           <%= link_to "Continue", "#anchor", type: "submit",
                       class: "button--red",
-                      data: {
-                        # save_dates_target: "form",
-                      action: "click->save-dates#continue" } %>
+                      data: { action: "click->save-dates#continue" } %>
           <%= link_to "I'm flexible", "#anchor", class: "button--red" %>
         </div>
       <% end %>
@@ -33,12 +38,14 @@
 
   <div class="container spacing-for-anchor" id="anchor">
 
-    <div data-save-dates-target="travelling_climbers" data-action="click->save-dates#continue">travelling climbers div</div>
+      <%# <div class="search-results-list" data-search-target="list"></div> %>
+
     <%# <button data-action="click->save-dates#show">button</button> %>
     <%# insert climbers that match the same timing like startDate and endDate %>
     <h2 class="t2">Climbers in <%= @crag.name.split(",")[0] %></h2>
     <% @crag.profiles.each do |profile| %>
-    <%= profile.name %> <br>
+     <%= profile.name %> <br>
     <% end %>
+    <div data-save-dates-target="travellingClimbers"></div>
   </div>
 </div>
