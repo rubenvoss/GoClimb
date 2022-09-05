@@ -16,15 +16,20 @@ class TripsController < ApplicationController
     @trips = Trip.all
     @trips = @trips.map do |trip|
       if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
-        trip.name
+        trip
       end
     end
+
+    # removes all nil values of array
+    @trips = @trips.compact
 
     respond_to do |format|
       format.html
       # render partial (movies/list)
       format.text { render partial: "crags/travelling_climbers", locals: { trips: @trips }, formats: [:html] }
     end
+
+    # raise
   end
 
   def new

@@ -1,7 +1,5 @@
 <h1>travelling climbers:</h1>
 
-<% trips.each do |trip| %>
-  <% unless trip.nil? %>
+<% @trips.each do |trip| %>
     <div class="card-wrapper"><%= trip.name %> - <%= trip.profile.name %></div>
-  <% end %>
 <% end %>
