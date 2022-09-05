@@ -3,7 +3,7 @@ import { end } from "@popperjs/core"
 
 // Connects to data-controller="save-dates"
 export default class extends Controller {
-  static targets = ["travelling_climbers"]
+  static targets = ["travelling_climbers", "start_date", "end_date"]
 
   displayTravellingClimbers() {
     // fetch(
