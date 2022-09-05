@@ -27,10 +27,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @crag = @profile.crag
     @profile.user = current_user
-    if @profile.update(profile_params)
-      redirect_to profile_path(@profile)
-    else
-      render :show, status: :unprocessable_entity
+    @profile.update(profile_params)
+
+    respond_to do |format|
+      format.html { redirect_to profile_path(@profile) }
+      format.text { render partial: "profiles/profile_infos", locals: {profile: @profile}, formats: [:html] }
     end
   end
 
