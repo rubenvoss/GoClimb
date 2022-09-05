@@ -2,5 +2,6 @@
 
 <div class="card-wrapper"></div>
 <% trips.each do |trip| %>
-    <%= trip.name %> - <%= trip.profile.name %>
+    <%= trip.name %> - <%= trip.profile.name %> <br>
+    <%= trip.start_date %> - <%= trip.end_date %>
 <% end %>
