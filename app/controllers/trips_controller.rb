@@ -15,7 +15,7 @@ class TripsController < ApplicationController
     # filter trips
     @trips = Trip.all
     @trips = @trips.map do |trip|
-      if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
+      if (trip.start_date..trip.end_date).overlaps?(start_date..end_date) then
         trip
       end
     end

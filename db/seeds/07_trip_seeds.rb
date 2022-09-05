@@ -63,10 +63,10 @@ trips_data = [
     user: Profile.where(name: "Carla")[0].user
   },
   {
-    name: "Sending hard routes in Margalef",
+    name: "second trip in 2022",
     crag: Crag.where(name: "Margalef, Spain")[0],
-    start_date: Date.new(2021, 9, 20),
-    end_date: Date.new(2021, 9, 30),
+    start_date: Date.new(2022, 1, 1),
+    end_date: Date.new(2022, 12, 30),
     user: Profile.where(name: "Shannon")[0].user
   },
   {
