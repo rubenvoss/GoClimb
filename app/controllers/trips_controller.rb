@@ -21,7 +21,7 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @profile.user = current_user
+    #@profile.user = current_user
     @crag = @trip.crag
     if @trip.update(trip_params)
       redirect_to profile_path(@profile)
