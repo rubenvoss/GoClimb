@@ -5,8 +5,27 @@ import { end } from "@popperjs/core"
 export default class extends Controller {
   static targets = ["travelling_climbers", "start_date", "end_date"]
 
-  displayTravellingClimbers() {
-    const url = `start_date=${this.startDateTarget.value}&end_date=${this.endDateTarget.value}`
+  makeYear(flatpickr_date) {
+    let date = new Date(flatpickr_date)
+    let year= date.getFullYear();
+    return year
+  }
+  makeMonth(flatpickr_date) {
+    let date = new Date(flatpickr_date)
+    let month= date.getMonth();
+    return month
+  }
+  makeDay(flatpickr_date) {
+    let date = new Date(flatpickr_date)
+    let day= date.getDate();
+    return day
+  }
+  makeDateParams(date){
+    return `${this.makeYear(date)}_${this.makeMonth(date)}_${this.makeDay(date)}`
+  }
+
+  displayTravellingClimbers(startDate, endDate) {
+    const url = `http://localhost:3000/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
@@ -14,35 +33,16 @@ export default class extends Controller {
         // this.listTarget.innerHTML = data
         console.log(data)
       })
-    // fetch(
-    //   "http://localhost:3000/crags/7"
-    //   // this.travelling_climbersTarget.action
-    //   // ,
-    // //   {
-    // //   method: "POST",
-    // //   headers: { "Accept": "application/json" },
-    // //   body: new FormData(this.formTarget)
-    // // }
-    // )
-    //   .then(response => response.json())
-    //   .then((data) => {
-    //     console.log(data)
-    //   })
-    // fetch('https://jsonplaceholder.typicode.com/todos/1')
-    // .then(response => response.json())
-    // .then(json => console.log(json))
   }
-
-
   // gets triggered when the user clicks the continue button
   continue() {
     let startDate = flatpickr(search_trip_start_date, {}).selectedDates
     let endDate = flatpickr(search_trip_end_date, {}).selectedDates
     localStorage.setItem("startDate", startDate)
     localStorage.setItem("endDate", endDate)
-    console.log(startDate)
-    console.log(endDate)
-    console.log(`localhost.com/trips?start_date=${startDate}&end_date=${endDate}`)
-    this.displayTravellingClimbers()
+
+    console.log(this.makeDateParams(startDate))
+    console.log(`start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`)
+    this.displayTravellingClimbers(startDate, endDate)
   }
 }

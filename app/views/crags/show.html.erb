@@ -14,12 +14,11 @@
                     value: params[:query],
                     data: {search_target: "end_date",
                            action: "click->save-dates#continue"} %>
+
         <div class="d-flex justify-content-between">
           <%= link_to "Continue", "#anchor", type: "submit",
                       class: "button--red",
-                      data: {
-                        # save_dates_target: "form",
-                      action: "click->save-dates#continue" } %>
+                      data: { action: "click->save-dates#continue" } %>
           <%= link_to "I'm flexible", "#anchor", class: "button--red" %>
         </div>
       <% end %>
