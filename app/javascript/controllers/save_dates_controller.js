@@ -7,17 +7,18 @@ export default class extends Controller {
 
   makeYear(flatpickr_date) {
     let date = new Date(flatpickr_date)
-    let year= date.getFullYear();
+    let year = date.getFullYear()
     return year
   }
   makeMonth(flatpickr_date) {
     let date = new Date(flatpickr_date)
-    let month= date.getMonth();
+    // for some reason flatpickr gives the month with -1
+    let month = date.getMonth() + 1
     return month
   }
   makeDay(flatpickr_date) {
     let date = new Date(flatpickr_date)
-    let day= date.getDate();
+    let day = date.getDate()
     return day
   }
   makeDateParams(date){
@@ -27,7 +28,7 @@ export default class extends Controller {
   displayTravellingClimbers(startDate, endDate) {
     // if you reload the page, this doesnt insert data!!!
     const url = `/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
-    console.log(url)
+    // console.log(url)
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
@@ -38,8 +39,8 @@ export default class extends Controller {
   // gets triggered when the user clicks the continue button
   continue() {
     // setting date variables to have selected start and end dates available
-    let startDate = flatpickr(search_trip_start_date, {}).selectedDates
-    let endDate = flatpickr(search_trip_end_date, {}).selectedDates
+    let startDate = flatpickr(search_trip_start_date, {}).selectedDates[0]
+    let endDate = flatpickr(search_trip_end_date, {}).selectedDates[0]
 
     // inserts HTML to display all travelling climbers
     this.displayTravellingClimbers(startDate, endDate)
