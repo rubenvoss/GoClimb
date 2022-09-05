@@ -40,17 +40,33 @@ def seed_activities(activities)
   activities.each_with_index do |activity, index|
     first_crag_id = Crag.first.id
     if Crag.find(index + first_crag_id)
-      index = 0
+      i = 0
       3.times do
-        a = Activity.new(activity[index])
+        a = Activity.new(activity[i])
         a.crag_id = index + first_crag_id
         a.user_id = User.all.sample.id
         a.save!
         puts "New activity with id #{a.id} created."
-        index += 1
+        i += 1
       end
     end
   end
 end
 
+def seed_proposal(data)
+  Crag.all.each_with_index do |crag, index|
+    next if index > data.length - 1
+
+    activities = data[index]
+    activities.each do |activity|
+      record = Activity.new(activity)
+      record.crag = crag
+      record.user_id = User.all.sample.id
+      record.save!
+      puts "New activity with id #{record.id} created."
+    end
+  end
+end
+
+# seed_proposal(activity_data)
 seed_activities(activity_data)
