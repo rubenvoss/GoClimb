@@ -4,7 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    marker: Object
+    //marker: Object,
+    activityMarkers: Array
   }
 
   connect() {
@@ -15,19 +16,21 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
-    this.#addMarkerToMap()
-    this.#fitMapToMarker()
+    this.#addActivityMarkersToMap()
+    this.#fitMapToActivityMarkers()
   }
 
-  #addMarkerToMap() {
-    new mapboxgl.Marker()
-      .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
-      .addTo(this.map)
+  #addActivityMarkersToMap() {
+    this.activityMarkersValue.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat])
+        .addTo(this.map)
+    })
   }
 
-  #fitMapToMarker() {
+  #fitMapToActivityMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
-    bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
+    this.activityMarkersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }

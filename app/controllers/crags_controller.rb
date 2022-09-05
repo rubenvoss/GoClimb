@@ -1,11 +1,12 @@
 class CragsController < ApplicationController
   def show
     @crag = Crag.find(params[:id])
-    @marker =
+    @activity_markers = @crag.activities.map do |activity|
       {
-        lat: @crag.lat,
-        lng: @crag.long
+        lat: activity.lat,
+        lng: activity.long
       }
+    end
 
     if params[:start_date] && params[:end_date]
       @trips = Trip.where(crag_id: @crag_id).where(start_date: params[:start_date]).or(Trip.where(end_date: params[:end_date]))
