@@ -100,6 +100,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_103812) do
     t.bigint "crag_id", null: false
     t.text "bio"
     t.bigint "user_id", null: false
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["crag_id"], name: "index_profiles_on_crag_id"

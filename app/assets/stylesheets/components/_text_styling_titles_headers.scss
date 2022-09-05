@@ -1,0 +1,48 @@
+.t {
+  font-weight: 500;
+}
+
+.t1 {
+  @extend .t;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.t2 {
+  @extend .t;
+  font-size: 1.5em;
+}
+
+.t3 {
+  @extend .t;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.white {
+  color: rgba($color: white, $alpha: 0.95);
+}
+
+.black {
+  color: black;
+}
+
+.blue {
+  color: $blue;
+}
+
+.blue-profile-text {
+  color: rgba($color: $blue, $alpha: 0.95);
+  font-size: 1.3em;
+  font-style: italic;
+  text-align: justify;
+}
+
+.fat {
+  font-weight: bold;
+}

@@ -1,6 +1,6 @@
 <div data-controller="flatpickr" class="flatpickr-form-wrapper">
   <%= simple_form_for [@profile, @trip] do |f| %>
-    <%= f.input :name, placeholder: 'Type a name here' %>
+    <%= f.input :name, placeholder: 'What is the name of your trip?' %>
     <%= f.input :start_date, label: "Start Date", as: :string, required: true,
                 input_html: {class: "datepicker"} %>
     <%= f.input :end_date, label: "End Date", as: :string, required: true,

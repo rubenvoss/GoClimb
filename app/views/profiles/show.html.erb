@@ -1,11 +1,16 @@
+<div class="profile-photo"
+      style="background-image: url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
+</div>
 <div class="container">
-  <h1 class="t1"><%= @profile.name %></h1>
-  <p class="t3">Home Crag: <%= @crag.name %></p>
-  <p><%= @profile.bio %></p>
-  <div class="profile-photo"
-       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-       url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
-  </div>
+  <d-flex class="justify-content-start">
+    <h1 class="t1">
+    <span><%= @profile.name %>,</span>
+    <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
+    </h1>
+  </d-flex>
+
+
+  <p><strong>Homecrag: </strong><%= @crag.name %></p>
 
   <h2 class="mt-4 t2">Trips</h2>
   <div class="trip-grid">
@@ -28,37 +33,60 @@
     <% end %>
   </div>
 
-  <h2 class="mt-4 t2">Reviews</h2>
-  <div class="container">
-    <div class="row d-flex flex-wrap justify-content-between">
-      <% @profile.reviews.each do |review| %>
-        <div class="col-12 border p-4 text-center">
-          <p><strong><%= review.user.profile.name %></strong></p></p>
-          <div class="profile-photo"
-               style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-               url('<%= cl_image_path review.user.profile.photo.key, crop: :fill %>')">
+  <% if @profile.bio %>
+    <p class="blue-profile-text">"<%= @profile.bio %>"</p>
+  <% end %>
+
+
+  <% if @profile.trips.size %>
+    <div class="py-1"></div>
+    <div class="d-flex justify-content-center">
+      <div class="horizontal-black-line"></div>
+    </div>
+    <div class="py-1"></div>
+    <h2 class="mt-4 t2">Upcoming Trips</h2>
+    <div class="trip-grid">
+      <% @profile.trips.each do |trip| %>
+        <div class="trip-card">
+          <div class="crag-photo"
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url('<%= cl_image_path trip.crag.photo.key, height: 300, crop: :fill %>')">
           </div>
-          <p>Rating: <strong><%= review.rating %></strong></p>
-          <p><em><%= review.comment %></em></p>
-          <% if review.user_id == current_user.id %>
-            <p>
-              <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </p>
-          <% end %>
+          <div class = "trip-info p-1 pt-3">
+            <p><strong><%= trip.name %></strong></p>
+            <p><em><%= trip.crag.name %></em></p>
+            <p><%= trip.start_date %> ⇨ <%= trip.end_date %></p>
+          </div>
         </div>
       <% end %>
     </div>
-  </div>
-
-  <% if @profile.user == current_user %>
-    <h2 class="mt-4 t2">Edit your profile</h2>
-    <%= render "form" %>
-  <% else %>
-    <div class="d-flex flex-column">
-      <%= link_to "Leave a review", new_profile_review_path(@profile) %>
-      <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
-    </div>
   <% end %>
 </div>
+
+<div class="container background-blue">
+  <h3 class="py-3 t3 white">What other climbers have said about <%= @profile.name %>:</h3>
+  <div class="d-flex flex-column">
+    <% @profile.reviews.each do |review| %>
+        <p><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></p>
+
+        <% if review.user_id == current_user.id %>
+          <p>
+            <%= link_to "Delete", review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </p>
+        <% end %>
+
+    <% end %>
+  </div>
+</div>
+
+<% if @profile.user == current_user %>
+  <h2 class="mt-4 t2">Edit your profile</h2>
+  <%= render "form" %>
+<% else %>
+  <div class="d-flex flex-column">
+    <%= link_to "Leave a review", new_profile_review_path(@profile) %>
+    <%= link_to "Contact #{@profile.name}", new_chatroom_path() %>
+  </div>
+<% end %>
 <div class="search-bottom-padding"></div>
 <%= render "shared/search_bottom" %>
