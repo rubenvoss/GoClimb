@@ -6,6 +6,14 @@ export default class extends Controller {
   static targets = ["travelling_climbers", "start_date", "end_date"]
 
   displayTravellingClimbers() {
+    const url = `start_date=${this.startDateTarget.value}&end_date=${this.endDateTarget.value}`
+    fetch(url, {headers: {"Accept": "text/plain"}})
+      .then(response => response.text())
+      .then((data) => {
+        // this.listTarget.innerHTML = " "
+        // this.listTarget.innerHTML = data
+        console.log(data)
+      })
     // fetch(
     //   "http://localhost:3000/crags/7"
     //   // this.travelling_climbersTarget.action
@@ -20,9 +28,9 @@ export default class extends Controller {
     //   .then((data) => {
     //     console.log(data)
     //   })
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(json => console.log(json))
+    // fetch('https://jsonplaceholder.typicode.com/todos/1')
+    // .then(response => response.json())
+    // .then(json => console.log(json))
   }
 
 
@@ -34,6 +42,7 @@ export default class extends Controller {
     localStorage.setItem("endDate", endDate)
     console.log(startDate)
     console.log(endDate)
+    console.log(`localhost.com/trips?start_date=${startDate}&end_date=${endDate}`)
     this.displayTravellingClimbers()
   }
 }
