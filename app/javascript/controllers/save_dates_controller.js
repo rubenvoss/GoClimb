@@ -26,21 +26,25 @@ export default class extends Controller {
 
   displayTravellingClimbers(startDate, endDate) {
     // if you reload the page, this doesnt insert data!!!
-    const url = `http://localhost:3000/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
+    const url = `/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
         this.travellingClimbersTarget.insertAdjacentHTML("beforeend", data)
-
       })
   }
 
   // gets triggered when the user clicks the continue button
   continue() {
+    // setting date variables to have selected start and end dates available
     let startDate = flatpickr(search_trip_start_date, {}).selectedDates
     let endDate = flatpickr(search_trip_end_date, {}).selectedDates
+
+    // inserts HTML to display all travelling climbers
+    this.displayTravellingClimbers(startDate, endDate)
+
+    // setting dates in local storage to make them available after tab closes
     localStorage.setItem("startDate", startDate)
     localStorage.setItem("endDate", endDate)
-    this.displayTravellingClimbers(startDate, endDate)
   }
 }
