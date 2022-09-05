@@ -4,7 +4,8 @@ class CragsController < ApplicationController
     @activity_markers = @crag.activities.map do |activity|
       {
         lat: activity.lat,
-        lng: activity.long
+        lng: activity.long,
+        info_window: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
 
