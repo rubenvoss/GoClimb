@@ -3,7 +3,7 @@ import { end } from "@popperjs/core"
 
 // Connects to data-controller="save-dates"
 export default class extends Controller {
-  static targets = ["travelling_climbers", "start_date", "end_date"]
+  static targets = ["travellingClimbers", "start_date", "end_date"]
 
   makeYear(flatpickr_date) {
     let date = new Date(flatpickr_date)
@@ -25,24 +25,22 @@ export default class extends Controller {
   }
 
   displayTravellingClimbers(startDate, endDate) {
+    // if you reload the page, this doesnt insert data!!!
     const url = `http://localhost:3000/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
-        // this.listTarget.innerHTML = " "
-        // this.listTarget.innerHTML = data
-        console.log(data)
+        this.travellingClimbersTarget.insertAdjacentHTML("beforeend", data)
+
       })
   }
+
   // gets triggered when the user clicks the continue button
   continue() {
     let startDate = flatpickr(search_trip_start_date, {}).selectedDates
     let endDate = flatpickr(search_trip_end_date, {}).selectedDates
     localStorage.setItem("startDate", startDate)
     localStorage.setItem("endDate", endDate)
-
-    console.log(this.makeDateParams(startDate))
-    console.log(`start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`)
     this.displayTravellingClimbers(startDate, endDate)
   }
 }

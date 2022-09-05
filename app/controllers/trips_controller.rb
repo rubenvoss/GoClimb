@@ -7,18 +7,17 @@ class TripsController < ApplicationController
     end_date = Date.new(params[:end_date].to_i)
     # raise
     # filter trips
-    @trips = @trips.map do |trip|
-      if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
-        trip
-      end
-    end
-    # create partial (movies/list)
+    # @trips = @trips.map do |trip|
+    #   if (trip.start_date..trip.end_date).overlaps?(start_date..end_date)
+    #     trip
+    #   end
+    # end
 
     respond_to do |format|
       format.html
-      format.text { render partial: "crags/travelling_climbers", locals: {trips: @trips}, formats: [:html] }
+      # render partial (movies/list)
+      format.text { render partial: "crags/travelling_climbers", locals: { trips: @trips }, formats: [:html] }
     end
-
   end
 
   def new
