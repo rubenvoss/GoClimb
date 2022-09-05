@@ -23,10 +23,11 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     #@profile.user = current_user
     @crag = @trip.crag
-    if @trip.update(trip_params)
-      redirect_to profile_path(@profile)
-    else
-      render :show, status: :unprocessable_entity
+    @trip.update(trip_params)
+
+    respond_to do |format|
+      format.html { redirect_to profile_path(@profile) }
+      format.text { render partial: "trip_info", locals: { profile: @profile, trip: @trip }, formats: [:html] }
     end
   end
 

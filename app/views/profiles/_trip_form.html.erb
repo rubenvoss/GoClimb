@@ -1,11 +1,20 @@
 <div data-controller="flatpickr" class="flatpickr-form-wrapper">
-  <%= simple_form_for [profile, trip], html: {class: "d-none", data: {edit_trip_target: "form"}} do |f| %>
-    <%= f.input :name, placeholder: 'Type a name here' %>
-    <%= f.input :start_date, label: "Start Date", as: :string, required: true,
-                input_html: {class: "datepicker"} %>
-    <%= f.input :end_date, label: "End Date", as: :string, required: true,
-                input_html: {class: "datepicker"} %>
-    <%= f.association :crag, include_blank: "Select a crag" %>
-    <%= f.submit class: "button--red mt-4" %>
-  <% end %>
+  <div class="trip-infos <%= 'd-none' if trip.errors.any? %>" data-edit-trip-target="infos">
+    <%= simple_form_for [profile, trip],
+      html: {
+        class: trip.errors.any? ? "" : "d-none",
+        data: {
+          edit_trip_target: "tripform",
+          action: "submit->edit-trip#update"
+          }
+        } do |f| %>
+            <%= f.input :name, placeholder: 'Type a name here' %>
+            <%= f.input :start_date, label: "Start Date", as: :string, required: true,
+                        input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, label: "End Date", as: :string, required: true,
+                        input_html: {class: "datepicker"} %>
+            <%= f.association :crag, include_blank: "Select a crag" %>
+            <%= f.submit class: "button--red mt-4" %>
+          <% end %>
+  </div>
 </div>
