@@ -10,6 +10,5 @@ export default class extends Controller {
       { channel: "NotificationChannel", id: this.userIdValue },
       { received: data => console.log(data) }
     )
-    console.log(`Subscribed to the notification channel`)
   }
 }

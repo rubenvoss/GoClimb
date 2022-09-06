@@ -15,7 +15,7 @@
         <span>
           <div class="text-me-button">
             <% if @profile.user != current_user %>
-              <% chatrooms = Chatroom.joins(messages: :user).where(messages: { user_id: [@profile.user.id, current_user.id]}) %>
+              <% chatrooms = (current_user.chatrooms & @profile.user.chatrooms) %>
               <% if chatrooms.any?  %>
                 <%= link_to "Text me!", chatroom_path(chatrooms.first), class: "button--red" %>
               <% else %>
