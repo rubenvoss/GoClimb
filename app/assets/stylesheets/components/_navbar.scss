@@ -51,6 +51,13 @@
   width: 1px;
 }
 
+.inbox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 0.3em;
+}
+
 .count {
-  width: 50%;
+  width: 10%;
 }
