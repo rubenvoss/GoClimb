@@ -10,7 +10,11 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.crag = Crag.find(profile_params[:crag_id])
+
+    if profile_params[:crag_id].nil?
+      @profile.crag = Crag.find(profile_params[:crag_id])
+    end
+
     @profile.user = current_user
     if @profile.save
       redirect_to profile_path(@profile)
