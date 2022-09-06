@@ -4,15 +4,10 @@
       <span class="icon--lastpage"><i class="fa-solid fa-angle-left"></i></span>
     <% end %>
     <div class="navbar-pipe"></div>
-    <div class= "inbox">
-      <div class="message-icon">
-        <%= link_to chatrooms_path, class: "navbar-button" do %>
-          <span class="icon--message"><i class="fa-solid fa-message"></i></span>
-        <% end %>
-      </div>
-      <div data-notification-subscription-target="inbox" class="count"><p>(5)</p>
-      </div>
-    </div>
+      <%= link_to chatrooms_path, class: "navbar-button" do %>
+        <span class="icon--message"><i class="fa-solid fa-message"></i></span>
+        <div data-notification-subscription-target="inbox" class="count"></div>
+      <% end %>
     <div class="navbar-pipe"></div>
     <div class="navbar-button" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .aligh-right {
@@ -51,13 +52,11 @@
   width: 1px;
 }
 
-.inbox {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  gap: 0.3em;
-}
-
 .count {
   width: 10%;
+  color: black;
+  text-decoration: none, !important;
+  position: absolute;
+  right: 22%;
+  top: 20%;
 }
