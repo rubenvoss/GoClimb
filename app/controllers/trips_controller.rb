@@ -12,17 +12,22 @@ class TripsController < ApplicationController
     start_date = Date.new(start_date_array[0], start_date_array[1], start_date_array[2])
     end_date = Date.new(end_date_array[0], end_date_array[1], end_date_array[2])
     # daterange from start_date to end_date
-    search_trip = start_date..end_date
+    query_date_range = start_date..end_date
+
+    crag = Crag.find(params[:crag_id])
 
     # filter trips
-    @trips = Trip.all
+    # @trips is all trips for a certain crag
+    @trips = crag.trips
     @trips = @trips.map do |trip|
-      saved_trip = trip.start_date..trip.end_date
+      trip_date_range = trip.start_date..trip.end_date
       # if the dates overlap && both are going to the same crag
-      if (saved_trip).overlaps?(search_trip) then
+      if trip_date_range.overlaps?(query_date_range) # && trip.crag ==
         trip
+      else
+        next
       end
-    end
+    end.compact_blank
 
     # removes all nil values of array
     @trips = @trips.compact
