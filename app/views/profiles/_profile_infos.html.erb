@@ -1,46 +1,38 @@
+<%# div for editing profile infos with js %>
 <div class="profile-card" data-controller="edit-profile" data-edit-profile-target="card">
+
   <div class="profile-infos <%= 'd-none' if profile.errors.any? %>" data-edit-profile-target="infos">
-    <div class="profile-photo"
-          style="background-image: url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
-    </div>
+
+    <%= render "profiles/partials/profile_photo" %>
+
+    <%# name, age, buttons, homecrag, bio %>
     <div class="container">
 
-      <d-flex class="d-flex justify-content-between flex-row align-items-center">
+      <div class="d-flex justify-content-between flex-row align-items-center">
+        <%= render "profiles/partials/name_and_age" %>
         <span>
-          <p class="t1 no-margin">
-            <span><%= @profile.name %>,</span>
-            <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
-          </p>
-        </span>
-        <span>
-          <div class="text-me-button">
-            <% if @profile.user != current_user %>
-              <% chatrooms = Chatroom.joins(messages: :user).where(messages: { user_id: [@profile.user.id, current_user.id]}) %>
-              <% if chatrooms.any?  %>
-                <%= link_to "Text me!", chatroom_path(chatrooms.first), class: "button--red" %>
-              <% else %>
-                <%= link_to "Text me!", chatrooms_path(other_user_id: @profile.user.id), data: { turbo_method: "post" }, class: "button--red" %>
-              <% end %>
-            <% end %>
+            <%# if you're on your own page, render edit_profile_button %>
             <% if @profile.user == current_user %>
-              <button aria-label="Edit profile">
-                <i class="fa-solid fa-pen fa-xs ml-2" data-action="click->edit-profile#displayForm"></i>
-              </button>
+              <%= render "profiles/partials/edit_profile_button" %>
             <% end %>
-          </div>
+            <%# if you're on another persons page, render text_me_button %>
+            <% if @profile.user != current_user %>
+              <%= render "profiles/partials/text_me_button" %>
+            <% end %>
         </span>
-      </d-flex>
-
+      </div>
 
       <p><strong>Homecrag: </strong><%= @crag.name %></p>
-
       <% if @profile.bio %>
         <p class="blue-profile-text">"<%= @profile.bio %>"</p>
       <% end %>
-
     </div>
+
   </div>
+
+  <%# form for editing profile %>
   <div class="container">
     <%= render "form", profile: @profile %>
   </div>
+
 </div>
