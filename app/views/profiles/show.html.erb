@@ -14,7 +14,7 @@
       <span>
         <div class="text-me-button">
           <% if @profile.user != current_user %>
-            <%= link_to "Text me!", new_chatroom_path(), class: "button--red" %>
+            <%= link_to "Text me!", new_chatroom_path(other_user_id: @profile.id), class: "button--red" %>
           <% end %>
           </div>
       </span>

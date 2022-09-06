@@ -2,7 +2,7 @@
   <h1>Messages:</h1>
   <% @chatrooms.each do |chatroom| %>
     <%= link_to chatroom_path(chatroom) do %>
-      <%= chatroom.name %>
+      <%= chatroom.other_user(current_user).profile.name %>
       <br>
     <% end %>
   <% end %>
