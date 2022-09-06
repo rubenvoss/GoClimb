@@ -1,7 +1,8 @@
-<% chatrooms = Chatroom.joins(messages: :user).where(messages: { user_id: [@profile.user.id, current_user.id]}) %>
-<% if chatrooms.any?  %>
-  <%= link_to "Text me!", chatroom_path(chatrooms.first), class: "button--red" %>
-<% else %>
-  <%= link_to "Text me!", chatrooms_path(other_user_id: @profile.user.id),
-                          data: { turbo_method: "post" }, class: "button--red" %>
+<% if @profile.user != current_user %>
+  <% chatrooms = current_user.chatrooms.where(id: @profile.user.chatrooms) %>
+  <% if chatrooms.any?  %>
+    <%= link_to "Text me!", chatroom_path(chatrooms.first), class: "button--red" %>
+  <% else %>
+    <%= link_to "Text me!", chatrooms_path(other_user_id: @profile.user.id), data: { turbo_method: "post" }, class: "button--red" %>
+  <% end %>
 <% end %>
