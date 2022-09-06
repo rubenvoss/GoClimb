@@ -11,11 +11,15 @@ class TripsController < ApplicationController
     # makes a date instance from the date arrays
     start_date = Date.new(start_date_array[0], start_date_array[1], start_date_array[2])
     end_date = Date.new(end_date_array[0], end_date_array[1], end_date_array[2])
+    # daterange from start_date to end_date
+    search_trip = start_date..end_date
 
     # filter trips
     @trips = Trip.all
     @trips = @trips.map do |trip|
-      if (trip.start_date..trip.end_date).overlaps?(start_date..end_date) then
+      saved_trip = trip.start_date..trip.end_date
+      # if the dates overlap && both are going to the same crag
+      if (saved_trip).overlaps?(search_trip) then
         trip
       end
     end
