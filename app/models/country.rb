@@ -3,6 +3,6 @@ class Country < ApplicationRecord
   validates :name, presence: true
 
   # makes countries searchable for names
-  include PgSearch::Model
-  multisearchable against: [:name]
+  # include PgSearch::Model
+  # multisearchable against: [:name]
 end

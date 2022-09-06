@@ -38,14 +38,9 @@
 
   <div class="container spacing-for-anchor" id="anchor">
 
-      <%# <div class="search-results-list" data-search-target="list"></div> %>
+    <%= render "local_climbers" %>
 
-    <%# <button data-action="click->save-dates#show">button</button> %>
-    <%# insert climbers that match the same timing like startDate and endDate %>
-    <h2 class="t2">Climbers in <%= @crag.name.split(",")[0] %></h2>
-    <% @crag.profiles.each do |profile| %>
-     <%= profile.name %> <br>
-    <% end %>
+
     <div data-save-dates-target="travellingClimbers"></div>
   </div>
 </div>

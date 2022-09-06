@@ -1,0 +1,4 @@
+    <h2 class="t2">Local Climbers in <%= @crag.name.split(",")[0] %></h2>
+    <% @crag.profiles.each do |profile| %>
+     <%= profile.name %> <br>
+    <% end %>
