@@ -1,0 +1,27 @@
+<div class="container background-blue">
+  <div class="relative">
+    <h3 class="py-3 t3 white">What other climbers have said about
+      <% if @profile.user == current_user %>
+        you:
+      <% else %>
+        <%= @profile.name %>:
+      <% end %>
+    </h3>
+    <div class="d-flex flex-column" id="reviews">
+      <% @profile.reviews.each do |review| %>
+
+          <div class="white-background review-bubble d-flex flex-column justify-content-center">
+            <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
+          <% if review.user_id == current_user.id %>
+              <i class="fa-solid fa-trash trash-icon align-self-end fa-lg"><%= link_to "", review_path(review), data: { turbo: :false }, class: "" %></i>
+          <% end %>
+          </div>
+
+      <% end %>
+    </div>
+    <% if @profile.user != current_user %>
+      <%= link_to "Leave a review", new_profile_review_path(@profile), class: "button--red bottom-right" %>
+    <% end %>
+    <div class="review-spacing"></div>
+  </div>
+</div>
