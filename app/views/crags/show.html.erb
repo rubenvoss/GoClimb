@@ -1,51 +1,16 @@
 <div data-controller="save-dates">
-  <div class="container background-blue full-screen">
-    <h3 class="t3 white pb-3">when do you want to go climbing?</h3>
-    <%# select a date %>
-    <div data-controller="flatpickr" class="flatpickr-form-wrapper">
-      <%= simple_form_for :search, method: "get" do |f| %>
-        <%= f.input :trip_start_date, label: "Start Date", as: :string, required: false,
-                    input_html: {class: "datepicker"},
-                    value: params[:query],
-                    data: {search_target: "start_date",
-                           action: "click->save-dates#continue"} %>
-        <%= f.input :trip_end_date, label: "End Date", as: :string, required: false,
-                    input_html: {class: "datepicker"},
-                    value: params[:query],
-                    data: {search_target: "end_date",
-                           action: "click->save-dates#continue"} %>
 
-        <div class="d-flex justify-content-between">
-          <%= link_to "Continue", "#anchor", type: "submit",
-                      class: "button--red",
-                      data: { action: "click->save-dates#continue" } %>
-          <%= link_to "I'm flexible", "#anchor", class: "button--red" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render "date_picker" %>
 
-  <div class="crag-photo d-flex justify-content-center align-items-center"
-    style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('<%= cl_image_path @crag.photo.key, crop: :fill %>')">
-    <h3 class="t3 white"><%= @crag.name %></h3>
-  </div>
+  <%= render "crag_photo" %>
 
-  <div style="width: 100%; height: 50vh;"
-    data-controller="map"
-    data-map-activity-markers-value="<%= @activity_markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <%= render "map" %>
 
   <div class="container spacing-for-anchor" id="anchor">
 
-      <%# <div class="search-results-list" data-search-target="list"></div> %>
+    <%= render "local_climbers" %>
 
-    <%# <button data-action="click->save-dates#show">button</button> %>
-    <%# insert climbers that match the same timing like startDate and endDate %>
-    <h2 class="t2">Climbers in <%= @crag.name.split(",")[0] %></h2>
-    <% @crag.profiles.each do |profile| %>
-     <%= profile.name %> <br>
-    <% end %>
+
     <div data-save-dates-target="travellingClimbers"></div>
   </div>
 </div>
