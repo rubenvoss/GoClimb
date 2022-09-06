@@ -1,32 +1,6 @@
-<div class="profile-photo"
-      style="background-image: url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
-</div>
-<div class="container">
+<%= render 'profiles/profile_infos', profile: @profile %>
 
-  <d-flex class="d-flex justify-content-between flex-row align-items-center">
-    <span>
-      <p class="t1 no-margin">
-        <span><%= @profile.name %>,</span>
-        <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
-      </p>
-    </span>
-    <span>
-      <div class="text-me-button">
-        <% if @profile.user != current_user %>
-          <%= link_to "Text me!", new_chatroom_path(), class: "button--red" %>
-        <% end %>
-        </div>
-    </span>
-  </d-flex>
-
-
-  <p><strong>Homecrag: </strong><%= @crag.name %></p>
-
-  <% if @profile.bio %>
-    <p class="blue-profile-text">"<%= @profile.bio %>"</p>
-  <% end %>
-
-
+<div class = "container">
   <% if @profile.trips.size %>
     <div class="py-1"></div>
     <div class="d-flex justify-content-center">
@@ -72,14 +46,6 @@
     <div class="review-spacing"></div>
   </div>
 </div>
-
-<% if @profile.user == current_user %>
-  <div class="container">
-    <h2 class="mt-4 t2">Edit your profile</h2>
-    <%= render "form" %>
-    <div class="py-3"></div>
-  </div>
-<% end %>
 
 <div class="container">
 </div>

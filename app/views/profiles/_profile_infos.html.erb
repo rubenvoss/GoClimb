@@ -1,0 +1,41 @@
+<div class="profile-card" data-controller="edit-profile" data-edit-profile-target="card">
+  <div class="profile-infos <%= 'd-none' if profile.errors.any? %>" data-edit-profile-target="infos">
+    <div class="profile-photo"
+          style="background-image: url('<%= cl_image_path @profile.photo.key, crop: :fill %>')">
+    </div>
+    <div class="container">
+
+      <d-flex class="d-flex justify-content-between flex-row align-items-center">
+        <span>
+          <p class="t1 no-margin">
+            <span><%= @profile.name %>,</span>
+            <span class="blue" style="margin-left: -20px;"><%= @profile.age %></span>
+          </p>
+        </span>
+        <span>
+          <div class="text-me-button">
+            <% if @profile.user != current_user %>
+              <%= link_to "Text me!", new_chatroom_path(), class: "button--red" %>
+            <% end %>
+            <% if @profile.user == current_user %>
+              <button aria-label="Edit profile">
+                <i class="fa-solid fa-pen fa-xs ml-2" data-action="click->edit-profile#displayForm"></i>
+              </button>
+            <% end %>
+          </div>
+        </span>
+      </d-flex>
+
+
+      <p><strong>Homecrag: </strong><%= @crag.name %></p>
+
+      <% if @profile.bio %>
+        <p class="blue-profile-text">"<%= @profile.bio %>"</p>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="container">
+    <%= render "form", profile: @profile %>
+  </div>
+</div>

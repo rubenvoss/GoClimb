@@ -1,4 +1,12 @@
-<%= simple_form_for(@profile) do |f| %>
+<%= simple_form_for profile,
+  html: {
+    class: profile.errors.any? ? "" : "d-none",
+    data: {
+      edit_profile_target: "form",
+      action: "submit->edit-profile#update"
+    }
+  } do |f|
+%>
   <%= f.input :name %>
   <%= f.input :age %>
   <%= f.input :bio %>
