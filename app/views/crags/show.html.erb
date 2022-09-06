@@ -5,12 +5,15 @@
 
   <%= render "crags/partials/crag_photo" %>
 
+  <%# anchor for pressing confirm / I'm flexible on the datepicker %>
   <div id="anchor"></div>
 
+  <%# only renders the map if there are activities %>
   <% if @crag.activities.nil? %>
     <%= render "crags/partials/map" %>
   <% end %>
 
+  <%# rendering local and travelling climbers %>
   <div class="container spacing-for-anchor">
     <%= render "crags/partials/local_climbers" %>
     <div data-save-dates-target="travellingClimbers"></div>
