@@ -1,0 +1,30 @@
+<%# div for editing profile infos with js %>
+<div class="profile-card" data-controller="edit-profile" data-edit-profile-target="card">
+  <div class="profile-infos <%= 'd-none' if profile.errors.any? %>" data-edit-profile-target="infos">
+    <%= render "profiles/partials/profile_photo" %>
+    <%# name, age, buttons, homecrag, bio %>
+    <div class="container">
+      <div class="d-flex justify-content-between flex-row align-items-center">
+        <%= render "profiles/partials/name_and_age" %>
+        <span>
+            <%# if you're on your own page, render edit_profile_button %>
+            <% if @profile.user == current_user %>
+              <%= render "profiles/partials/edit_profile_button" %>
+            <% end %>
+            <%# if you're on another persons page, render text_me_button %>
+            <% if @profile.user != current_user %>
+              <%= render "profiles/partials/text_me_button" %>
+            <% end %>
+        </span>
+      </div>
+      <p><strong>Homecrag: </strong><%= @crag.name %></p>
+      <% if @profile.bio %>
+        <p class="blue-profile-text">"<%= @profile.bio %>"</p>
+      <% end %>
+    </div>
+  </div>
+  <%# form for editing profile %>
+  <div class="container">
+    <%= render "form", profile: @profile %>
+  </div>
+</div>

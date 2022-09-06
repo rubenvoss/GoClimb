@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .aligh-right {
@@ -49,4 +50,13 @@
   color: black;
   height: 85%;
   width: 1px;
+}
+
+.count {
+  width: 10%;
+  color: black;
+  text-decoration: none, !important;
+  position: absolute;
+  right: 22%;
+  top: 20%;
 }

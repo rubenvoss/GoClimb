@@ -7,6 +7,9 @@ import { application } from "./application"
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
 
+import EditProfileController from "./edit_profile_controller"
+application.register("edit-profile", EditProfileController)
+
 import EditTripController from "./edit_trip_controller"
 application.register("edit-trip", EditTripController)
 
@@ -18,6 +21,9 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import NotificationSubscriptionController from "./notification_subscription_controller"
+application.register("notification-subscription", NotificationSubscriptionController)
 
 import SaveDatesController from "./save_dates_controller"
 application.register("save-dates", SaveDatesController)

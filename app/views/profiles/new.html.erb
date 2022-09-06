@@ -1,4 +1,12 @@
 <div class="container">
   <h1>Make a profile</h1>
-  <%= render "form" %>
+  <%= simple_form_for @profile do |f| %>
+  <%= f.input :name, placeholder: "Type your name" %>
+  <%= f.input :age, placeholder: "How old are you?" %>
+  <%= f.input :bio, placeholder: "Tell other climbers about yourself..." %>
+  <%= f.input :photo, as: :file, label: "Upload a photo" %>
+  <%= f.association :crag, label: "What's your home crag?" %>
+  <div class="py-1"></div>
+  <%= f.submit class: "button--red", data: { turbo: :false } %>
+<% end %>
 </div>

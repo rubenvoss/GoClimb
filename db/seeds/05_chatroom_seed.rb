@@ -7,4 +7,4 @@ def seed_chatrooms
   end
 end
 
-seed_chatrooms
+# seed_chatrooms

@@ -1,0 +1,18 @@
+<div class = "container">
+  <% if @profile.trips.size %>
+    <div class="py-1"></div>
+    <div class="d-flex justify-content-center">
+      <div class="horizontal-black-line"></div>
+    </div>
+    <div class="py-1"></div>
+    <h2 class="mt-4 t2">Upcoming Trips</h2>
+    <div class="trip-grid">
+      <% @profile.trips.each do |trip| %>
+        <div class="trip-card" data-controller="edit-trip" data-edit-trip-target="card">
+          <%= render 'trips/trip_info', profile: @profile, trip: trip %>
+          <%= render "trip_form", profile: @profile, trip: trip %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
