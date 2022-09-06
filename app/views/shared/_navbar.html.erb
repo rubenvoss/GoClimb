@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon background" data-controller="notification-subscription" data-notification-subscription-user-id-value="<%= current_user.id %>">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon background" data-controller="notification-subscription" data-notification-subscription-user-id-value="<%= current_user&.id %>">
   <div class="navbar-full-height d-flex justify-content-between align-items-center">
     <%= link_to :back, class: "navbar-button" do %>
       <span class="icon--lastpage"><i class="fa-solid fa-angle-left"></i></span>
@@ -7,6 +7,7 @@
     <%= link_to chatrooms_path, class: "navbar-button" do %>
       <span class="icon--message"><i class="fa-solid fa-message"></i></span>
     <% end %>
+    <div data-notification-subscription-target="inbox"><p class = "count">(5)</p></div>
     <div class="navbar-pipe"></div>
     <div class="navbar-button" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

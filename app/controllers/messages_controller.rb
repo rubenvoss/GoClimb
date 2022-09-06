@@ -4,17 +4,19 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
     @message.user = current_user
-    @other_user = @chatroom.other_user
+    @other_user = @chatroom.other_user(current_user)
     if @message.save
+      NotificationChannel.broadcast_to(
+        @other_user,
+        notification: render_to_string(
+          partial: "shared/notification",
+          locals: { count: @other_user.unread_messages.count }
+        )
+      )
       ChatroomChannel.broadcast_to(
         @chatroom,
         message: render_to_string(partial: "message", locals: { message: @message }),
         sender_id: @message.user.id
-      )
-      head :ok
-      NotificationChannel.broadcast_to(
-        @other_user,
-        notification: @other_user.unread_messages.count
       )
       head :ok
     else
