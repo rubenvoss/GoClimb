@@ -26,7 +26,7 @@ class TripsController < ApplicationController
     respond_to do |format|
       format.html
       # render partial (movies/list)
-      format.text { render partial: "crags/travelling_climbers", locals: { trips: @trips }, formats: [:html] }
+      format.text { render partial: "crags/partials/travelling_climbers", locals: { trips: @trips }, formats: [:html] }
     end
 
     # raise
