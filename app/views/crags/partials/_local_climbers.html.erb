@@ -1,4 +1,5 @@
-    <h2 class="t2">Local Climbers in <%= @crag.name.split(",")[0] %></h2>
-    <% @crag.profiles.each do |profile| %>
-     <%= profile.name %> <br>
-    <% end %>
+<div class="d-flex flex-column align-items-center">
+  <h2 class="t2 text-center">Local Climbers in <%= @crag.name.split(",")[0] %></h2>
+  <% @profiles = @crag.profiles %>
+  <%= render "shared/profile_cards" %>
+</div>
