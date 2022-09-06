@@ -4,6 +4,7 @@ import { end } from "@popperjs/core"
 // Connects to data-controller="save-dates"
 export default class extends Controller {
   static targets = ["travellingClimbers", "start_date", "end_date"]
+  static values = { cragId: Number }
 
   makeYear(flatpickr_date) {
     let date = new Date(flatpickr_date)
@@ -27,7 +28,7 @@ export default class extends Controller {
 
   displayTravellingClimbers(startDate, endDate) {
     // if you reload the page, this doesnt insert data!!!
-    const url = `/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}`
+    const url = `/trips?start_date=${this.makeDateParams(startDate)}&end_date=${this.makeDateParams(endDate)}&crag_id=${this.cragIdValue}`
     // console.log(url)
     fetch(url, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
