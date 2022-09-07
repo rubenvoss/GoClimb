@@ -8,7 +8,7 @@
   <div id="anchor"></div>
 
   <%# only renders the map if there are activities %>
-  <% if @crag.activities.nil? %>
+  <% unless @crag.activities.empty? %>
     <%= render "crags/partials/map" %>
   <% end %>
 

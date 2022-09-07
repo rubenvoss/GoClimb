@@ -34,7 +34,7 @@ male_profiles = [
     name: "Jasmien",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg",
     bio: "I am quite new to climbing but I learn fast 😊. I love traveling and discovering new places all over the world.",
-    age: 23
+    age: 29
   },
   {
     name: "Max",
@@ -44,17 +44,17 @@ male_profiles = [
   {
     name: "Theo",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662029774/go%20climb%20profile%20pictures/petr-slovacek-YqVDdDkdFkw-unsplash_50_1_50_md4jrj.jpg",
-    age: 23
+    age: 31
   },
   {
     name: "Martin",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662030113/go%20climb%20profile%20pictures/tommy-lisbin-tl88ay2QxLU-unsplash_50_1_50_zjqcmw.jpg",
-    age: 23
+    age: 29
   },
   {
     name: "Connor",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031008/go%20climb%20profile%20pictures/tommy-lisbin-zUHe9T8Zsj8-unsplash_50_1_50_kxzwdn.jpg",
-    age: 23
+    age: 36
   },
   {
     name: "Alex",
@@ -72,12 +72,12 @@ female_profiles = [
   {
     name: "Marie",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662028670/go%20climb%20profile%20pictures/khamkhor--I-McziCxxM-unsplash_50_wnumu1.jpg",
-    age: 23
+    age: 26
   },
   {
     name: "Anna",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662029941/go%20climb%20profile%20pictures/emma-smith-9Bv0OzPxcOI-unsplash_50_sgqmmp.jpg",
-    age: 23
+    age: 27
   },
   {
     name: "Carla",
@@ -87,12 +87,12 @@ female_profiles = [
   {
     name: "Shannon",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662030692/go%20climb%20profile%20pictures/jason-gardner-el88SU3-AQY-unsplash_50_f0o5w7.jpg",
-    age: 23
+    age: 20
   },
   {
     name: "Alice",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662030864/go%20climb%20profile%20pictures/elijah-hiett-ai7tP-odA2c-unsplash_1_50_e8pfqj.jpg",
-    age: 23
+    age: 27
   }
 ]
 
