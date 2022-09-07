@@ -33,7 +33,8 @@ male_profiles = [
   {
     name: "Jasmien",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg",
-    age: 29
+    bio: "I am quite new to climbing but I learn fast 😊. I love traveling and discovering new places all over the world.",
+    age: 29,
   },
   {
     name: "Max",
