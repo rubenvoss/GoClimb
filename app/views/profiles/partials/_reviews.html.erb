@@ -12,14 +12,14 @@
         <% @profile.reviews.each do |review| %>
 
           <% unless review.user.profile.nil? %>
-            <div class="white-background review-bubble d-flex flex-column justify-content-center">
-                <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
-                  <% if review.user_id == current_user.id %>
-                    <%= link_to review_path(review), data: { turbo_method: :delete } do %>
-                      <i class="fa-solid fa-trash trash-icon align-self-end fa-lg"></i>
-                    <% end %>
-                  <% end %>
-                </div>
+            <div class="white-background review-bubble d-flex flex-row justify-content-between align-items-start">
+              <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
+              <% if review.user_id == current_user.id %>
+                <%= link_to review_path(review), data: { turbo_method: :delete }, class: "delete-review-link" do %>
+                  <i class="fa-solid fa-trash trash-icon fa-lg delete-review-link"></i>
+                <% end %>
+              <% end %>
+              </div>
           <% end %>
 
         <% end %>
