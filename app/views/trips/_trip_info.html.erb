@@ -14,7 +14,9 @@
           <div class="button--red small" aria-label="Edit Trip">
             <i class="fa-solid fa-pen fa-lg" data-action="click->edit-trip#displayForm"></i>
           </div>
-          <%= link_to "Add a new Trip", new_profile_trip_path(@profile), class: "button--red" %>
+          <% if trip == profile.trips.last %>
+            <%= link_to "Add another Trip", new_profile_trip_path(@profile), class: "button--red" %>
+          <% end %>
         </div>
       <% end %>
     </div>
