@@ -1,10 +1,12 @@
 <div class="container py-3">
   <h1>Messages:</h1>
+  <div class="py-2"></div>
   <% @chatrooms.each do |chatroom| %>
-    <%= link_to chatroom_path(chatroom) do %>
+    <%= link_to chatroom_path(chatroom), class: "button--blue" do %>
       <%= chatroom.other_user(current_user).profile.name %>
-      <br>
     <% end %>
+    <br>
+    <div class="py-3"></div>
   <% end %>
 </div>
 <div class="search-bottom-padding"></div>
