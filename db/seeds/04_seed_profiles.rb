@@ -37,6 +37,16 @@ male_profiles = [
     age: 29,
   },
   {
+    name: "Alex",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662561658/go%20climb%20profile%20pictures/man_1_35_bluwjn.jpg",
+    age: 35
+  },
+  {
+    name: "Joseph",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662561670/go%20climb%20profile%20pictures/man_2_32_vpp3gj.jpg",
+    age: 32
+  },
+  {
     name: "Max",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662030258/go%20climb%20profile%20pictures/mihajlo-sebalj-swfJN1URFzA-unsplash_50_whpy63.jpg",
     age: 23
@@ -55,28 +65,17 @@ male_profiles = [
     name: "Connor",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031008/go%20climb%20profile%20pictures/tommy-lisbin-zUHe9T8Zsj8-unsplash_50_1_50_kxzwdn.jpg",
     age: 36
-  },
-  {
-    name: "Alex",
-    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662479844/go-climb-seeds/__20220508_162818_aah5gb.jpg",
-    age: 23
-  },
-  {
-    name: "Joseph",
-    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662480373/go-climb-seeds/_IMG_20220421_124635_wuv7df.jpg",
-    age: 23
-  },
-
+  }
 ]
 female_profiles = [
   {
     name: "Marie",
-    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662028670/go%20climb%20profile%20pictures/khamkhor--I-McziCxxM-unsplash_50_wnumu1.jpg",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662561662/go%20climb%20profile%20pictures/woman_2_27_d6aae3.jpg",
     age: 26
   },
   {
     name: "Anna",
-    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662029941/go%20climb%20profile%20pictures/emma-smith-9Bv0OzPxcOI-unsplash_50_sgqmmp.jpg",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662561665/go%20climb%20profile%20pictures/Woman_1_24_frmmrx.jpg",
     age: 27
   },
   {
