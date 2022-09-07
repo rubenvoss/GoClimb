@@ -1,8 +1,10 @@
 <div id="message-<%= message.id %>">
   <% if message.user.profile %>
-    <div class="d-flex align-items-center">
-      <%= cl_image_tag message.user.profile.photo.key, height: 100, width: 100, crop: :fill, gravity: :face, class: "round-image" %>
-      <div class="px-2"><strong><%= message.user.profile.name %></strong></div>
+      <div class="d-flex align-items-center">
+        <%= link_to profile_path(message.user.profile) do %>
+          <%= cl_image_tag message.user.profile.photo.key, height: 100, width: 100, crop: :fill, gravity: :face, class: "round-image" %>
+        <% end %>
+        <div class="px-2"><strong><%= message.user.profile.name %></strong></div>
       </div>
     <p><em><%= message.content %></em></p>
   <% else %>
