@@ -6,7 +6,7 @@
     <div class="navbar-pipe"></div>
       <%= link_to chatrooms_path, class: "navbar-button" do %>
         <span class="icon--message"><i class="fa-solid fa-message"></i></span>
-        <div data-notification-subscription-target="inbox" class="count"></div>
+        <div data-notification-subscription-target="inbox" class="count"><%= "(#{current_user.unread_messages.count})" if current_user&.unread_messages&.any? %></div>
       <% end %>
     <div class="navbar-pipe"></div>
     <div class="navbar-button" type="button" data-bs-toggle="collapse"
