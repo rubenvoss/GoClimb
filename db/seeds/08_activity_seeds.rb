@@ -17,8 +17,8 @@ activity_data = [
     {name: "Schleifmühlklamm Waterfall", lat: 47.61027530593548, long: 11.016791967612544},
     {name: "Kolbensesselbahn Chairlift", lat: 47.59985866429959, long: 11.048720980860615},
     {name: "Camping Oberammergau", lat: 47.592797316636876, long: 11.06760373063098},
-    {name: "Camping Oberammergau", lat: 47.592797316636876, long: 11.06760373063098},
-    {name: "Camping Oberammergau", lat: 47.592797316636876, long: 11.06760373063098}
+    {name: "Klosterhotel Ettal Ludwig der Bayer", lat: 47.571144295894875, long: 11.0926662894171},
+    {name: "Restaurant Ettaler Mühle", lat: 47.57026535689869, long: 11.07457176674148}
   ],
   [# Geyikbayiyri
     {name: "Pan Camping &Hotel", lat: 36.876811307969, long: 30.47217174089902},
