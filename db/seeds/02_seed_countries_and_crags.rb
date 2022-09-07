@@ -21,7 +21,35 @@ crags_data = [
     name: "Oberammergau",
     lat: 47.596418,
     long: 11.071603,
-    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1661857179/go-climb-seeds/P1060004-1_gycg9f.jpg",
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662563879/go-climb-seeds/klettergebiet-frauenwasserl_lqnemr.jpg",
+    country: germany
+  },
+  {
+    name: "Sächsische Schweiz",
+    lat: 50.90718813667059,
+    long: 14.323394432806465,
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662563987/go-climb-seeds/c3066a1c2fdc342df21851c18828416ab1929ba8_uf6qid.jpg",
+    country: germany
+  },
+  {
+    name: "Löbejün",
+    lat: 51.63397749748562,
+    long: 11.879099133583155,
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662564090/go-climb-seeds/4286ed0af22658406c9bd24d6f9d1912def4d0e1_dh9ivf.jpg",
+    country: germany
+  },
+  {
+    name: "Thüringer Wald",
+    lat: 47.596418,
+    long: 11.071603,
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662564195/go-climb-seeds/Bad-Tabarz-Lauchagrund-Aschenbergstein-Klettern_hppiv0.jpg",
+    country: germany
+  },
+  {
+    name: "Frankenjura",
+    lat: 49.49925836670939,
+    long: 11.413256921590024,
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662564290/go-climb-seeds/kl-klettern-frankenjura-nuernberger-turm-c-rico-haase-n-jpg--fotoshowBig-a2c69252-1566015_ksbwua.jpg",
     country: germany
   },
   {
