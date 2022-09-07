@@ -1,10 +1,12 @@
 <div class="banner">
   <div class="overlay">
     <div class="container text-center">
-      <h1><strong>GoClimb</strong> connects</h1>
-      <p>Pick a date, look for crags and find other climbers in the same area.</p>
+      <%# <h1 class="t1"><strong>GoClimb</strong> connects</h1> %>
+      <%= image_tag "logo.png", class: "banner-logo" %>
+      <div class="py-1"></div>
+      <p>Climb in new places with new people!</p>
       <br>
-      <%= link_to "Discover more", search_path, class: "button--red" %>
+      <%= link_to "Checkout Areas!", search_path, class: "button--red" %>
     </div>
   </div>
 </div>
