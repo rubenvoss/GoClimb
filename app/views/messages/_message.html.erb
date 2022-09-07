@@ -1,6 +1,6 @@
 <div id="message-<%= message.id %>">
   <% if message.user.profile %>
-    <div class="d-flex align-items-end">
+    <div class="d-flex align-items-center">
       <%= cl_image_tag message.user.profile.photo.key, height: 100, width: 100, crop: :fill, gravity: :face, class: "round-image" %>
       <div class="px-2"><strong><%= message.user.profile.name %></strong></div>
       </div>
