@@ -26,7 +26,7 @@ male_profiles = [
   # first profile is admin
   {
     name: "Ruben",
-    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662310752/go-climb-seeds/ruben_lod8sw.jpg",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662562709/go%20climb%20profile%20pictures/Ruben_def_se4dts.jpg",
     bio: "I loooove climbing, lived in front of the crag for a long time. I'm going on a big climbing trip to Margalef next week! come and join...",
     age: 23
   },
@@ -43,12 +43,12 @@ male_profiles = [
   },
   {
     name: "Joseph",
-    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662561670/go%20climb%20profile%20pictures/man_2_32_vpp3gj.jpg",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662562998/go%20climb%20profile%20pictures/Joseph_def_def_kgq4cq.jpg",
     age: 32
   },
   {
     name: "Max",
-    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662030258/go%20climb%20profile%20pictures/mihajlo-sebalj-swfJN1URFzA-unsplash_50_whpy63.jpg",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031176/go%20climb%20profile%20pictures/omid-armin-D9RrI5IW9h0-unsplash_50_1_50_joecin.jpg",
     age: 23
   },
   {
@@ -75,7 +75,7 @@ female_profiles = [
   },
   {
     name: "Anna",
-    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662561665/go%20climb%20profile%20pictures/Woman_1_24_frmmrx.jpg",
+    url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662562461/go%20climb%20profile%20pictures/anna_test_q3cqfl.jpg",
     age: 27
   },
   {
