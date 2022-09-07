@@ -1,7 +1,18 @@
-.alert {
+.alert-ours {
   position: fixed !important;
   bottom: 1vh;
   right: 1vh;
   width: 93%;
   z-index: 1000;
+  background-color: #f7dfb2 !important;
+  ;
+}
+
+.notice-ours {
+  position: fixed !important;
+  bottom: 1vh;
+  right: 1vh;
+  width: 93%;
+  z-index: 1000;
+  background-color: #acdae7 !important;
 }
