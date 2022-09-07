@@ -3,14 +3,18 @@
       style="background-image: url('<%= cl_image_path trip.crag.photo.key, crop: :fill %>')">
   </div>
 
-  <div class="container--pb">
+  <div class="container">
     <div class = "trip-infos p-1 pt-3">
       <p><strong><%= trip.name %></strong></p>
       <p><em><%= trip.crag.name %></em></p>
       <p><%= trip.start_date %> ⇨ <%= trip.end_date %></p>
+      <div class="py-3"></div>
       <% if profile.user == current_user %>
-        <div class="button--red small" aria-label="Edit Trip">
-          <i class="fa-solid fa-pen fa-lg" data-action="click->edit-trip#displayForm"></i>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="button--red small" aria-label="Edit Trip">
+            <i class="fa-solid fa-pen fa-lg" data-action="click->edit-trip#displayForm"></i>
+          </div>
+          <%= link_to "Add a new Trip", new_profile_trip_path(@profile), class: "button--red" %>
         </div>
       <% end %>
     </div>
