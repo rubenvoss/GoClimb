@@ -54,7 +54,18 @@ male_profiles = [
     name: "Connor",
     url: "https://res.cloudinary.com/dqdezmage/image/upload/v1662031008/go%20climb%20profile%20pictures/tommy-lisbin-zUHe9T8Zsj8-unsplash_50_1_50_kxzwdn.jpg",
     age: 23
-  }
+  },
+  {
+    name: "Alex",
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662479844/go-climb-seeds/__20220508_162818_aah5gb.jpg",
+    age: 23
+  },
+  {
+    name: "Joseph",
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662480373/go-climb-seeds/_IMG_20220421_124635_wuv7df.jpg",
+    age: 23
+  },
+
 ]
 female_profiles = [
   {
