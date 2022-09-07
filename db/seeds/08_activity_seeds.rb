@@ -55,7 +55,7 @@ def seed_activities(activities)
     first_crag_id = Crag.first.id
     if Crag.find(index + first_crag_id)
       i = 0
-      3.times do
+      5.times do
         a = Activity.new(activity[i])
         a.crag_id = index + first_crag_id
         a.user_id = User.all.sample.id
