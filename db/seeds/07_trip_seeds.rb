@@ -4,7 +4,7 @@ trips_data = [
     crag: Crag.where(name: "Margalef, Spain")[0],
     start_date: Date.new(2021, 9, 20),
     end_date: Date.new(2021, 9, 30),
-    user: Profile.where(name: "Ruben")[0].user
+    user: Profile.where(name: "Alex")[0].user
   },
   {
     name: "Sending hard routes in Margalef",
