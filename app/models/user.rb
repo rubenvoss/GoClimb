@@ -15,4 +15,12 @@ class User < ApplicationRecord
     chatrooms.map(&:messages).flatten.reject { |message| message.user == self || message.read || message.content.nil? }
     # same thing as: chatrooms.map { |chatroom| chatroom.messages }
   end
+
+  def mark_as_read_with(other_user)
+    chatroom = chatrooms.where(id: other_user.chatrooms).first
+    messages = chatroom.messages.reject { |message| message.user == self || message.read || message.content.nil? }
+    messages.each do |message|
+      message.update(read: true)
+    end
+  end
 end
