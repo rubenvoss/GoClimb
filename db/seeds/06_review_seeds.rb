@@ -1,15 +1,15 @@
 reviews_data = [
   [
-    {comment: "Showed me the most interesting route"},
-    {comment: "Friendly, but not very responsive over the app"}
+    {comment: "Great technique and good coach"},
+    {comment: "Responsible and trustworthy"}
   ],
   [
     {comment: "Good belayer"},
     {comment: "Nice, but always late..."}
   ],
   [
-    {comment: "Great technique and good coach"},
-    {comment: "Special kind of humour"}
+    {comment: "Showed me the most interesting route"},
+    {comment: "Friendly, but not very responsive over the app"}
   ],
   [
     {comment: "Best pancakes!"},
@@ -51,12 +51,12 @@ def seed_reviews(reviews)
     if Profile.find(index + first_profile_id)
       r = Review.new(review[0])
       r.profile_id = index + first_profile_id
-      r.user_id = User.all.sample.id
+      r.user = User.where(email: "user@user2.com")[0]
       r.save!
       puts "New review with id #{r.id} created."
       s = Review.new(review[1])
       s.profile_id = index + first_profile_id
-      s.user_id = User.all.sample.id
+      s.user = User.where(email: "user@user5.com")[0]
       s.save!
       puts "New review with id #{s.id} created."
     end
