@@ -1,17 +1,18 @@
 <div data-edit-trip-target="infos">
   <div class="crag-photo"
-      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-      url('<%= cl_image_path trip.crag.photo.key, height: 300, crop: :fill %>')">
+      style="background-image: url('<%= cl_image_path trip.crag.photo.key, crop: :fill %>')">
   </div>
 
-  <div class = "trip-infos p-1 pt-3">
-    <p><strong><%= trip.name %></strong></p>
-    <p><em><%= trip.crag.name %></em></p>
-    <p><%= trip.start_date %> ⇨ <%= trip.end_date %></p>
-    <% if profile.user == current_user %>
-      <div class="button--red small" aria-label="Edit Trip">
-        <i class="fa-solid fa-pen fa-lg" data-action="click->edit-trip#displayForm"></i>
-      </div>
-    <% end %>
+  <div class="container--pb">
+    <div class = "trip-infos p-1 pt-3">
+      <p><strong><%= trip.name %></strong></p>
+      <p><em><%= trip.crag.name %></em></p>
+      <p><%= trip.start_date %> ⇨ <%= trip.end_date %></p>
+      <% if profile.user == current_user %>
+        <div class="button--red small" aria-label="Edit Trip">
+          <i class="fa-solid fa-pen fa-lg" data-action="click->edit-trip#displayForm"></i>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
