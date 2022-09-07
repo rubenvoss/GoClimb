@@ -1,6 +1,11 @@
 .container {
   padding-top: 3vh;
   padding-bottom: 3vh;
+  &--pb {
+    @extend .container;
+    padding-top: 0;
+    padding-bottom: 5vh;
+  }
 }
 
 .background-blue {
