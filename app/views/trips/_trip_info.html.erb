@@ -9,9 +9,9 @@
     <p><em><%= trip.crag.name %></em></p>
     <p><%= trip.start_date %> ⇨ <%= trip.end_date %></p>
     <% if profile.user == current_user %>
-      <button aria-label="Edit trip">
-        <i class="fa-solid fa-pen fa-xs ml-2" data-action="click->edit-trip#displayForm"></i>
-      </button>
+      <div class="button--red small" aria-label="Edit Trip">
+        <i class="fa-solid fa-pen fa-lg" data-action="click->edit-trip#displayForm"></i>
+      </div>
     <% end %>
   </div>
 </div>

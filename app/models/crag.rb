@@ -2,6 +2,7 @@ class Crag < ApplicationRecord
   belongs_to :country
   has_many :profiles
   has_many :activities
+  has_many :trips
   validates :name, :lat, :long, presence: true
   has_one_attached :photo
 
