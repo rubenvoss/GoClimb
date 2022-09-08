@@ -1,6 +1,6 @@
 trips_data = [
   {
-    name: "Sending hard routes in Mallorca this Winter!",
+    name: "Climbing fun in Mallorca this Winter!",
     crag: Crag.where(name: "Mallorca, Spain")[0],
     start_date: Date.new(2022, 12, 10),
     end_date: Date.new(2022, 12, 30),
