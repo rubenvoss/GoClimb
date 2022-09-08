@@ -1,6 +1,6 @@
 <% unless trips.empty? %>
   <div class="d-flex flex-column align-items-center">
-    <h2 class="t2 text-center">Travelling Climbers:</h2>
+    <h2 class="t2 text-center">Travelling Climbers going at the same time:</h2>
     <% trips.each do |trip| %>
       <%= link_to profile_path(trip.profile), class:"card-button p-3 my-3 d-flex flex-row align-items-start justify-content-start" do %>
             <div class="avatar-wrapper">
@@ -10,9 +10,9 @@
               </div>
             </div>
             <div class="card-text align-items-start">
-              <h2 class="t2"><%= trip.profile.name %></h2>
-              <h3 class="t3 text-left">local crag:</h3>
-              <h3 class="t3 text-left"><%= trip.profile.crag.name %></h3>
+              <h2 class="t2 t2-p"><%= trip.profile.name %></h2>
+              <h3 class="t3 t3-np text-left">local crag:</h3>
+              <p class="p p-nm text-left"><%= trip.profile.crag.name %></p>
             </div>
       <% end %>
     <% end %>
