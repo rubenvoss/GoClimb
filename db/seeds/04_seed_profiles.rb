@@ -26,7 +26,7 @@ male_profiles = [
   # first profile is admin
   {
     name: "Ruben",
-    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662310752/go-climb-seeds/ruben_lod8sw.jpg",
+    url: "https://res.cloudinary.com/dlpbxzb7o/image/upload/v1662624068/go-climb-seeds/ruben_lod8sw_1_cgbud4.jpg",
     bio: "I loooove climbing, lived in front of the crag for a long time. I'm going on a big climbing trip to Margalef next week! come and join...",
     age: 23
   },
