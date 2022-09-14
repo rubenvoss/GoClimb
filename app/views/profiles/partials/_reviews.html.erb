@@ -16,7 +16,7 @@
           <% counter += review.stars %>
         <% end %>
 
-        <div class="text-center"><strong>Rating:</strong> <p data-controller="star-rating"><%= (counter/amount.to_f).round(half: :up) %></p></div>
+        <div class="text-center"><strong>Rating:</strong> <%= (counter/amount.to_f).round(half: :up) %></div>
 
         <% @profile.reviews.each do |review| %>
           <% unless review.user.profile.nil? %>
