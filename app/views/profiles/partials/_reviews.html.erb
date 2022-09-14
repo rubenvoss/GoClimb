@@ -9,9 +9,13 @@
         <% end %>
       </h3>
       <div class="d-flex flex-column" id="reviews">
-        <% @profile.reviews.each do |review| %>
+        <% counter = 0 %>
 
+        <% @profile.reviews.each do |review| %>
+          <% amount = @profile.reviews.size %>
+          <% counter += review.stars %>
           <% unless review.user.profile.nil? %>
+
             <div class="white-background review-bubble d-flex flex-row justify-content-between align-items-start">
               <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
               <% if review.user_id == current_user.id %>
@@ -19,9 +23,11 @@
                   <i class="fa-solid fa-trash trash-icon fa-lg delete-review-link"></i>
                 <% end %>
               <% end %>
-              </div>
-          <% end %>
+            </div>
 
+            <div>Rating: <%= (counter/amount) %></div>
+
+          <% end %>
         <% end %>
       </div>
       <% if @profile.user != current_user %>
