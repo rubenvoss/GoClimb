@@ -10,9 +10,9 @@
       </h3>
       <div class="d-flex flex-column" id="reviews">
         <% counter = 0 %>
+        <% amount = @profile.reviews.size %>
 
         <% @profile.reviews.each do |review| %>
-          <% amount = @profile.reviews.size %>
           <% counter += review.stars %>
           <% unless review.user.profile.nil? %>
 
@@ -25,11 +25,13 @@
               <% end %>
             </div>
 
-            <div>Rating: <%= (counter/amount) %></div>
-
           <% end %>
         <% end %>
+
+        <div>Rating: <%= (counter/amount.to_f).round(half: :up) %></div>
+
       </div>
+
       <% if @profile.user != current_user %>
         <%= link_to "Leave a review", new_profile_review_path(@profile), class: "button--red bottom-right" %>
       <% end %>
