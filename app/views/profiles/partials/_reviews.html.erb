@@ -14,6 +14,12 @@
 
         <% @profile.reviews.each do |review| %>
           <% counter += review.stars %>
+        <% end %>
+
+        <div class="text-center"><strong>Rating:</strong> <%= (counter/amount.to_f).round(half: :up) %></div>
+
+
+        <% @profile.reviews.each do |review| %>
           <% unless review.user.profile.nil? %>
 
             <div class="white-background review-bubble d-flex flex-row justify-content-between align-items-start">
@@ -27,9 +33,6 @@
 
           <% end %>
         <% end %>
-
-        <div>Rating: <%= (counter/amount.to_f).round(half: :up) %></div>
-
       </div>
 
       <% if @profile.user != current_user %>
