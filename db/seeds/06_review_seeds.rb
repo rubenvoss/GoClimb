@@ -1,47 +1,47 @@
 reviews_data = [
   [
-    {comment: "Great technique and good coach"},
-    {comment: "Responsible and trustworthy"}
+    {stars: 5, comment: "Great technique and good coach"},
+    {stars: 5, comment: "Responsible and trustworthy"}
   ],
   [
-    {comment: "Good belayer"},
-    {comment: "Nice, but always late..."}
+    {stars: 4, comment: "Good belayer"},
+    {stars: 4, comment: "Nice, but always late..."}
   ],
   [
-    {comment: "Showed me the most interesting route"},
-    {comment: "Friendly, but not very responsive over the app"}
+    {stars: 5, comment: "Showed me the most interesting route"},
+    {stars: 4, comment: "Friendly, but not very responsive over the app"}
   ],
   [
-    {comment: "Best pancakes!"},
-    {comment: "Responsible and trustworthy"},
+    {stars: 5, comment: "Best pancakes!"},
+    {stars: 5, comment: "Responsible and trustworthy"},
   ],
   [
-    {comment: "Nothing to complain about"},
-    {comment: "Didn't show up"},
+    {stars: 5, comment: "Nothing to complain about"},
+    {stars: 1, comment: "Didn't show up"},
   ],
   [
-    {comment: "Knows the best cafe in town"},
-    {comment: "Picked me up by car"},
+    {stars: 5, comment: "Knows the best cafe in town"},
+    {stars: 5, comment: "Picked me up by car"},
   ],
   [
-    {comment: "Great guest bed"},
-    {comment: "Great host"},
+    {stars: 4, comment: "Great guest bed"},
+    {stars: 5, comment: "Great host"},
   ],
   [
-    {comment: "Didn't tell me about the cat in advance"},
-    {comment: "Friendly cat"},
+    {stars: 3, comment: "Didn't tell me about the cat in advance"},
+    {stars: 5, comment: "Friendly cat"},
   ],
   [
-    {comment: "Knows how to cheer you up"},
-    {comment: "Borrowed me some gear"},
+    {stars: 5, comment: "Knows how to cheer you up"},
+    {stars: 5, comment: "Borrowed me some gear"},
   ],
   [
-    {comment: "We didn't match very well"},
-    {comment: "Direct and efficient communicator"},
+    {stars: 3, comment: "We didn't match very well"},
+    {stars: 4, comment: "Direct and efficient communicator"},
   ],
   [
-    {comment: "No previous climbing experience whatsoever"},
-    {comment: "Kept on calling me after our trip"},
+    {stars: 2, comment: "No previous climbing experience whatsoever"},
+    {stars: 1, comment: "Kept on calling me after our trip"},
   ]
 ]
 

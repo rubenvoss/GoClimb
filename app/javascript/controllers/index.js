@@ -30,3 +30,6 @@ application.register("save-dates", SaveDatesController)
 
 import SearchController from "./search_controller"
 application.register("search", SearchController)
+
+import StarRatingController from "./star_rating_controller"
+application.register("star-rating", StarRatingController)

@@ -1,7 +1,8 @@
 <div class="container">
   <h1>New review</h1>
   <%= simple_form_for [@profile, @review] do |f| %>
-    <%= f.input :comment, placeholder: "Leave a review" %>
+    <%= f.input :stars, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
+    <%= f.input :comment, label: "Leave a review" %>
     <%= f.submit "Submit review", class: "button--red", data: { turbo: :false } %>
   <% end %>
 </div>
