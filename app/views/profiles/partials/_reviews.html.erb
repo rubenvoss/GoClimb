@@ -16,7 +16,16 @@
           <% counter += review.stars %>
         <% end %>
 
-        <div class="text-center"><strong>Rating:</strong> <%= (counter/amount.to_f).round(half: :up) %></div>
+        <div class="text-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <% rating = (counter/amount.to_f).round(half: :up) %>
+            <i class="fa fa-star m-1 <%= rating >= 1 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star <%= rating >= 2 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star m-1 <%= rating >= 3 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star <%= rating >= 4 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star m-1 <%= rating >= 5 ? "stars-active" : "stars-inactive" %>"></i>
+          </div>
+        </div>
 
         <% @profile.reviews.each do |review| %>
           <% unless review.user.profile.nil? %>
