@@ -9,9 +9,27 @@
         <% end %>
       </h3>
       <div class="d-flex flex-column" id="reviews">
-        <% @profile.reviews.each do |review| %>
+        <% counter = 0 %>
+        <% amount = @profile.reviews.size %>
 
+        <% @profile.reviews.each do |review| %>
+          <% counter += review.stars %>
+        <% end %>
+
+        <div class="text-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <% rating = (counter/amount.to_f).round(half: :up) %>
+            <i class="fa fa-star m-1 <%= rating >= 1 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star <%= rating >= 2 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star m-1 <%= rating >= 3 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star <%= rating >= 4 ? "stars-active" : "stars-inactive" %>"></i>
+            <i class="fa fa-star m-1 <%= rating >= 5 ? "stars-active" : "stars-inactive" %>"></i>
+          </div>
+        </div>
+
+        <% @profile.reviews.each do |review| %>
           <% unless review.user.profile.nil? %>
+
             <div class="white-background review-bubble d-flex flex-row justify-content-between align-items-start">
               <div class="review"><strong><%= review.user.profile.name %>:  </strong><%= review.comment %></div>
               <% if review.user_id == current_user.id %>
@@ -19,11 +37,12 @@
                   <i class="fa-solid fa-trash trash-icon fa-lg delete-review-link"></i>
                 <% end %>
               <% end %>
-              </div>
-          <% end %>
+            </div>
 
+          <% end %>
         <% end %>
       </div>
+
       <% if @profile.user != current_user %>
         <%= link_to "Leave a review", new_profile_review_path(@profile), class: "button--red bottom-right" %>
       <% end %>
