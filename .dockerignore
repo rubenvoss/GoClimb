@@ -1,0 +1,10 @@
+# ignore gitignore file and git folder
+.gitignore
+.git
+# Gemfile.lock
+
+# Ignore .env file containing credentials.
+.env*
+# Ignore Mac and Linux file system files
+*.swp
+.DS_Store
