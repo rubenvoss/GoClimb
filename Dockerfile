@@ -3,16 +3,17 @@ FROM ruby:3.1.2
 WORKDIR /goclimb
 
 # Operating system dependencies
-RUN apt update && \
-  apt install npm
+RUN apt update
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
 
 
 # Application dependencies
-COPY Gemfile Gemfile.lock ./
-RUN bundle install
+# COPY Gemfile Gemfile.lock ./
+# RUN bundle
 
 
-COPY . .
+# COPY . .
 
 # COPY ./Gemfile .
 
