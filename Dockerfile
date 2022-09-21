@@ -1,11 +1,13 @@
-FROM ruby:3.1.2
+FROM ruby:3.1.2-alpine3.16
 
 WORKDIR /goclimb
 
 # Operating system dependencies
-RUN apt update
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt-get install -y nodejs
+RUN apk update
+
+# RUN apk add npm
+# RUN apk add nodejs
+RUN apk add yarn
 
 
 # Application dependencies
