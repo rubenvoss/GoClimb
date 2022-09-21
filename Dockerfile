@@ -1,14 +1,12 @@
-# Dockerfile.rails
-FROM ruby:3.1.2
+FROM ruby:3.1.2 AS goclimb
 
-# Default directory
-ENV INSTALL_PATH /opt/app
-RUN mkdir -p $INSTALL_PATH
+WORKDIR /app
 
-# Install rails
-RUN gem install rails bundler
-#RUN chown -R user:user /opt/app
-WORKDIR /opt/app
+COPY . .
+
+# COPY ./Gemfile .
+
+# RUN bundle
 
 # Run a shell
 CMD ["/bin/sh"]
