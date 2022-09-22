@@ -3,13 +3,11 @@ FROM ruby:3.1.2-alpine3.16
 WORKDIR /goclimb
 
 # Operating system dependencies
-RUN apk update
-
-# RUN apk add npm
-# RUN apk add nodejs
-RUN apk add yarn \
+RUN apk add --update \
             postgresql-dev \
-            tzdata
+            tzdata \
+            nodejs \
+            yarn
 
 
 # Application dependencies
