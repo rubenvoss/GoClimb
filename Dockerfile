@@ -27,5 +27,8 @@ COPY . .
 
 EXPOSE 3000
 
-# Run a shell
-CMD ["rails", "server", "-b", "0.0.0.0"]
+# Run the rails server
+# CMD ["rails", "server", "-b", "0.0.0.0", "-d"]
+RUN chmod +x /goclimb/container_start.sh
+
+CMD ["/goclimb/container_start.sh"]
