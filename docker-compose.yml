@@ -21,12 +21,12 @@ services:
     ports:
       - 8080:8080
 
-  goclimb:
+  rails:
     build: .
-    restart: always
     ports:
       - 3000:3000
     # if you want to get an interactive shell with docker-compose, use this in the terminal:
     # docker-compose run --rm goclimb
+    # tty: true
     depends_on:
       - db
