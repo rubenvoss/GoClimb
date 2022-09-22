@@ -1,26 +1,25 @@
-# Use postgres/example user/password credentials
 version: '3.1'
 
 services:
 
-  # db:
-  #   image: postgres:14.5-alpine3.16
-  #   restart: always
-  #   environment:
-  #     POSTGRES_PASSWORD: password
+  db:
+    image: postgres:14.5-alpine3.16
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
 
-  # # adminer is a user interface on the web, to display contents of db
-  # # domain - localhost:8080
-  # # database system - postgresql
-  # # server - db
-  # # user - postgres
-  # # password - password
-  # # database - postgres
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 8080:8080
+  # adminer is a user interface on the web, to display contents of db
+  # domain - localhost:8080
+  # database system - postgresql
+  # server - db
+  # user - postgres
+  # password - password
+  # database - postgres
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
   goclimb:
     build: .
@@ -29,5 +28,5 @@ services:
       - 3000:3000
     # if you want to get an interactive shell with docker-compose, use this in the terminal:
     # docker-compose run --rm goclimb
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
