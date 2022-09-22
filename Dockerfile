@@ -25,10 +25,9 @@ COPY . .
 
 # RUN bundle
 
+# exposing port 3000 to localhost
 EXPOSE 3000
-
-# Run the rails server
-# CMD ["rails", "server", "-b", "0.0.0.0", "-d"]
+# set the script as executable with chmod
 RUN chmod +x /goclimb/container_start.sh
-
+# execute the starting script to start rails server, etc.
 CMD ["/goclimb/container_start.sh"]
