@@ -7,15 +7,17 @@ RUN apk update
 
 # RUN apk add npm
 # RUN apk add nodejs
-RUN apk add yarn
+RUN apk add yarn \
+            postgresql-dev \
+            tzdata
 
 
 # Application dependencies
-# COPY Gemfile Gemfile.lock ./
-# RUN bundle
+COPY Gemfile Gemfile.lock ./
+RUN bundle
 
 
-# COPY . .
+COPY . .
 
 # COPY ./Gemfile .
 
