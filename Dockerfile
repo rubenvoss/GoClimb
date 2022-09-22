@@ -28,5 +28,4 @@ COPY . .
 EXPOSE 3000
 
 # Run a shell
-CMD ruby -e "cat /usr/local/bundle/extensions/aarch64-linux-musl/3.1.0/pg-1.4.3/mkmf.log"
-CMD ["/bin/sh"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
