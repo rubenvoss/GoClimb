@@ -28,5 +28,6 @@ services:
     # if you want to get an interactive shell with docker-compose, use this in the terminal:
     # docker-compose run --rm goclimb
     # tty: true
-    depends_on:
-      - db
+    # stdin_open: true
+    # depends_on:
+    #   - db
