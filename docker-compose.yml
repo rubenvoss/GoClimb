@@ -40,6 +40,9 @@ services:
     restart: always
     depends_on:
       - db
+    # if you change any code in your files, it will be updated in the container
+    volumes:
+      - ./:/src:rw
     # you HAVE to run the command here, otherwise docker container exits with code 0
     command: ["rails", "server", "-b", "0.0.0.0"]
 
