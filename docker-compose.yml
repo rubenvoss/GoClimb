@@ -13,6 +13,8 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
   # adminer is a user interface on the web, to display contents of db
   # domain - localhost:8080
@@ -40,3 +42,6 @@ services:
       - db
     # you HAVE to run the command here, otherwise docker container exits with code 0
     command: ["rails", "server", "-b", "0.0.0.0"]
+
+volumes:
+  postgres_data:
