@@ -1,11 +1,6 @@
-version: '3.1'
+version: '3.8'
 
 services:
-
-  # 1. volume for db
-  # 2. volume for all of the code to make live changes
-
-
   db:
     image: postgres:14.5-alpine3.16
     restart: always
@@ -33,17 +28,15 @@ services:
     build: .
     ports:
       - 3000:3000
-    # if you want to get an interactive shell with docker-compose, use this in the terminal:
-    # docker-compose run --rm goclimb
-    # tty: true
-    # stdin_open: true
     restart: always
     depends_on:
       - db
     # if you change any code in your files, it will be updated in the container
     volumes:
       - ./:/goclimb:rw
+
     # entrypoint: /goclimb/rails_entrypoint.sh
+
     # you HAVE to run the command here, otherwise docker container exits with code 0
     command: ["rails", "server", "-b", "0.0.0.0"]
 
