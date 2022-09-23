@@ -14,18 +14,18 @@ services:
     ports:
       - 5432:5432
 
-  # # adminer is a user interface on the web, to display contents of db
-  # # domain - localhost:8080
-  # # database system - postgresql
-  # # server - db
-  # # user - postgres
-  # # password - password
-  # # database - postgres
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 8080:8080
+  # adminer is a user interface on the web, to display contents of db
+  # domain - localhost:8080
+  # database system - postgresql
+  # server - db
+  # user - postgres
+  # password - password
+  # database - postgres
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
   rails:
     build: .
