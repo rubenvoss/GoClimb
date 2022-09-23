@@ -1,5 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon background" data-controller="<%= params[:controller] + params[:action] != "chatroomsshow" && "notification-subscription"  %>" data-notification-subscription-user-id-value="<%= current_user&.id %>">
-  <div class="navbar-full-height d-flex justify-content-between align-items-center">
+  <div class="navbar-full-height navbar-main d-flex justify-content-between align-items-center" data-controller="<%= params[:controller] + params[:action] != "chatroomsshow" && "notification-subscription"  %>" data-notification-subscription-user-id-value="<%= current_user&.id %>">
     <%= link_to :back, class: "navbar-button" do %>
       <span class="icon--lastpage"><i class="fa-solid fa-angle-left"></i></span>
     <% end %>

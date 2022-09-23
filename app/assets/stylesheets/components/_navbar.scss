@@ -20,6 +20,13 @@
   position: relative;
 }
 
+.navbar-main {
+  background-color: $blue;
+  height: 100%!important;
+  max-height: 50px;
+  padding: .5rem 0!important;
+}
+
 .aligh-right {
   align-items: flex-end;
 }
@@ -48,7 +55,7 @@
 .navbar-pipe {
   background-color: black;
   color: black;
-  height: 85%;
+  height: 25px;
   width: 1px;
 }
 

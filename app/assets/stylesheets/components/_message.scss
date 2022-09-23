@@ -1,7 +1,9 @@
 // To style the wrapping div
 .message-row {
-  margin-bottom: 10px;
-  padding: 8px;
+  margin-bottom: 18px;
+}
+.message-row:last-of-type {
+  margin-bottom: 0!important;
 }
 
 // To style the message itself
