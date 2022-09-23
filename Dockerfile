@@ -24,7 +24,7 @@ COPY . .
 
 # COPY ./Gemfile .
 
-# RUN bundle
+
 EXPOSE 3000
 
 # exposing port 3000 to localhost
