@@ -39,8 +39,6 @@
 !/app/assets/builds/.keep
 
 /node_modules
-# Ignore .env file containing credentials.
-.env*
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
