@@ -13,20 +13,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  # adminer is a user interface on the web, to display contents of db
-  # domain - localhost:8080
-  # database system - postgresql
-  # server - db
-  # user - postgres
-  # password - password
-  # database - postgres
-  adminer:
-    container_name: adminer
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-
   rails_development_server:
     container_name: rails_development_server
     build: .
@@ -43,6 +29,20 @@ services:
 
     # you HAVE to run the command here, otherwise docker container exits with code 0
     command: ["rails", "server", "-b", "0.0.0.0"]
+
+  adminer:
+    # adminer is a user interface on the web, to display contents of db
+    # domain - localhost:8080
+    # database system - postgresql
+    # server - db
+    # user - postgres
+    # password - password
+    # database - postgres
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
 volumes:
   postgres_data:
