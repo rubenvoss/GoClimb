@@ -44,16 +44,16 @@ docker ps
 ```
 2. Look for the name (all the way on the right)
 ```
-CONTAINER ID   IMAGE                      COMMAND                  CREATED         STATUS         PORTS                    NAMES
-47ba0a61d94b   goclimb-rails              "rails server -b 0.0…"   4 minutes ago   Up 4 minutes   0.0.0.0:3000->3000/tcp   goclimb-rails-1
-ea23a8f48086   adminer                    "entrypoint.sh docke…"   4 minutes ago   Up 4 minutes   0.0.0.0:8080->8080/tcp   goclimb-adminer-1
-49d9c3b32ba1   postgres:14.5-alpine3.16   "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes   0.0.0.0:5432->5432/tcp   goclimb-db-1
+CONTAINER ID   IMAGE                              COMMAND                  CREATED         STATUS         PORTS                    NAMES
+e19709f324be   goclimb-rails_development_server   "rails server -b 0.0…"   5 seconds ago   Up 3 seconds   0.0.0.0:3000->3000/tcp   rails_development_server
+fcd08ee5be80   postgres:14.5-alpine3.16           "docker-entrypoint.s…"   8 hours ago     Up 4 seconds   0.0.0.0:5432->5432/tcp   db_development
+c4a9511f0964   adminer                            "entrypoint.sh docke…"   8 hours ago     Up 4 seconds   0.0.0.0:8080->8080/tcp   adminer
 ```
 
 3. execute the command that you want to run with docker exec:
 
 ```
-docker exec -it goclimb-rails-1 rails db:seed
+docker exec -it rails_development_server rails db:seed
 ```
 <br>
 <br>
