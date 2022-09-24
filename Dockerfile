@@ -13,26 +13,15 @@ RUN apk add tzdata=2022c-r0
 RUN apk add nodejs=16.16.0-r0
 RUN apk add yarn=1.22.19-r0
 
-
-
 # Application dependencies
 COPY Gemfile Gemfile.lock ./
 RUN bundle
 
-
+# Copy the source code into the Docker container
 COPY . .
 
-# COPY ./Gemfile .
-
-
+# This container exposes port 3000 on localhost
 EXPOSE 3000
 
-# exposing port 3000 to localhost
-# set the script as executable with chmod
-# RUN chmod +x /goclimb/container_start.sh
-# execute the starting script to start rails server, etc.
-# CMD ["/goclimb/container_start.sh"]
-
+# Uncomment this if you want to run the docker container without docker compose ($ docker build -t rails .)
 # CMD ["rails", "server", "-b", "0.0.0.0"]
-
-# ➜  GoClimb git:(docker) ✗ docker run --name rails --rm -d -p 3000:3000 rails
