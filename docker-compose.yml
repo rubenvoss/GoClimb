@@ -1,11 +1,13 @@
 version: '3.8'
 
 services:
-  db:
+  db_development:
+    container_name: db_development
     image: postgres:14.5-alpine3.16
     restart: always
-    env_file:
-      - postgres.env
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=goClimb_development
     ports:
       - 5432:5432
     volumes:
@@ -19,18 +21,20 @@ services:
   # password - password
   # database - postgres
   adminer:
+    container_name: adminer
     image: adminer
     restart: always
     ports:
       - 8080:8080
 
-  rails:
+  rails_development_server:
+    container_name: rails_development_server
     build: .
     ports:
       - 3000:3000
     restart: always
     depends_on:
-      - db
+      - db_development
     # if you change any code in your files, it will be updated in the container
     volumes:
       - ./:/goclimb:rw
