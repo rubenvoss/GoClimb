@@ -8,7 +8,7 @@ https://www.docker.com/products/docker-desktop/
 <br>
 <br>
 
-## On Linux(or windows WSL) you have to add a sudo in front of the docker command every time, or do some postinstall settings:
+## Do some postinstall settings:
 https://docs.docker.com/engine/install/linux-postinstall/
 <br>
 <br>
