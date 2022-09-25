@@ -3,15 +3,15 @@ FROM ruby:3.1.2-alpine3.16
 WORKDIR /goclimb
 
 # Operating system dependencies
-RUN apk update
-RUN apk add ruby-dev=3.1.2-r0
-RUN apk add git=2.36.2-r0
-RUN apk add postgresql-dev
-RUN apk add --no-cache build-base=0.5-r3
-RUN apk add --no-cache gcompat=1.0.0-r4
-RUN apk add tzdata=2022c-r0
-RUN apk add nodejs=16.16.0-r0
-RUN apk add yarn=1.22.19-r0
+RUN apk add --update \
+            ruby-dev=3.1.2-r0 \
+            git=2.36.2-r0 \
+            postgresql-dev \
+            --no-cache build-base=0.5-r3 \
+            --no-cache gcompat=1.0.0-r4 \
+            tzdata=2022c-r0 \
+            nodejs=16.16.0-r0 \
+            yarn=1.22.19-r0
 
 # Application dependencies
 COPY Gemfile Gemfile.lock ./
