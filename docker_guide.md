@@ -22,15 +22,15 @@ sudo service postgresql stop
 
 ## **How to run all docker containers for GoClimb:**
 ```
-docker-compose up
+docker compose up
 ```
 Or if you don't want to see the logs of the containers
 ```
-docker-compose up -d
+docker compose up -d
 ```
 Or if there is a change in dependencies (like a new gem)
 ```
-docker-compose up --build
+docker compose up --build
 ```
 <br>
 <br>
