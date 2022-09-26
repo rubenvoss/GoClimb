@@ -14,6 +14,9 @@ RUN apk add --update \
             yarn=1.22.19-r0
 
 # Application dependencies
+COPY package.json yarn.lock ./
+RUN yarn install
+
 COPY Gemfile Gemfile.lock ./
 RUN bundle
 
