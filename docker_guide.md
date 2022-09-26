@@ -72,7 +72,7 @@ Adminer is a user interface on the web, to display contents of the database.
 Go to http://localhost:8080/
 Select the following options:
 -  database system: postgresql
--  server: db
+-  server: db_development
 -  user: postgres
 -  password: password
 -  database: postgres
