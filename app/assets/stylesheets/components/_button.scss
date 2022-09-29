@@ -9,12 +9,18 @@
   &--red {
     @extend .button;
     background-color: $red;
+    --slick {
+      @extend .button--red;
+      padding: 3px 6px;
+    }
   }
   &--blue {
     @extend .button;
     background-color: $blue;
   }
+
 }
+
 
 .small {
   max-width: fit-content;

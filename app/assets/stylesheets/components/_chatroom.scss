@@ -1,6 +1,6 @@
 .chatroom {
   background: white;
-  height: 90vh;
+  height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,4 +32,14 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
+}
+
+.lower-input-wrapper {
+  max-height: 70px!important;
+}
+.lower-input {
+  margin-right: 10px!important;
+}
+.lower-input input {
+  height: 40px!important;
 }
