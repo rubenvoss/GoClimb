@@ -34,7 +34,7 @@ services:
     # adminer is a user interface on the web, to display contents of db
     # domain - localhost:8080
     # database system - postgresql
-    # server - db
+    # server - db_development
     # user - postgres
     # password - password
     # database - postgres
