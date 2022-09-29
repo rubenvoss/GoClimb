@@ -5,8 +5,7 @@
 
   <div class="container">
     <div class = "trip-infos p-1 pt-3">
-      <p><strong><%= trip.name %></strong></p>
-      <p><em><%= trip.crag.name %></em></p>
+      <p><strong><%= trip.crag.name %></strong></p>
       <p><%= trip.start_date %> ⇨ <%= trip.end_date %></p>
       <div class="py-3"></div>
       <% if profile.user == current_user %>
