@@ -7,13 +7,13 @@ RUN apt install nginx -y
 
 # RUN rm /etc/nginx/conf.d/nginx.conf
 
-COPY index.html goclimb/index.html
+COPY index.html .
 
-RUN service nginx start
 
 COPY nginx.conf /etc/nginx/conf.d/
 
-RUN service nginx reload
+# RUN service nginx reload
+RUN service nginx start
 
 
 # RUN adduser deploy
