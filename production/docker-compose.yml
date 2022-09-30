@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db_production:
+    container_name: db_production
+    image: postgres:14.5-alpine3.16
+    restart: always
+    # environment:
+    #   - POSTGRES_PASSWORD=password
+    #   - POSTGRES_DB=goClimb_development
+    volumes:
+      - postgres_data_PRODUCTION:/var/lib/postgresql/data
+
+  rails_production_server:
+    container_name: rails_production_server
