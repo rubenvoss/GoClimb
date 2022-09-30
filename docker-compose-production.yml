@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=goClimb_production
     volumes:
       - postgres_data_PRODUCTION:/var/lib/postgresql/data
 
@@ -21,6 +22,10 @@ services:
       - db_production
     stdin_open: true
     tty: true
+    volumes:
+      - ./:/goclimb:ro
+    # you HAVE to run the command here, otherwise docker container exits with code 0
+    command: ["rails", "server", "-b", "0.0.0.0"]
 
 volumes:
   postgres_data_PRODUCTION:
