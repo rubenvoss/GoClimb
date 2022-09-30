@@ -51,4 +51,8 @@ production:
   <<: *default
   database: goClimb_production
   username: goClimb
-  password: <%= ENV["GOCLIMB_DATABASE_PASSWORD"] %>
+  password: password
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
