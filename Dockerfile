@@ -6,6 +6,7 @@ WORKDIR /goclimb
 RUN apk add --update \
             ruby-dev=3.1.2-r0 \
             git=2.36.2-r0 \
+            # libpq-dev=14.5-r0 \
             postgresql-dev \
             --no-cache build-base=0.5-r3 \
             --no-cache gcompat=1.0.0-r4 \
