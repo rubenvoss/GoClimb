@@ -4,6 +4,7 @@ WORKDIR /goclimb
 
 RUN apk add --update \
             git=2.36.2-r0 \
+            libpq-dev=14.5-r0 \
             --no-cache build-base=0.5-r3 \
             --no-cache gcompat=1.0.0-r4 \
             tzdata=2022c-r0 \
