@@ -27,9 +27,10 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./:/goclimb:ro
+      - ./:/goclimb:rw
     # you HAVE to run the command here, otherwise docker container exits with code 0
     command: ["rails", "server", "-b", "0.0.0.0"]
+    # command: ["/bin/ash"]
 
 volumes:
   postgres_data_PRODUCTION:
