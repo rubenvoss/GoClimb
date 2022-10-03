@@ -18,9 +18,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-production
+    environment:
+      - RAILS_ENV=production
     ports:
       - 3000:3000
-      - 80:80
     restart: always
     depends_on:
       - db_production
