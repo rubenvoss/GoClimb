@@ -40,3 +40,7 @@
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
+
+/config/credentials/production.key
+
+/config/credentials/development.key
