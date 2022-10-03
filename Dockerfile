@@ -22,6 +22,8 @@ RUN yarn install
 COPY Gemfile Gemfile.lock ./
 RUN bundle
 
+ENV EDITOR=nano
+
 # Copy the source code into the Docker container
 COPY . .
 
