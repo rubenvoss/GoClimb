@@ -50,9 +50,7 @@ test:
 production:
   <<: *default
   database: goClimb_production
-  username: goClimb
-  password: password
-  host: localhost
+  host: db_production
   adapter: postgresql
   encoding: utf8
   pool: 5
