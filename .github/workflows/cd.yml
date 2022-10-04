@@ -26,8 +26,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: user/app:latest
-
+          tags: rubenvoss/rails-production:latest
+          
   redeploy:
     name: Redeploy webhook call
     runs-on: ubuntu-18.04
