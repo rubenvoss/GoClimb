@@ -19,6 +19,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-production
+    image: rubenvoss/rails-production:latest
     environment:
       - RAILS_ENV=production
     ports:
