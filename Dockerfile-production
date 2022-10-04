@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-alpine3.16
+FROM --platform=amd64 ruby:3.1.2-alpine3.16
 
 WORKDIR /goclimb
 
