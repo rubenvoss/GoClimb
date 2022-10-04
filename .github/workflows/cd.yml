@@ -1,4 +1,4 @@
-name: Release - Test, Build & Redeploy
+name: Release Push Image to Dockerhub & upload to server
 
 on:
   push:
