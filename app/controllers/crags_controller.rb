@@ -1,10 +1,10 @@
 class CragsController < ApplicationController
   def show
     @crag = Crag.find(params[:id])
-    @activity_markers = @crag.activities.map do |activity|
+    @activity_markers = @crag.activities.geocoded.map do |activity|
       {
-        lat: activity.lat,
-        lng: activity.long,
+        lat: activity.latitude,
+        lng: activity.longitude,
         info_window: render_to_string(partial: "info_window", locals: { activity: activity })
       }
     end
