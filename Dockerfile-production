@@ -14,15 +14,10 @@ RUN apk add --update \
 # Application dependencies
 COPY package.json yarn.lock ./
 RUN yarn install
-
 COPY Gemfile Gemfile.lock ./
 RUN bundle
 
-# RUN service nginx reload
-# RUN service nginx start
-# ARG RAILS_ENV="production"
-
-# RUN adduser deploy
+# precompiling assets to make the rails server 🔥fast
 RUN rails assets:precompile
 
 # This container exposes port 3000 on localhost
