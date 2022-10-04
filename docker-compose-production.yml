@@ -1,5 +1,3 @@
-# docker compose -f docker-compose-production.yml up --build
-
 version: '3.8'
 
 services:
@@ -38,3 +36,6 @@ services:
 
 volumes:
   postgres_data_PRODUCTION:
+
+# run it with:
+# docker compose -f docker-compose-production.yml up --build
