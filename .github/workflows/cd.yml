@@ -1,4 +1,4 @@
-name: Release -- Push Image to Dockerhub & upload to server
+name: CD
 
 on:
   push:
