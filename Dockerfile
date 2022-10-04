@@ -17,10 +17,10 @@ RUN apk add --update \
 # Application dependencies
 COPY package.json yarn.lock ./
 RUN yarn install
-
 COPY Gemfile Gemfile.lock ./
 RUN bundle
 
+# You can use the nano texteditor to edit credentials files in the docker container
 ENV EDITOR=nano
 
 # Copy the source code into the Docker container
