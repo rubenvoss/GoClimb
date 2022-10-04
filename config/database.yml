@@ -7,7 +7,6 @@ default: &default
 
   # these are the standard username and password for the postgres db_development docker container
   username: postgres
-  password: password
 
   # The TCP port the server listens on. Defaults to 5432.
   # port: 5432
@@ -16,6 +15,7 @@ default: &default
 development:
   <<: *default
   database: goClimb_development
+  password: password
 
   # this is the hostname of the db_development docker container
   host: db_development
