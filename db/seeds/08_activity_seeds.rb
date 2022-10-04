@@ -1,10 +1,10 @@
 activity_data = [
   [# Margalef
-    {name: "Accommodation in Margalef On Sight", lat: 41.28475435204124, long: 0.7548767099402085},
-    {name: "Margalef Beer", lat: 41.285758072466976, long: 0.7513254655231684},
-    {name: "La Botiga Supermarket", lat: 41.284516520440846, long: 0.7546353111505305},
-    {name: "Cal Bruno", lat: 41.28510505129424, long: 0.7545387516346593},
-    {name: "Cafe Vernet", lat: 41.28465357604522, long: 0.7535731564759476}
+    {name: "Accommodation in Margalef On Sight", address: "Carrer dels Molins, 24, 43371 Margalef, Tarragona, Spanien"}, #lat: 41.28475435204124, long: 0.7548767099402085
+    {name: "Margalef Beer", address: "C. Nou, 43371 Margalef, Tarragona, Spanien" }, #lat: 41.285758072466976, long: 0.7513254655231684
+    {name: "La Botiga Supermarket", address: "Carrer del Pont, 4, 43371 Margalef, Tarragona, Spanien" }, #lat: 41.284516520440846, long: 0.7546353111505305
+    {name: "Cal Bruno", address: "Carrer dels Molins, 32, 43371 Margalef, Tarragona, Spanien"}, #lat: 41.28510505129424, long: 0.7545387516346593
+    {name: "Cafe Vernet", address: "Plaça de Sant Miquel, 17, 43371 Margalef, Tarragona, Spanien"} #lat: 41.28465357604522, long: 0.7535731564759476
   ],
   [# Siurana
     {name: "Viewpoint El Balcó de Siurana", lat: 41.25721212522358, long: 0.9302155672044444},
@@ -49,6 +49,7 @@ activity_data = [
     {name: "Carmen Mijana Farreny Farmacy", lat: 42.06825571160916, long: 1.3142830790321425}
   ]
 ]
+
 
 def seed_activities(activities)
   activities.each_with_index do |activity, index|
