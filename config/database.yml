@@ -54,3 +54,4 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
+  password: <%= Rails.application.credentials.db_production_password %>
