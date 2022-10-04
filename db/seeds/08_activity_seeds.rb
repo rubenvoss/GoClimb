@@ -1,55 +1,54 @@
 activity_data = [
   [# Margalef
-    {name: "Accommodation in Margalef On Sight", address: "Carrer dels Molins, 24, 43371 Margalef, Tarragona, Spanien"}, #lat: 41.28475435204124, long: 0.7548767099402085
-    {name: "Margalef Beer", address: "C. Nou, 43371 Margalef, Tarragona, Spanien" }, #lat: 41.285758072466976, long: 0.7513254655231684
-    {name: "La Botiga Supermarket", address: "Carrer del Pont, 4, 43371 Margalef, Tarragona, Spanien" }, #lat: 41.284516520440846, long: 0.7546353111505305
-    {name: "Cal Bruno", address: "Carrer dels Molins, 32, 43371 Margalef, Tarragona, Spanien"}, #lat: 41.28510505129424, long: 0.7545387516346593
-    {name: "Cafe Vernet", address: "Plaça de Sant Miquel, 17, 43371 Margalef, Tarragona, Spanien"} #lat: 41.28465357604522, long: 0.7535731564759476
+    {name: "Accommodation in Margalef On Sight", address: "Carrer dels Molins, 24, 43371 Margalef, Tarragona, Spanien"},
+    {name: "Margalef Beer", address: "C. Nou, 43371 Margalef, Tarragona, Spanien" },
+    {name: "La Botiga Supermarket", address: "Carrer del Pont, 4, 43371 Margalef, Tarragona, Spanien" },
+    {name: "Cal Bruno", address: "Carrer dels Molins, 32, 43371 Margalef, Tarragona, Spanien"},
+    {name: "Cafe Vernet", address: "Plaça de Sant Miquel, 17, 43371 Margalef, Tarragona, Spanien"}
   ],
   [# Siurana
-    {name: "Viewpoint El Balcó de Siurana", lat: 41.25721212522358, long: 0.9302155672044444},
-    {name: "Santa Maria Church", lat: 41.25772024819562, long: 0.9321574863569647},
-    {name: "Restaurant Siurana", lat: 41.25816384438382, long: 0.9326080974310302},
-    {name: "Restaurant Siurana", lat: 41.25816384438382, long: 0.9326080974310302},
-    {name: "Restaurant Siurana", lat: 41.25816384438382, long: 0.9326080974310302}
+    {name: "Viewpoint El Balcó de Siurana", address: "Carrer Major, S/N, 43362 Siurana, Tarragona, Spanien"},
+    {name: "Santa Maria Church", address: "Carrer Major, 43362 Siurana, Tarragona, Spanien"},
+    {name: "Restaurant Siurana", address: "Carrer Major, 43362 Siurana, Tarragona, Spanien"},
+    {name: "Restaurant Siurana", address: "Carrer Major, 43362 Siurana, Tarragona, Spanien"},
+    {name: "Restaurant Siurana", address: "Carrer Major, 43362 Siurana, Tarragona, Spanien"}
   ],
   [# Oberammergau
-    {name: "Schleifmühlklamm Waterfall", lat: 47.61027530593548, long: 11.016791967612544},
-    {name: "Kolbensesselbahn Chairlift", lat: 47.59985866429959, long: 11.048720980860615},
-    {name: "Camping Oberammergau", lat: 47.592797316636876, long: 11.06760373063098},
-    {name: "Klosterhotel Ettal Ludwig der Bayer", lat: 47.571144295894875, long: 11.0926662894171},
-    {name: "Restaurant Ettaler Mühle", lat: 47.57026535689869, long: 11.07457176674148}
+    {name: "Schleifmühlklamm Waterfall", address: "Pürschlingstraße 52, 82497 Unterammergau"},
+    {name: "Kolbensesselbahn Chairlift", address: "Kreislainenweg, 82487 Oberammergau"},
+    {name: "Camping Oberammergau", address: "Ettaler Str. 56B, 82487 Oberammergau"},
+    {name: "Klosterhotel Ettal Ludwig der Bayer", address: "Kaiser-Ludwig-Platz 10, 82488 Ettal"},
+    {name: "Restaurant Ettaler Mühle", address: "Ettaler Mühle 1, 82488 Ettal"}
   ],
   [# Geyikbayiyri
-    {name: "Pan Camping &Hotel", lat: 36.876811307969, long: 30.47217174089902},
-    {name: "Josito Resort", lat: 36.874751530149744, long: 30.483415560080463},
-    {name: "Geyikbayiri su kenari Waterfall", lat: 36.8764336861939, long: 30.465476947798617},
-    {name: "Geyikbayiri su kenari Waterfall", lat: 36.8764336861939, long: 30.465476947798617},
-    {name: "Geyikbayiri su kenari Waterfall", lat: 36.8764336861939, long: 30.465476947798617}
+    {name: "Pan Camping &Hotel", address: "Geyikbayırı, 07070 Konyaaltı/Antalya, Türkei"},
+    {name: "Josito Resort", address: "Geyikbayırı, 07070 Konyaaltı/Antalya, Türkei"},
+    {name: "Geyikbayiri su kenari Waterfall", address: "Geyikbayırı, Geyikbayırı Köyü Yolu, 07070 Konyaaltı/Antalya, Türkei"},
+    {name: "Geyikbayiri su kenari Waterfall", address: "Geyikbayırı, Geyikbayırı Köyü Yolu, 07070 Konyaaltı/Antalya, Türkei"},
+    {name: "Geyikbayiri su kenari Waterfall", address: "Geyikbayırı, Geyikbayırı Köyü Yolu, 07070 Konyaaltı/Antalya, Türkei"}
   ],
   [# Kochel
-    {name: "Franz Marc Museum", lat: 47.65487903293675, long: 11.3655317767997},
-    {name: "Café und Gästehaus Landerermühle", lat: 47.643546043318054, long: 11.604141083647736},
-    {name: "Bergzeit Climbing Gear", lat: 47.791936439166896, long: 11.731485674579304},
-    {name: "Bergzeit Climbing Gear", lat: 47.791936439166896, long: 11.731485674579304},
-    {name: "Bergzeit Climbing Gear", lat: 47.791936439166896, long: 11.731485674579304}
+    {name: "Franz Marc Museum", address: "Franz Marc Park 8, 82431 Kochel am See"},
+    {name: "Café und Gästehaus Landerermühle", address: "Leger 2, 83661 Lenggries"},
+    {name: "Bergzeit Climbing Gear", address: "Tölzer Straße 131, 83607 Holzkirchen"},
+    {name: "Bergzeit Climbing Gear", address: "Tölzer Straße 131, 83607 Holzkirchen"},
+    {name: "Bergzeit Climbing Gear", address: "Tölzer Straße 131, 83607 Holzkirchen"}
   ],
   [# Weißmain-Alb
-    {name: "Burg Stein", lat: 50.0645273766788, long: 11.702539949245134},
-    {name: "Hotel Hartl's Lindenmühle", lat: 50.0527352084049, long: 11.677134067735917},
-    {name: "ALDI Supermarket", lat: 50.03934152125124, long: 11.679108178777557},
-    {name: "ALDI Supermarket", lat: 50.03934152125124, long: 11.679108178777557},
-    {name: "ALDI Supermarket", lat: 50.03934152125124, long: 11.679108178777557}
+    {name: "Burg Stein", address: "Stein 1, 08118 Hartenstein"},
+    {name: "Hotel Hartl's Lindenmühle", address: "Kolonnadenweg 1, 95460 Bad Berneck im Fichtelgebirge"},
+    {name: "ALDI Supermarket", address: "Maintalstraße 161, 95460 Bad Berneck im Fichtelgebirge"},
+    {name: "ALDI Supermarket", address: "Maintalstraße 161, 95460 Bad Berneck im Fichtelgebirge"},
+    {name: "ALDI Supermarket", address: "Maintalstraße 161, 95460 Bad Berneck im Fichtelgebirge"}
   ],
   [# Oliana
-    {name: "Hostal Víctor", lat: 42.06753890067664, long: 1.3137037219369154},
-    {name: "Bar Restaurant Rebollé", lat: 42.07107508941453, long: 1.311922735310847},
-    {name: "Carmen Mijana Farreny Farmacy", lat: 42.06825571160916, long: 1.3142830790321425},
-    {name: "Carmen Mijana Farreny Farmacy", lat: 42.06825571160916, long: 1.3142830790321425},
-    {name: "Carmen Mijana Farreny Farmacy", lat: 42.06825571160916, long: 1.3142830790321425}
+    {name: "Hostal Víctor", address: "Avinguda de l'Alt Urgell, 4, 25790 Oliana, Lleida, Spanien"},
+    {name: "Bar Restaurant Rebollé", address: "Avinguda de l'Alt Urgell, 88, 25790 Oliana, Lleida, Spanien"},
+    {name: "Carmen Mijana Farreny Farmacy", address: "carrer Ignasi Esteve, 9, 25790 Oliana, Lleida, Spanien"},
+    {name: "Carmen Mijana Farreny Farmacy", address: "carrer Ignasi Esteve, 9, 25790 Oliana, Lleida, Spanien"},
+    {name: "Carmen Mijana Farreny Farmacy", address: "carrer Ignasi Esteve, 9, 25790 Oliana, Lleida, Spanien"}
   ]
 ]
-
 
 def seed_activities(activities)
   activities.each_with_index do |activity, index|
