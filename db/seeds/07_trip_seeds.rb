@@ -74,7 +74,7 @@ def seed_trips(trips_data)
                     end_date: trip_data[:end_date], crag: trip_data[:crag],
                     user: trip_data[:user])
     trip.save!
-    puts "trip with name #{trip.name} created"
+    puts "trip with id #{trip.id} created"
   end
 end
 
