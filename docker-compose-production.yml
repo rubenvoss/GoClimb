@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db_production:
+    container_name: db_production
+    image: postgres:14.5-alpine3.16
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=<%= Rails.application.credentials.db_production_password %>
+      - POSTGRES_DB=goClimb_production
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data_PRODUCTION:/var/lib/postgresql/data
+
+  rails_production_server:
+    container_name: rails_production_server
+    build:
+      context: .
+      dockerfile: Dockerfile-production
+    image: rubenvoss/rails-production:latest
+    environment:
+      - RAILS_ENV=production
+    ports:
+      - 3000:3000
+    restart: always
+    depends_on:
+      - db_production
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/goclimb:rw
+    # you HAVE to run the command here, otherwise docker container exits with code 0
+    command: ["rails", "server", "-b", "0.0.0.0"]
+    # command: ["/bin/ash"]
+
+volumes:
+  postgres_data_PRODUCTION:
+
+# run it with:
+# docker compose -f docker-compose-production.yml up --build
