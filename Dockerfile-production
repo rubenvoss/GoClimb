@@ -18,6 +18,7 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle
 
 # precompiling assets to make the rails server 🔥fast
+COPY . .
 RUN rails assets:precompile
 
 # This container exposes port 3000 on localhost
