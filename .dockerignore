@@ -32,7 +32,7 @@
 
 /public/assets
 
-# Ignore master key for decrypting credentials and more.
+# Ignore master key for decrypting credentials and more (.gitignore already does this).
 /config/master.key
 /config/credentials/development.key
 /config/credentials/production.key
