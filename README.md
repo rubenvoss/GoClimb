@@ -5,4 +5,3 @@ Find climbing spots and partners in different European locations.
 Main features of this app include: basic CRUD actions, extensive search/filter function, map, chatbox, notifications
 
 staging: [rubenvoss.com](http://rubenvoss.com/)
-prod: [goclimb.fun](http://www.goclimb.fun/)
