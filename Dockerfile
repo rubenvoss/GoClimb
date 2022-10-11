@@ -10,7 +10,7 @@ RUN apk add --update \
             --no-cache build-base=0.5-r3 \
             --no-cache gcompat=1.0.0-r4 \
             tzdata=2022c-r0 \
-            nodejs=16.16.0-r0 \
+            nodejs \
             nano \
             yarn=1.22.19-r0
 

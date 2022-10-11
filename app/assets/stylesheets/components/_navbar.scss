@@ -18,13 +18,14 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  text-decoration: none;
+  height: 100%;
 }
 
 .navbar-main {
   background-color: $blue;
   height: 100%!important;
   max-height: 50px;
-  padding: .5rem 0!important;
 }
 
 .navbar-collapse {
@@ -46,19 +47,11 @@
   height: 4vh;
 }
 
-.icon {
+.icon-nav {
   font-size: 1.5em;
-  &--lastpage {
-    @extend .icon;
-    color: white;
-  }
-  &--message {
-    @extend .icon;
-    color: black;
-  }
-  &--menu {
-    @extend .icon;
-  }
+  color: black;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 .navbar-pipe {
