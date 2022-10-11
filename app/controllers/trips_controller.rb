@@ -27,7 +27,7 @@ class TripsController < ApplicationController
       else
         next
       end
-
+    end
     # removes all nil values of array
     @trips = @trips.compact
 
