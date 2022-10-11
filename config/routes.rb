@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   resources :profiles, except: %i[index destroy] do
     resources :reviews, only: %i[new create]
     resources :trips, only: %i[new create edit update]
+    resources :enrollments, only: %i[new create edit update]
   end
 
   resources :trips, only: [:index]
+  resources :enrollments, only: [:index]
 
   resources :reviews, only: [:destroy]
   resources :crags
