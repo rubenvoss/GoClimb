@@ -24,10 +24,6 @@ services:
     # if you change any code in your files, it will be updated in the container
     volumes:
       - ./:/goclimb:rw
-
-    # entrypoint: /goclimb/rails_entrypoint.sh
-
-    # you HAVE to run the command here, otherwise docker container exits with code 0
     command: ["rails", "server", "-b", "0.0.0.0"]
 
   adminer:
