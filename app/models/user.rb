@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :chatrooms, -> { distinct }, through: :messages
   has_many :trips
+  has_many :enrollments
   has_many :reviews
   has_one :profile
   validates :email, :encrypted_password, presence: true
