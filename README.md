@@ -5,5 +5,5 @@ Find climbing spots and partners in different European locations.
 Main features of this app include: basic CRUD actions, extensive search/filter function, map, chatbox, notifications
 
 You should visit the site with a phone or adjust your desktop browser to phone size :)  
-[Visit the Website](https://goclimb953.herokuapp.com/)
+[Visit the Website](http://goclimb.fun/)
 
